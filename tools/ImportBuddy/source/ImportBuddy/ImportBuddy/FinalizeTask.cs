@@ -100,7 +100,7 @@ public class FinalizeTask : IConsoleTask
                 if (await this.fileSystem.File.Exists(releaseFile))
                 {
                     string json = await this.fileSystem.File.ReadAllText(releaseFile);
-                    ReleaseFile file = JsonSerializer.Deserialize<ReleaseFile>(json);
+                    ReleaseFile file = JsonSerializer.Deserialize<ReleaseFile>(json, JsonHelper.JsonOptions);
                     file.Upc = item.Upc;
                     await this.fileSystem.File.WriteAllText(releaseFile, JsonSerializer.Serialize(file, JsonHelper.JsonOptions));
                 }
