@@ -21,7 +21,7 @@ public class TmdbByIdImportTask : IImportTask
         return title.StartsWith("tmdb:", StringComparison.OrdinalIgnoreCase) || Int32.TryParse(title, out var _); // allow just the id to be passed
     }
 
-    public async Task<ImportItem> GetImportItem(string title, string itemType, CancellationToken cancellationToken = default)
+    public async Task<ImportItem?> GetImportItem(string title, string itemType, CancellationToken cancellationToken = default)
     {
         if (Int32.TryParse(title.Replace("tmdb:", "", StringComparison.OrdinalIgnoreCase), out int id))
         {

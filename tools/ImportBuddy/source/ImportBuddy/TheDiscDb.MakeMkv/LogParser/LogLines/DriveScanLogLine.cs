@@ -10,10 +10,10 @@
         public int Index { get; set; }
         public bool Visible { get; set; }
         public bool Enabled { get; set; }
-        public string Flags { get; set; }
-        public string DriveName { get; set; }
-        public string DiscName { get; set; }
-        public string DriveLetter { get; set; }
+        public string? Flags { get; set; }
+        public string? DriveName { get; set; }
+        public string? DiscName { get; set; }
+        public string? DriveLetter { get; set; }
 
         public static DriveScanLogLine Parse(string line)
         {

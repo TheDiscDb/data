@@ -16,7 +16,7 @@ public static class DiskContentHash
             if (line.StartsWith(HashInfoLogLine.LinePrefix, StringComparison.OrdinalIgnoreCase))
             {
                 var hashInfo = HashInfoLogLine.Parse(line);
-                info.Files.Add(new FileHashInfo(default, default, default, default)
+                info.Files.Add(new FileHashInfo
                 {
                     Index = hashInfo.Index,
                     Name = hashInfo.Name,
@@ -36,7 +36,7 @@ public static class DiskContentHash
         string bluRayPath = $@"{driveLetter}:\BDMV\STREAM";
         string dvdPath = $@"{driveLetter}:\VIDEO_TS";
 
-        string path = null;
+        string? path = null;
         string pattern = "*";
 
         if (await fileSystem.Directory.Exists(bluRayPath))
@@ -64,7 +64,7 @@ public static class DiskContentHash
         int index = 0;
         foreach (var file in filesInfo)
         {
-            info.Files.Add(new FileHashInfo(default, default, default, default)
+            info.Files.Add(new FileHashInfo
             {
                 Index = index++,
                 Name = file.Name,

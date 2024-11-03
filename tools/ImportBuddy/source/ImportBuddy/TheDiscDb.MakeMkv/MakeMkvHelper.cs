@@ -18,6 +18,11 @@
         {
             this.options = options ?? throw new System.ArgumentNullException(nameof(options));
             this.fileSystem = fileSystem ?? throw new ArgumentNullException(nameof(fileSystem));
+
+            if (options.Value.Path == null)
+            {
+                throw new Exception("The MakeMKV Path is not configured");
+            }
         }
 
         public IList<Drive> Drives => this.options.Value.Drives;

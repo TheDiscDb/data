@@ -1,3 +1,9 @@
 ﻿namespace TheDiscDb.Core.DiscHash;
 
-public record FileHashInfo(int Index, string Name, DateTime CreationTime, long Size);
+public record FileHashInfo
+{
+    public int Index { get; set; }
+    public string? Name { get; set; }
+    public DateTime CreationTime { get; set; }
+    public long Size { get; set; }
+}

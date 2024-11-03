@@ -9,11 +9,11 @@
         {
         }
 
-        public string Code { get; set; }
-        public string Flags { get; set; }
+        public string? Code { get; set; }
+        public string? Flags { get; set; }
         public int ParamCount { get; set; }
-        public string Message { get; set; }
-        public string MessageTemplate { get; set; }
+        public string? Message { get; set; }
+        public string? MessageTemplate { get; set; }
         public IList<string> Params { get; set; } = new List<string>();
 
         public static MessageLogLine Parse(string line)
@@ -32,7 +32,11 @@
 
             for (int i = 5; i < parts.Length; i++)
             {
-                result.Params.Add(GetString(i, parts));
+                string? val = GetString(i, parts);
+                if (val != null)
+                {
+                    result.Params.Add(val);
+                }
             }
 
             return result;

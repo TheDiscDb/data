@@ -16,12 +16,12 @@
 
         public int Index { get; set; }
         public int ChapterCount { get; set; } //8
-        public string Length { get; set; } //9
-        public string DisplaySize { get; set; } //10
+        public string? Length { get; set; } //9
+        public string? DisplaySize { get; set; } //10
         public long Size { get; set; } //11
-        public string Playlist { get; set; } //16
-        public string SegmentMap { get; set; } //26
-        public string Comment { get; set; } //27
+        public string? Playlist { get; set; } //16
+        public string? SegmentMap { get; set; } //26
+        public string? Comment { get; set; } //27
         public IList<Segment> Segments { get; set; } = new List<Segment>();
     }
 }

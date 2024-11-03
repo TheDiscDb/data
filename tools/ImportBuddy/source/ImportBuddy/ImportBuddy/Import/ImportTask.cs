@@ -38,6 +38,11 @@ public class ImportTask : IConsoleTask
         this.fileSystem = fileSystem ?? throw new ArgumentNullException(nameof(fileSystem));
         this.httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
         this.importTasks = importTasks ?? throw new ArgumentNullException(nameof(importTasks));
+
+        if (this.options.Value.DataRepositoryPath == null)
+        {
+            throw new Exception("DataRepositoryPath is not set in the configuration file");
+        }
     }
 
     public ushort Id => 10;
@@ -54,7 +59,7 @@ public class ImportTask : IConsoleTask
 
         string itemType = AnsiConsole.Prompt(itemPrompt);
 
-        ImportItem importItem = null;
+        ImportItem? importItem = null;
 
         foreach (var task in importTasks)
         {
@@ -75,7 +80,7 @@ public class ImportTask : IConsoleTask
             return;
         }
 
-        string posterUrl = importItem.GetPosterUrl();
+        string? posterUrl = importItem.GetPosterUrl();
         int year = importItem.TryGetYear();
 
         var format = AnsiConsole.Prompt(new SelectionPrompt<string>()
@@ -84,6 +89,12 @@ public class ImportTask : IConsoleTask
 
         var metadata = BuildMetadata(importItem.ImdbTitle, importItem.GetTmdbItemToSerialize() as Fantastic.TheMovieDb.Models.Movie, importItem.GetTmdbItemToSerialize() as Fantastic.TheMovieDb.Models.Series, year, itemType);
 
+        if (metadata.Title == null)
+        {
+            AnsiConsole.WriteLine("Could not determine title for metadata");
+            return;
+        }
+
         string folderName = $"{this.fileSystem.CleanPath(metadata.Title)} ({year})";
         string subFolderName = "movie";
         if (itemType.Equals("Series", StringComparison.OrdinalIgnoreCase))
@@ -91,7 +102,7 @@ public class ImportTask : IConsoleTask
             subFolderName = "series";
         }
 
-        string basePath = this.fileSystem.Path.Combine(this.options.Value.DataRepositoryPath, subFolderName, folderName);
+        string basePath = this.fileSystem.Path.Combine(this.options.Value.DataRepositoryPath!, subFolderName, folderName);
         AnsiConsole.MarkupLine($"Importing into [bold]{basePath}[/]");
 
         if (!(await this.fileSystem.Directory.Exists(basePath)))
@@ -254,7 +265,7 @@ public class ImportTask : IConsoleTask
         }
 
         string formattedTitle = $"{folderName} [{resolution}].mkv";
-        string contentHash = string.Empty;
+        string? contentHash = string.Empty;
 
         string makeMkvLogPath = this.fileSystem.Path.Combine(releaseFolder, $"{discName.Name}.txt");
         if (!await this.fileSystem.File.Exists(makeMkvLogPath))
@@ -295,9 +306,23 @@ public class ImportTask : IConsoleTask
                 }
 
                 AnsiConsole.WriteLine("Calculating disk content hash...");
-                var hashInfo = await this.fileSystem.HashMediaDisc(driveChoice.Letter[0]);
-                contentHash = hashInfo.Hash;
-                await DiskContentHash.TryAppendHashInfo(this.fileSystem, makeMkvLogPath, hashInfo, cancellationToken);
+                if (driveChoice.Letter == null)
+                {
+                    AnsiConsole.WriteLine("The selected drive does not have a Letter configured. No Hash will be calculated.");
+                }
+                else
+                {
+                    var hashInfo = await this.fileSystem.HashMediaDisc(driveChoice.Letter[0]);
+                    if (hashInfo == null)
+                    {
+                        AnsiConsole.WriteLine("Warning: Could not calculate disc hash");
+                    }
+                    else
+                    {
+                        contentHash = hashInfo.Hash;
+                        await DiskContentHash.TryAppendHashInfo(this.fileSystem, makeMkvLogPath, hashInfo, cancellationToken);
+                    }
+                }
             }
         }
 
@@ -317,7 +342,7 @@ public class ImportTask : IConsoleTask
         }
     }
 
-    private MetadataFile BuildMetadata(TitleData imdbTitle, Fantastic.TheMovieDb.Models.Movie movie, Fantastic.TheMovieDb.Models.Series series, int year, string type)
+    private MetadataFile BuildMetadata(TitleData? imdbTitle, Fantastic.TheMovieDb.Models.Movie? movie, Fantastic.TheMovieDb.Models.Series? series, int year, string type)
     {
         var metadata = new MetadataFile
         {
@@ -330,28 +355,41 @@ public class ImportTask : IConsoleTask
         {
             metadata.Title = imdbTitle.Title;
             metadata.FullTitle = imdbTitle.FullTitle;
-            metadata.Slug = this.CreateSlug(imdbTitle.Title, year);
+            if (imdbTitle?.Title != null)
+            {
+                metadata.Slug = this.CreateSlug(imdbTitle.Title, year);
+            }
         }
         else if (movie != null)
         {
-            metadata.Title = movie.Title;
-            metadata.FullTitle = movie.OriginalTitle;
-            metadata.Slug = this.CreateSlug(movie.Title, year);
             if (movie.ReleaseDate.HasValue)
             {
                 metadata.ReleaseDate = movie.ReleaseDate.Value;
             }
+
+            metadata.Title = movie.Title;
+            metadata.FullTitle = movie.OriginalTitle;
+
+            if (movie?.Title != null)
+            {
+                metadata.Slug = this.CreateSlug(movie.Title, year);
+            }
         }
         else if (series != null)
         {
+            if (series.FirstAirDate.HasValue)
+            {
+                metadata.ReleaseDate = series.FirstAirDate.Value;
+            }
+
             metadata.Title = series.Name;
             metadata.SortTitle = GetSortTitle(series.Name);
             metadata.SortTitle = GetSortTitle(metadata.Title);
             metadata.FullTitle = series.OriginalName;
-            metadata.Slug = this.CreateSlug(series.Name, year);
-            if (series.FirstAirDate.HasValue)
+
+            if (series?.Name != null)
             {
-                metadata.ReleaseDate = series.FirstAirDate.Value;
+                metadata.Slug = this.CreateSlug(series.Name, year);
             }
         }
 
@@ -402,7 +440,7 @@ public class ImportTask : IConsoleTask
             }
         }
 
-        if (metadata.Title.StartsWith("the", StringComparison.OrdinalIgnoreCase))
+        if (metadata.Title != null && metadata.Title.StartsWith("the", StringComparison.OrdinalIgnoreCase))
         {
             metadata.SortTitle = metadata.Title.Substring(4, metadata.Title.Length - 4).Trim() + ", The";
         }
@@ -414,7 +452,7 @@ public class ImportTask : IConsoleTask
         return metadata;
     }
 
-    private string GetSortTitle(string title)
+    private string? GetSortTitle(string? title)
     {
         if (string.IsNullOrEmpty(title))
         {

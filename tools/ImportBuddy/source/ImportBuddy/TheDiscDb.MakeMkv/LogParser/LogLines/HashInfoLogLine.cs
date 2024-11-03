@@ -10,7 +10,7 @@ public class HashInfoLogLine : LogLine
     }
 
     public int Index { get; set; }
-    public string Name { get; set; }
+    public string? Name { get; set; }
     public DateTime CreationTime { get; set; }
     public long Size { get; set; }
 

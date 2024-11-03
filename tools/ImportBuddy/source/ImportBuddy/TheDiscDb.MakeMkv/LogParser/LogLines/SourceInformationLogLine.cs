@@ -9,7 +9,7 @@
 
         public int Code { get; set; }
         public int SubCode { get; set; }
-        public string Message { get; set; }
+        public string? Message { get; set; }
 
         public static SourceInformationLogLine Parse(string line)
         {

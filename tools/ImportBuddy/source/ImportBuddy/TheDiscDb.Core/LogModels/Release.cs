@@ -4,8 +4,8 @@
 
     public class Release
     {
-        public string Name { get; set; }
-        public string Locale { get; set; }
+        public string? Name { get; set; }
+        public string? Locale { get; set; }
         public IList<Disc> Discs { get; set; } = new List<Disc>();
     }
 }

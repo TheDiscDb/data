@@ -11,16 +11,16 @@
         public const int AspectRatioId = 20;
 
         public int Index { get; set; }
-        public string Type { get; set; } //1
-        public string Name { get; set; } //7
+        public string? Type { get; set; } //1
+        public string? Name { get; set; } //7
 
         // Audio Specific
-        public string AudioType { get; set; } //2
-        public string LanguageCode { get; set; } //3
-        public string Language { get; set; } //4
+        public string? AudioType { get; set; } //2
+        public string? LanguageCode { get; set; } //3
+        public string? Language { get; set; } //4
 
         // Video Specific
-        public string Resolution { get; set; } //19
-        public string AspectRatio { get; set; } //20
+        public string? Resolution { get; set; } //19
+        public string? AspectRatio { get; set; } //20
     }
 }

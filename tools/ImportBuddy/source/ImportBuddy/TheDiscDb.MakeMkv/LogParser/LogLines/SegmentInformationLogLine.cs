@@ -11,7 +11,7 @@
         public int SegmentIndex { get; set; }
         public int Code { get; set; }
         public int SubCode { get; set; }
-        public string Message { get; set; }
+        public string? Message { get; set; }
 
         public static SegmentInformationLogLine Parse(string line)
         {

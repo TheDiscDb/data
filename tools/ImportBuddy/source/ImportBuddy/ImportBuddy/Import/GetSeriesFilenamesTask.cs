@@ -2,6 +2,7 @@
 using Fantastic.TheMovieDb;
 using Fantastic.TheMovieDb.Models;
 using Microsoft.Extensions.Options;
+using Spectre.Console;
 
 namespace ImportBuddy;
 
@@ -24,8 +25,14 @@ public class GetSeriesFilenamesTask
 
     public ushort Id { get; } = 50;
 
-    internal async Task RunInternal(Fantastic.TheMovieDb.Models.Series series, string basePath)
+    internal async Task RunInternal(Fantastic.TheMovieDb.Models.Series? series, string basePath)
     {
+        if (series == null)
+        {
+            AnsiConsole.WriteLine("Could not get series filenames for null series");
+            return;
+        }
+
         string episodeListPath = this.fileSystem.Path.Combine(basePath, EpisodesFilename);
         if (!await this.fileSystem.File.Exists(episodeListPath))
         {
@@ -85,7 +92,7 @@ public class GetSeriesFilenamesTask
             var year = series.FirstAirDate.HasValue ? series.FirstAirDate.Value.Year : 0;
 
             string folderName = $"{this.fileSystem.CleanPath(title)} ({year})";
-            string basePath = this.fileSystem.Path.Combine(this.options.Value.DataRepositoryPath, "series", folderName);
+            string basePath = this.fileSystem.Path.Combine(this.options.Value.DataRepositoryPath!, "series", folderName);
 
             await RunInternal(series, basePath);
         }

@@ -5,11 +5,11 @@ namespace ImportBuddy;
 
 public class ImportItem
 {
-    public string Type { get; set; }
-    public TitleData ImdbTitle { get; set; }
-    public Fantastic.TheMovieDb.Models.Series Series { get; set; }
-    public Fantastic.TheMovieDb.Models.Movie Movie { get; set; }
-    public object GetTmdbItemToSerialize()
+    public required string Type { get; set; }
+    public TitleData? ImdbTitle { get; set; }
+    public Fantastic.TheMovieDb.Models.Series? Series { get; set; }
+    public Fantastic.TheMovieDb.Models.Movie? Movie { get; set; }
+    public object? GetTmdbItemToSerialize()
     {
         if (Type.Equals("Movie", StringComparison.OrdinalIgnoreCase))
         {
@@ -23,20 +23,20 @@ public class ImportItem
         return null;
     }
 
-    public string GetPosterUrl()
+    public string? GetPosterUrl()
     {
         if (this.ImdbTitle != null)
         {
-            return this.ImdbTitle.Image;
+            return this.ImdbTitle?.Image;
         }
 
         if (Type.Equals("Movie", StringComparison.OrdinalIgnoreCase))
         {
-            return "https://image.tmdb.org/t/p/w500" + this.Movie.PosterPath;
+            return "https://image.tmdb.org/t/p/w500" + this.Movie?.PosterPath;
         }
         else if (Type.Equals("Series", StringComparison.OrdinalIgnoreCase))
         {
-            return "https://image.tmdb.org/t/p/w500" + this.Series.PosterPath;
+            return "https://image.tmdb.org/t/p/w500" + this.Series?.PosterPath;
         }
 
         return null;

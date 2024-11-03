@@ -5,14 +5,14 @@
     [System.Diagnostics.DebuggerDisplay("{OriginalLine}")]
     public abstract class LogLine
     {
-        public string OriginalLine { get; protected set; }
+        public string? OriginalLine { get; protected set; }
 
         public LogLine(string prefix)
         {
             this.Prefix = prefix;
         }
 
-        public string Prefix { get; set; }
+        public string? Prefix { get; set; }
 
         public bool Matches(string prefix)
         {
@@ -21,7 +21,7 @@
                 return false;
             }
 
-            return this.Prefix.Equals(prefix, StringComparison.OrdinalIgnoreCase);
+            return this.Prefix != null && this.Prefix.Equals(prefix, StringComparison.OrdinalIgnoreCase);
         }
 
         protected static int TryParseInt(int index, string[] parts)
@@ -50,14 +50,14 @@
             return default(bool);
         }
 
-        protected static string GetString(int index, string[] parts)
+        protected static string? GetString(int index, string[] parts)
         {
             if (index < parts.Length)
             {
                 return parts[index].Replace("\"", string.Empty);
             }
 
-            return default(string);
+            return default;
         }
 
         protected static DateTime TryParseDateTime(int index, string[] parts)

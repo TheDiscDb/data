@@ -39,7 +39,7 @@
 
         public static IEnumerable<DiscFile> ParseDiscs(string input)
         {
-            DiscFile current = null;
+            DiscFile? current = null;
             var currentLines = new List<string>();
             int index = 1;
 
@@ -276,7 +276,7 @@
                             title.Comment = result.Value;
                         }
 
-                        if (string.IsNullOrEmpty(title.Type))
+                        if (string.IsNullOrEmpty(title.Type) && !string.IsNullOrEmpty(title.Title))
                         {
                             if (title.Title.Contains("trailer", StringComparison.OrdinalIgnoreCase))
                             {

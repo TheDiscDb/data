@@ -2,5 +2,5 @@
 
 public class ImportBuddyOptions
 {
-    public string DataRepositoryPath { get; set; }
+    public string? DataRepositoryPath { get; set; }
 }

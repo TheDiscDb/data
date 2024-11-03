@@ -50,14 +50,14 @@ public class FinalizeTask : IConsoleTask
             }
 
             string discOutputPath = logFile.Replace(".txt", ".json");
-            TheDiscDb.InputModels.Disc disc = new TheDiscDb.InputModels.Disc();
+            TheDiscDb.InputModels.Disc? disc = new TheDiscDb.InputModels.Disc();
             if (await this.fileSystem.File.Exists(discOutputPath))
             {
                 string discJson = await this.fileSystem.File.ReadAllText(discOutputPath);
                 disc = JsonSerializer.Deserialize<TheDiscDb.InputModels.Disc>(discJson, JsonHelper.JsonOptions);
             }
 
-            DiscInfo discInfo = null;
+            DiscInfo? discInfo = null;
             bool hasRetried = false;
 
         startOrganize:
@@ -79,7 +79,12 @@ public class FinalizeTask : IConsoleTask
 
             string contents = await this.fileSystem.File.ReadAllText(summaryFile);
             var discFile = SummaryFileParser.ParseSingleDisc(contents);
-            discFile.Index = disc.Index;
+            discFile.Index = disc?.Index ?? 0;
+
+            if (disc == null)
+            {
+                disc = new TheDiscDb.InputModels.Disc();
+            }
 
             Map(disc, discFile, discInfo);
 
@@ -100,7 +105,13 @@ public class FinalizeTask : IConsoleTask
                 if (await this.fileSystem.File.Exists(releaseFile))
                 {
                     string json = await this.fileSystem.File.ReadAllText(releaseFile);
-                    ReleaseFile file = JsonSerializer.Deserialize<ReleaseFile>(json, JsonHelper.JsonOptions);
+                    ReleaseFile? file = JsonSerializer.Deserialize<ReleaseFile>(json, JsonHelper.JsonOptions);
+
+                    if (file == null)
+                    {
+                        file = new ReleaseFile();
+                    }
+
                     file.Upc = item.Upc;
                     await this.fileSystem.File.WriteAllText(releaseFile, JsonSerializer.Serialize(file, JsonHelper.JsonOptions));
                 }
@@ -162,7 +173,7 @@ public class FinalizeTask : IConsoleTask
             }
 
             var matchingTitles = disc.Titles.Where(title => title.SegmentMap == item.SegmentMap && title.SourceFile == item.SourceFile && item.Duration == title.Duration);
-            if (disc.Format.Equals("dvd", StringComparison.OrdinalIgnoreCase))
+            if (!string.IsNullOrEmpty(disc.Format) && disc.Format.Equals("dvd", StringComparison.OrdinalIgnoreCase))
             {
                 matchingTitles = matchingTitles.Where(title => title.DisplaySize == item.Size);
             }

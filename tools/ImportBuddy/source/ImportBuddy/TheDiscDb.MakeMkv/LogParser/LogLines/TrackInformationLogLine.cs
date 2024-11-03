@@ -10,7 +10,7 @@
         public int Index { get; set; }
         public int Code { get; set; }
         public int SubCode { get; set; }
-        public string Message { get; set; }
+        public string? Message { get; set; }
 
         public static TrackInformationLogLine Parse(string line)
         {

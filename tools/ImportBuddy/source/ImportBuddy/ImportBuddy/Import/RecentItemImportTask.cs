@@ -26,18 +26,18 @@ public class RecentItemImportTask : IImportTask
         return title.Equals("x"); // case sensitive
     }
 
-    public async Task<ImportItem> GetImportItem(string title, string itemType, CancellationToken cancellationToken = default)
+    public async Task<ImportItem?> GetImportItem(string title, string itemType, CancellationToken cancellationToken = default)
     {
         IEnumerable<KeyValuePair<string, DateTimeOffset>> dirs;
         const int choiceCount = 3;
         if (itemType.Equals("Series", StringComparison.OrdinalIgnoreCase))
         {
-            string inputDirectory = this.fileSystem.Path.Combine(this.options.Value.DataRepositoryPath, "Series");
+            string inputDirectory = this.fileSystem.Path.Combine(this.options.Value.DataRepositoryPath!, "Series");
             dirs = (await this.GetSortedDirectories(inputDirectory, cancellationToken)).Take(choiceCount);
         }
         else
         {
-            string inputDirectory = this.fileSystem.Path.Combine(this.options.Value.DataRepositoryPath, itemType);
+            string inputDirectory = this.fileSystem.Path.Combine(this.options.Value.DataRepositoryPath!, itemType);
             dirs = (await this.GetSortedDirectories(inputDirectory, cancellationToken)).Take(choiceCount);
         }
 
@@ -51,9 +51,6 @@ public class RecentItemImportTask : IImportTask
 
             if (await this.fileSystem.File.Exists(tmdbPath, cancellationToken))
             {
-                Series series = null;
-                Movie movie = null;
-
                 string displayTitle = string.Empty;
                 string displayYear = string.Empty;
 
@@ -65,14 +62,14 @@ public class RecentItemImportTask : IImportTask
                 if (itemType.Equals("Series", StringComparison.OrdinalIgnoreCase))
                 {
                     newItem.Series = await this.fileSystem.Deserialize<Series>(tmdbPath, cancellationToken);
-                    displayTitle = newItem.Series?.Name;
-                    displayYear = newItem.Series.FirstAirDate?.Year.ToString() ?? "";
+                    displayTitle = newItem.Series?.Name ?? string.Empty;
+                    displayYear = newItem.Series?.FirstAirDate?.Year.ToString() ?? "";
                 }
                 else
                 {
                     newItem.Movie = await this.fileSystem.Deserialize<Movie>(tmdbPath, cancellationToken);
-                    displayTitle = newItem.Movie?.Title;
-                    displayYear = newItem.Movie.ReleaseDate?.Year.ToString() ?? "";
+                    displayTitle = newItem.Movie?.Title ?? string.Empty;
+                    displayYear = newItem.Movie?.ReleaseDate?.Year.ToString() ?? "";
                 }
 
                 fullTitles.Add(newItem);

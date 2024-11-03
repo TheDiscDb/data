@@ -52,7 +52,7 @@ public class LogParser
                 }
             }
 
-            if (lineParsers.TryGetValue(prefix, out Func<string, LogLine> parser))
+            if (lineParsers.TryGetValue(prefix, out Func<string, LogLine>? parser))
             {
                 yield return parser(line);
             }
@@ -73,8 +73,8 @@ public class LogParser
     {
         var disc = new DiscInfo();
 
-        Title currentTrack = null;
-        Segment currentSegment = null;
+        Title? currentTrack = null;
+        Segment? currentSegment = null;
         int expectedTrackCount = 0;
 
         foreach (var line in lines)
@@ -164,7 +164,7 @@ public class LogParser
                     switch (segment.Code)
                     {
                         case Segment.TypeId: // Also the first entry
-                            if (currentSegment != null)
+                            if (currentSegment != null && currentTrack != null)
                             {
                                 currentTrack.Segments.Add(currentSegment);
                             }
@@ -176,28 +176,46 @@ public class LogParser
                             };
                             break;
                         case Segment.NameId:
-                            currentSegment.Name = segment.Message;
+                            if (currentSegment != null)
+                            {
+                                currentSegment.Name = segment.Message;
+                            }
                             break;
                         case Segment.AudioTypeId:
-                            currentSegment.AudioType = segment.Message;
+                            if (currentSegment != null)
+                            {
+                                currentSegment.AudioType = segment.Message;
+                            }
                             break;
                         case Segment.LanguageCodeId:
-                            currentSegment.LanguageCode = segment.Message;
+                            if (currentSegment != null)
+                            {
+                                currentSegment.LanguageCode = segment.Message;
+                            }
                             break;
                         case Segment.LanguageId:
-                            currentSegment.Language = segment.Message;
+                            if (currentSegment != null)
+                            {
+                                currentSegment.Language = segment.Message;
+                            }
                             break;
                         case Segment.ResolutionId:
-                            currentSegment.Resolution = segment.Message;
+                            if (currentSegment != null)
+                            {
+                                currentSegment.Resolution = segment.Message;
+                            }
                             break;
                         case Segment.AspectRatioId:
-                            currentSegment.AspectRatio = segment.Message;
+                            if (currentSegment != null)
+                            {
+                                currentSegment.AspectRatio = segment.Message;
+                            }
                             break;
                     }
 
                     break;
-                    case HashInfoLogLine hash:
-                        disc.HashInfo.Add(hash);
+                case HashInfoLogLine hash:
+                    disc.HashInfo.Add(hash);
                     break;
             }
         }
