@@ -1,10 +1,14 @@
-name: Publish
+name: Publish ImportBuddy
 
 on:
   release:
     types: [published]
 env:
   DOTNET_CORE_VERSION: 8.0.x
+
+permissions:
+  contents: write   # This is required to create/push the new git tag
+
 jobs:
   release:
     name: Release
