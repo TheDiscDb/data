@@ -48,5 +48,7 @@ public class Startup
 
         services.AddSingleton<IImportTask, RecentItemImportTask>();
         services.AddSingleton<IImportTask, TmdbByIdImportTask>();
+
+        services.AddSingleton<Shell>();
     }
 }
