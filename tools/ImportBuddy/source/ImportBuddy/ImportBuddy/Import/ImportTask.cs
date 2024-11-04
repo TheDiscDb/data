@@ -126,19 +126,25 @@ public class ImportTask : IConsoleTask
         string tmdbPath = this.fileSystem.Path.Combine(basePath, "tmdb.json");
         if (!await this.fileSystem.File.Exists(tmdbPath) && importItem.GetTmdbItemToSerialize() != null)
         {
+#pragma warning disable IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
             await this.fileSystem.File.WriteAllText(tmdbPath, JsonSerializer.Serialize(importItem.GetTmdbItemToSerialize(), JsonHelper.JsonOptions));
+#pragma warning restore IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
         }
 
         string imdbPath = this.fileSystem.Path.Combine(basePath, "imdb.json");
         if (!await this.fileSystem.File.Exists(imdbPath) && importItem.ImdbTitle != null)
         {
+#pragma warning disable IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
             await this.fileSystem.File.WriteAllText(imdbPath, JsonSerializer.Serialize(importItem.ImdbTitle, JsonHelper.JsonOptions));
+#pragma warning restore IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
         }
 
         string metadataPath = this.fileSystem.Path.Combine(basePath, MetadataFile.Filename);
         if (!await this.fileSystem.File.Exists(metadataPath))
         {
+#pragma warning disable IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
             await this.fileSystem.File.WriteAllText(metadataPath, JsonSerializer.Serialize(metadata, JsonHelper.JsonOptions));
+#pragma warning restore IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
         }
 
         var releaseFolders = await this.fileSystem.Directory.GetDirectories(basePath, cancellationToken);
@@ -148,11 +154,6 @@ public class ImportTask : IConsoleTask
 
         if (hasReleases)
         {
-            //var releasePrompt = new SelectionPrompt<string>();
-            //itemPrompt.AddChoice("Add New Release");
-            //itemPrompt.AddChoice("Add to Existing Release");
-            //string itemType = AnsiConsole.Prompt(releasePrompt);
-
             bool addNewRelease = AnsiConsole.Confirm("Add New release?");
             if (addNewRelease)
             {
@@ -245,7 +246,9 @@ public class ImportTask : IConsoleTask
                     DateAdded = DateTimeOffset.UtcNow.Date
                 };
 
+#pragma warning disable IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
                 string json = JsonSerializer.Serialize(release, JsonHelper.JsonOptions);
+#pragma warning restore IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
                 await this.fileSystem.File.WriteAllText(releaseFile, json);
             }
         }
@@ -338,7 +341,9 @@ public class ImportTask : IConsoleTask
                 ContentHash = contentHash
             };
 
+#pragma warning disable IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
             await this.fileSystem.File.WriteAllText(discJsonFilePath, JsonSerializer.Serialize(discJsonFile, JsonHelper.JsonOptions));
+#pragma warning restore IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
         }
     }
 

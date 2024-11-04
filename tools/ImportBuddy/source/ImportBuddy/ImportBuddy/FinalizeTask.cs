@@ -54,7 +54,9 @@ public class FinalizeTask : IConsoleTask
             if (await this.fileSystem.File.Exists(discOutputPath))
             {
                 string discJson = await this.fileSystem.File.ReadAllText(discOutputPath);
+#pragma warning disable IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
                 disc = JsonSerializer.Deserialize<TheDiscDb.InputModels.Disc>(discJson, JsonHelper.JsonOptions);
+#pragma warning restore IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
             }
 
             DiscInfo? discInfo = null;
@@ -88,7 +90,9 @@ public class FinalizeTask : IConsoleTask
 
             Map(disc, discFile, discInfo);
 
+#pragma warning disable IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
             string json = JsonSerializer.Serialize(disc, JsonHelper.JsonOptions);
+#pragma warning restore IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
             await this.fileSystem.File.WriteAllText(discOutputPath, json);
 
             await TrySetUpc(discFile, releaseDirectory);
@@ -105,7 +109,9 @@ public class FinalizeTask : IConsoleTask
                 if (await this.fileSystem.File.Exists(releaseFile))
                 {
                     string json = await this.fileSystem.File.ReadAllText(releaseFile);
+#pragma warning disable IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
                     ReleaseFile? file = JsonSerializer.Deserialize<ReleaseFile>(json, JsonHelper.JsonOptions);
+#pragma warning restore IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
 
                     if (file == null)
                     {
@@ -113,7 +119,9 @@ public class FinalizeTask : IConsoleTask
                     }
 
                     file.Upc = item.Upc;
+#pragma warning disable IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
                     await this.fileSystem.File.WriteAllText(releaseFile, JsonSerializer.Serialize(file, JsonHelper.JsonOptions));
+#pragma warning restore IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
                 }
             }
         }

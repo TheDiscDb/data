@@ -19,7 +19,9 @@ public static class FileSystemExtensions
             return default;
         }
 
+#pragma warning disable IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
         return JsonSerializer.Deserialize<T>(json, JsonHelper.JsonOptions);
+#pragma warning restore IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
     }
 
     public static string CleanPath(this IFileSystem fileSystem, string name)

@@ -1,4 +1,5 @@
-﻿using Fantastic.FileSystem;
+﻿using System.Diagnostics.CodeAnalysis;
+using Fantastic.FileSystem;
 using Fantastic.TheMovieDb;
 using Fantastic.TheMovieDb.Caching.FileSystem;
 using Microsoft.Extensions.Configuration;
@@ -19,6 +20,7 @@ public class Startup
     public IConfiguration Configuration { get; }
     public string BaseDirectory { get; }
 
+    [RequiresUnreferencedCode(message: "Don't want to trim use of IOptions")]
     public void ConfigureServices(IServiceCollection services)
     {
         IFileSystem fileSystem = new PhysicalFileSystem();

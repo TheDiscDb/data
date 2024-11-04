@@ -1,8 +1,11 @@
-﻿using System.Runtime.InteropServices;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Runtime.InteropServices;
+using Fantastic.TheMovieDb;
 using ImportBuddy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using TheDiscDb.Tools.MakeMkv;
 
 // Examples
 // -hash <pathToDiscFile> <driveLetter>
@@ -26,5 +29,7 @@ static IHostBuilder CreateHostBuilder(string[] args) =>
             .ConfigureServices((hostContext, services) =>
             {
                 var startup = new Startup(hostContext.Configuration, hostContext.HostingEnvironment.ContentRootPath);
+#pragma warning disable IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
                 startup.ConfigureServices(services);
+#pragma warning restore IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
             });
