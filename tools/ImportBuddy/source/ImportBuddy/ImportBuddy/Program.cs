@@ -1,11 +1,9 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using System.Runtime.InteropServices;
-using Fantastic.TheMovieDb;
+﻿using System.Runtime.InteropServices;
 using ImportBuddy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using TheDiscDb.Tools.MakeMkv;
+using Microsoft.Extensions.Logging;
 
 // Examples
 // -hash <pathToDiscFile> <driveLetter>
@@ -25,6 +23,10 @@ static IHostBuilder CreateHostBuilder(string[] args) =>
                 {
                     config.AddJsonFile("appSettings.linux.json", optional: false);
                 }
+            })
+            .ConfigureLogging(logging =>
+            {
+                logging.ClearProviders();
             })
             .ConfigureServices((hostContext, services) =>
             {

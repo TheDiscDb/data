@@ -8,6 +8,15 @@
 		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 	</PropertyGroup>
 
+	<PropertyGroup>
+		<PackageId>TheDiscDb.MakeMkv</PackageId>
+		<Version>1.0.0</Version>
+		<Authors>lfoust</Authors>
+		<Company>TheDiscDb</Company>
+		<PackageDescription>Helper classes to interact with MakeMkv for thediscdb.com</PackageDescription>
+		<RepositoryUrl>https://github.com/thediscdb/data</RepositoryUrl>
+	</PropertyGroup>
+
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Options" Version="8.0.2" />
 		<PackageReference Include="Fantastic.FileSystem" Version="1.0.1" />
