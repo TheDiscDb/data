@@ -20,6 +20,44 @@ public class FinalizeTask : IConsoleTask
 
     public string MenuText => "Finalize";
 
+    public async Task ExecuteAsync(string releaseDirectory, bool recurse, CancellationToken cancellationToken = default)
+    {
+        if (!await this.fileSystem.Directory.Exists(releaseDirectory))
+        {
+            AnsiConsole.MarkupLine($"[red]'{releaseDirectory}' does not exist.[/]");
+            return;
+        }
+
+        if (recurse)
+        {
+            await this.fileSystem.VisitAsync(releaseDirectory, async (item, ct) =>
+            {
+                if (item.Type == FileItemType.Directory)
+                {
+                    string releaseJsonPath = this.fileSystem.Path.Combine(item.Path, ReleaseFile.Filename);
+                    if (await this.fileSystem.File.Exists(releaseJsonPath, ct))
+                    {
+                        AnsiConsole.WriteLine($"Finalizing '{releaseDirectory}'");
+                        await FinalizeRelease(item.Path, ct);
+                    }
+                }
+            }, cancellationToken);
+        }
+        else
+        {
+            string releaseJsonPath = this.fileSystem.Path.Combine(releaseDirectory, ReleaseFile.Filename);
+            if (await this.fileSystem.File.Exists(releaseJsonPath, cancellationToken))
+            {
+                AnsiConsole.WriteLine($"Finalizing '{releaseDirectory}'");
+                await FinalizeRelease(releaseDirectory, cancellationToken);
+            }
+            else
+            {
+                AnsiConsole.MarkupLine($"[red]No release file found in '{releaseDirectory}'[/]");
+            }
+        }
+    }
+
     public async Task ExecuteAsync(CancellationToken cancellationToken)
     {
         string releaseDirectory = AnsiConsole.Ask<string>("Release Folder?");
@@ -29,21 +67,15 @@ public class FinalizeTask : IConsoleTask
             return;
         }
 
-        if (!await this.fileSystem.Directory.Exists(releaseDirectory))
-        {
-            AnsiConsole.MarkupLine($"[red]'{releaseDirectory}' does not exist.[/]");
-            return;
-        }
-
-        await FinalizeRelease(releaseDirectory);
+        await ExecuteAsync(releaseDirectory, false, cancellationToken);
     }
 
-    public async Task FinalizeRelease(string releaseDirectory)
+    public async Task FinalizeRelease(string releaseDirectory, CancellationToken cancellationToken)
     {
-        await foreach (var summaryFile in this.fileSystem.Directory.EnumerateFiles(releaseDirectory, "*-summary.txt"))
+        await foreach (var summaryFile in this.fileSystem.Directory.EnumerateFiles(releaseDirectory, "*-summary.txt", cancellationToken))
         {
             string logFile = summaryFile.Replace("-summary", "");
-            if (!await this.fileSystem.File.Exists(logFile))
+            if (!await this.fileSystem.File.Exists(logFile, cancellationToken))
             {
                 AnsiConsole.MarkupLine($"No companion log file found for '{summaryFile}'");
                 continue;
@@ -51,9 +83,9 @@ public class FinalizeTask : IConsoleTask
 
             string discOutputPath = logFile.Replace(".txt", ".json");
             TheDiscDb.InputModels.Disc? disc = new TheDiscDb.InputModels.Disc();
-            if (await this.fileSystem.File.Exists(discOutputPath))
+            if (await this.fileSystem.File.Exists(discOutputPath, cancellationToken))
             {
-                string discJson = await this.fileSystem.File.ReadAllText(discOutputPath);
+                string discJson = await this.fileSystem.File.ReadAllText(discOutputPath, cancellationToken);
 #pragma warning disable IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
                 disc = JsonSerializer.Deserialize<TheDiscDb.InputModels.Disc>(discJson, JsonHelper.JsonOptions);
 #pragma warning restore IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
@@ -79,7 +111,7 @@ public class FinalizeTask : IConsoleTask
                 return;
             }
 
-            string contents = await this.fileSystem.File.ReadAllText(summaryFile);
+            string contents = await this.fileSystem.File.ReadAllText(summaryFile, cancellationToken);
             var discFile = SummaryFileParser.ParseSingleDisc(contents);
             discFile.Index = disc?.Index ?? 0;
 
@@ -93,22 +125,22 @@ public class FinalizeTask : IConsoleTask
 #pragma warning disable IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
             string json = JsonSerializer.Serialize(disc, JsonHelper.JsonOptions);
 #pragma warning restore IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
-            await this.fileSystem.File.WriteAllText(discOutputPath, json);
+            await this.fileSystem.File.WriteAllText(discOutputPath, json, cancellationToken);
 
-            await TrySetUpc(discFile, releaseDirectory);
+            await TrySetUpc(discFile, releaseDirectory, cancellationToken);
         }
     }
 
-    private async Task TrySetUpc(DiscFile discFile, string releasePath)
+    private async Task TrySetUpc(DiscFile discFile, string releasePath, CancellationToken cancellationToken)
     {
         foreach (var item in discFile.MainMovies)
         {
             if (!string.IsNullOrEmpty(item.Upc))
             {
                 string releaseFile = this.fileSystem.Path.Combine(releasePath, ReleaseFile.Filename);
-                if (await this.fileSystem.File.Exists(releaseFile))
+                if (await this.fileSystem.File.Exists(releaseFile, cancellationToken))
                 {
-                    string json = await this.fileSystem.File.ReadAllText(releaseFile);
+                    string json = await this.fileSystem.File.ReadAllText(releaseFile, cancellationToken);
 #pragma warning disable IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
                     ReleaseFile? file = JsonSerializer.Deserialize<ReleaseFile>(json, JsonHelper.JsonOptions);
 #pragma warning restore IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
@@ -120,7 +152,7 @@ public class FinalizeTask : IConsoleTask
 
                     file.Upc = item.Upc;
 #pragma warning disable IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
-                    await this.fileSystem.File.WriteAllText(releaseFile, JsonSerializer.Serialize(file, JsonHelper.JsonOptions));
+                    await this.fileSystem.File.WriteAllText(releaseFile, JsonSerializer.Serialize(file, JsonHelper.JsonOptions), cancellationToken);
 #pragma warning restore IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
                 }
             }

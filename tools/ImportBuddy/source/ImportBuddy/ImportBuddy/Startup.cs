@@ -46,6 +46,7 @@ public class Startup
 
         services.AddSingleton<IConsoleTask, ImportTask>();
         services.AddSingleton<IConsoleTask, FinalizeTask>();
+        services.AddSingleton<FinalizeTask>();
         services.AddSingleton<IConsoleTask, ExitTask>();
 
         services.AddSingleton<IImportTask, RecentItemImportTask>();

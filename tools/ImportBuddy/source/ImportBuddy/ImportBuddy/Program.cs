@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System.CommandLine;
+using System.Runtime.InteropServices;
 using ImportBuddy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -6,13 +7,39 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
 // Examples
-// -hash <pathToDiscFile> <driveLetter>
+// hash <pathToDiscFile> <driveLetter>
+// finalize <pathToReleaseFolder>
 
 var builder = CreateHostBuilder(args);
 var host = CreateHostBuilder(args).Build();
-var shell = host.Services.GetRequiredService<Shell>();
 var source = new CancellationTokenSource();
-await shell.RunAsync(source);
+
+var rootCommand = new RootCommand();
+
+var finalizeCommand = new Command("finalize", "Run finalize on a release");
+var releaseFileArgument = new Argument<string>("file", "The release folder to finalize");
+var recursiveOption = new Option<bool>(name: "--recursive", description: "Recursively finalize all subfolders", getDefaultValue: () => false)
+{
+    IsRequired = false
+};
+finalizeCommand.AddArgument(releaseFileArgument);
+finalizeCommand.AddOption(recursiveOption);
+
+rootCommand.AddCommand(finalizeCommand);
+
+finalizeCommand.SetHandler(async (releasePath, recurse) =>
+{
+    var finalizeTask = host.Services.GetRequiredService<FinalizeTask>();
+    await finalizeTask.ExecuteAsync(releasePath, recurse, source.Token);
+}, releaseFileArgument, recursiveOption);
+
+rootCommand.SetHandler(async () =>
+{
+    var shell = host.Services.GetRequiredService<Shell>();
+    await shell.RunAsync(source);
+});
+
+return await rootCommand.InvokeAsync(args);
 
 static IHostBuilder CreateHostBuilder(string[] args) =>
         Host.CreateDefaultBuilder(args)
