@@ -1,4 +1,6 @@
-﻿namespace TheDiscDb.Tools.MakeMkv
+﻿using MakeMkv;
+
+namespace TheDiscDb.Tools.MakeMkv
 {
     using System;
     using System.Collections.Generic;
@@ -42,7 +44,7 @@
                 await Task.Delay(200); // wait for file handle to be released
                 try
                 {
-                    await CleanLogs(path);
+                    await CleanLogs(driveIndex, path);
                 }
                 catch (IOException e)
                 {
@@ -51,18 +53,64 @@
             }
         }
 
-        public async Task CleanLogs(string path, CancellationToken cancellationToken = default)
+        public async Task CleanLogs(int driveIndex, string path, CancellationToken cancellationToken = default)
         {
             var output = new List<string>();
             var lines = await this.fileSystem.File.ReadAllLines(path, cancellationToken);
             bool fileChanged = false;
-            foreach (var line in lines)
+            foreach (var originalLine in lines)
             {
-                if (string.IsNullOrWhiteSpace(line) || line.StartsWith("MSG") || line.StartsWith("DRV"))
+                // Remove empty lines from the output
+                if (originalLine == string.Empty)
                 {
                     fileChanged = true;
                     continue;
                 }
+
+                string? line = null;
+                if (originalLine.StartsWith("MSG"))
+                {
+                    var msgLine = MessageLogLine.Parse(originalLine);
+                    var (toRedact, replacement) = msgLine.Code switch
+                    {
+                        // The debug file path is usually in the user's home directory
+                        "1004" => (msgLine.Params[0], "file::///redacted/by/ImportBuddy"),
+                        // The drive name can sometimes contain a serial number
+                        "2003" => (msgLine.Params[1], "redacted by ImportBuddy"),
+                        // The .MakeMKV folder is usually in the user's home directory
+                        "3338" => (msgLine.Params[1], "/redacted/by/ImportBuddy"),
+                        // No other messages are known to contain sensitive information
+                        _ => (null, ""),
+                    };
+
+                    if (toRedact is not null)
+                        line = originalLine.Replace(toRedact, replacement);
+                }
+                else if (originalLine.StartsWith("DRV"))
+                {
+                    // DRV:1,2,999,12,"BD-ROM HL-DT-ST BDDVDRW UH12NS30 1.03","42","E:"
+                    // becomes
+                    // DRV:1,2,999,12,"redacted by ImportBuddy","42","/redacted/by/ImportBuddy"
+                    var driveLine = DriveScanLogLine.Parse(originalLine);
+                    if (driveLine.DriveName is not null)
+                    {
+                        // Always redact the drive name, since it could contain a serial number
+                        line = originalLine.Replace(driveLine.DriveName, "redacted by ImportBuddy");
+                        // Only keep the disc name for the active drive
+                        if (driveLine.Index != driveIndex && !string.IsNullOrEmpty(driveLine.DiscName))
+                            line = line.Replace(driveLine.DiscName, "redacted by ImportBuddy");
+                        // Always redact the drive letter or path
+                        if (!string.IsNullOrEmpty(driveLine.DriveLetter))
+                            line = line.Replace(driveLine.DriveLetter, "/redacted/by/ImportBuddy");
+                    }
+                }
+
+                if (line is null)
+                    // This line wasn't modified, use the original line
+                    line = originalLine;
+                else
+                    // Something was changed, ensure the file is overwritten
+                    fileChanged = true;
 
                 output.Add(line);
             }
