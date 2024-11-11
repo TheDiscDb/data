@@ -18,26 +18,20 @@
 
         public static MessageLogLine Parse(string line)
         {
-            string[] parts = line.Substring(4).Split(',');
+            var enumerator = new CsvEnumerator(line[4..]);
 
             var result = new MessageLogLine
             {
-                Code = GetString(0, parts),
-                Flags = GetString(1, parts),
-                ParamCount = TryParseInt(2, parts),
-                Message = GetString(3, parts),
-                MessageTemplate = GetString(4, parts),
+                Code = GetString(enumerator),
+                Flags = GetString(enumerator),
+                ParamCount = TryParseInt(enumerator),
+                Message = GetString(enumerator),
+                MessageTemplate = GetString(enumerator),
                 OriginalLine = line
             };
 
-            for (int i = 5; i < parts.Length; i++)
-            {
-                string? val = GetString(i, parts);
-                if (val != null)
-                {
-                    result.Params.Add(val);
-                }
-            }
+            while (GetString(enumerator) is {} val)
+                result.Params.Add(val);
 
             return result;
         }
