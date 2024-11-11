@@ -92,7 +92,7 @@ namespace TheDiscDb.Tools.MakeMkv
                     // becomes
                     // DRV:1,2,999,12,"redacted by ImportBuddy","42","/redacted/by/ImportBuddy"
                     var driveLine = DriveScanLogLine.Parse(originalLine);
-                    if (driveLine.DriveName is not null)
+                    if (!string.IsNullOrEmpty(driveLine.DriveName))
                     {
                         // Always redact the drive name, since it could contain a serial number
                         line = originalLine.Replace(driveLine.DriveName, "redacted by ImportBuddy");
