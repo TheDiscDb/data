@@ -31,7 +31,9 @@ public sealed class CsvEnumerator
     {
         Int32 start = _currentEnd + 1;
         if (!_isInitialized || start > _span.Length)
+        {
             return false;
+        }
 
         var slice = _span[start..];
         _currentStart = start;
@@ -53,12 +55,16 @@ public sealed class CsvEnumerator
             else if (curChar == '"')
             {
                 if (!escaped)
+                {
                     quoted = !quoted;
+                }
             }
             else if (curChar == ',')
             {
                 if (!quoted)
+                {
                     break;
+                }
             }
 
             escaped = false;

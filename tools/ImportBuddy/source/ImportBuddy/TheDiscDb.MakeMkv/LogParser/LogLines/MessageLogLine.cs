@@ -31,7 +31,9 @@
             };
 
             while (enumerator.GetString() is { } val)
+            {
                 result.Params.Add(val);
+            }
 
             return result;
         }

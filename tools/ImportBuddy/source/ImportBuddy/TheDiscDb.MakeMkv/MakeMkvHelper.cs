@@ -84,7 +84,9 @@ namespace TheDiscDb.Tools.MakeMkv
                     };
 
                     if (toRedact is not null)
+                    {
                         line = originalLine.Replace(toRedact, replacement);
+                    }
                 }
                 else if (originalLine.StartsWith("DRV"))
                 {
@@ -96,21 +98,31 @@ namespace TheDiscDb.Tools.MakeMkv
                     {
                         // Always redact the drive name, since it could contain a serial number
                         line = originalLine.Replace(driveLine.DriveName, "***");
+
                         // Only keep the disc name for the active drive
                         if (driveLine.Index != driveIndex && !string.IsNullOrEmpty(driveLine.DiscName))
+                        {
                             line = line.Replace(driveLine.DiscName, "***");
+                        }
+
                         // Always redact the drive letter or path
                         if (!string.IsNullOrEmpty(driveLine.DriveLetter))
+                        {
                             line = line.Replace(driveLine.DriveLetter, "***");
+                        }
                     }
                 }
 
                 if (line is null)
+                {
                     // This line wasn't modified, use the original line
                     line = originalLine;
+                }
                 else
+                {
                     // Something was changed, ensure the file is overwritten
                     fileChanged = true;
+                }
 
                 output.Add(line);
             }
