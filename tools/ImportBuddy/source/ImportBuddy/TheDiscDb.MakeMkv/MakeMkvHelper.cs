@@ -74,11 +74,11 @@ namespace TheDiscDb.Tools.MakeMkv
                     var (toRedact, replacement) = msgLine.Code switch
                     {
                         // The debug file path is usually in the user's home directory
-                        "1004" => (msgLine.Params[0], "file::///redacted/by/ImportBuddy"),
+                        "1004" => (msgLine.Params[0], "***"),
                         // The drive name can sometimes contain a serial number
-                        "2003" => (msgLine.Params[1], "redacted by ImportBuddy"),
+                        "2003" => (msgLine.Params[1], "***"),
                         // The .MakeMKV folder is usually in the user's home directory
-                        "3338" => (msgLine.Params[1], "/redacted/by/ImportBuddy"),
+                        "3338" => (msgLine.Params[1], "***"),
                         // No other messages are known to contain sensitive information
                         _ => (null, ""),
                     };
@@ -95,13 +95,13 @@ namespace TheDiscDb.Tools.MakeMkv
                     if (!string.IsNullOrEmpty(driveLine.DriveName))
                     {
                         // Always redact the drive name, since it could contain a serial number
-                        line = originalLine.Replace(driveLine.DriveName, "redacted by ImportBuddy");
+                        line = originalLine.Replace(driveLine.DriveName, "***");
                         // Only keep the disc name for the active drive
                         if (driveLine.Index != driveIndex && !string.IsNullOrEmpty(driveLine.DiscName))
-                            line = line.Replace(driveLine.DiscName, "redacted by ImportBuddy");
+                            line = line.Replace(driveLine.DiscName, "***");
                         // Always redact the drive letter or path
                         if (!string.IsNullOrEmpty(driveLine.DriveLetter))
-                            line = line.Replace(driveLine.DriveLetter, "/redacted/by/ImportBuddy");
+                            line = line.Replace(driveLine.DriveLetter, "***");
                     }
                 }
 
