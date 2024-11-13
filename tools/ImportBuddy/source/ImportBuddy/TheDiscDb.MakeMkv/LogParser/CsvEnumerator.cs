@@ -74,4 +74,86 @@ public sealed class CsvEnumerator
     /// Returns an enumerator suitable for use in foreach loops.
     /// </summary>
     public CsvEnumerator GetEnumerator() => this;
+
+    /// <summary>
+    /// Attempts to advance the enumerator and parse the value as an <see cref="int"/>.
+    /// </summary>
+    /// <returns>The parsed value, or the <see langword="default"/> value if enumeration or parsing failed.</returns>
+    public int TryParseInt()
+    {
+        if (MoveNext())
+        {
+            if (Int32.TryParse(Current, out int val))
+            {
+                return val;
+            }
+        }
+
+        return default;
+    }
+
+    /// <summary>
+    /// Attempts to advance the enumerator and parse the value as a <see cref="bool"/>.
+    /// </summary>
+    /// <returns>The parsed value, or <see langword="false"/> if enumeration or parsing failed.</returns>
+    public bool TryParseBoolean()
+    {
+        if (MoveNext())
+        {
+            if (Int32.TryParse(Current, out int val))
+            {
+                return val != 256 && val != 999 && val > 0;
+            }
+        }
+
+        return default;
+    }
+
+    /// <summary>
+    /// Attempts to advance the enumerator and parse the value as a <see cref="long"/>.
+    /// </summary>
+    /// <returns>The parsed value, or <see langword="null"/> if enumeration or parsing failed.</returns>
+    public string? GetString()
+    {
+        if (MoveNext())
+        {
+            return Current.ToString().Replace("\"", string.Empty);
+        }
+
+        return default;
+    }
+
+    /// <summary>
+    /// Attempts to advance the enumerator and parse the value as a <see cref="DateTime"/>.
+    /// </summary>
+    /// <returns>The parsed value, or the <see langword="default"/> value if enumeration or parsing failed.</returns>
+    public DateTime TryParseDateTime()
+    {
+        if (MoveNext())
+        {
+            if (DateTime.TryParse(Current, out DateTime val))
+            {
+                return val;
+            }
+        }
+
+        return default;
+    }
+
+    /// <summary>
+    /// Attempts to advance the enumerator and parse the value as a <see cref="long"/>.
+    /// </summary>
+    /// <returns>The parsed value, or the <see langword="default"/> value if enumeration or parsing failed.</returns>
+    public long TryParseLong()
+    {
+        if (MoveNext())
+        {
+            if (Int64.TryParse(Current, out long val))
+            {
+                return val;
+            }
+        }
+
+        return default;
+    }
 }

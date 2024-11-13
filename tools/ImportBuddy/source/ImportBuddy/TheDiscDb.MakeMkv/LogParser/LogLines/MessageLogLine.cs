@@ -22,15 +22,15 @@
 
             var result = new MessageLogLine
             {
-                Code = GetString(enumerator),
-                Flags = GetString(enumerator),
-                ParamCount = TryParseInt(enumerator),
-                Message = GetString(enumerator),
-                MessageTemplate = GetString(enumerator),
+                Code = enumerator.GetString(),
+                Flags = enumerator.GetString(),
+                ParamCount = enumerator.TryParseInt(),
+                Message = enumerator.GetString(),
+                MessageTemplate = enumerator.GetString(),
                 OriginalLine = line
             };
 
-            while (GetString(enumerator) is {} val)
+            while (enumerator.GetString() is { } val)
                 result.Params.Add(val);
 
             return result;
