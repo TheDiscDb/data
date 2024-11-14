@@ -1,6 +1,7 @@
 name: Publish ImportBuddy
 
 on:
+  workflow_dispatch:
   release:
     types: [published]
 env:
@@ -30,10 +31,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup dotnet
+      - name: Setup dotnet 8
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: ${{ env.DOTNET_CORE_VERSION }}
+          dotnet-version: 8.0.x
+
+      - name: Setup dotnet 9
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 9.0.x
 
       - name: Build
         shell: bash
