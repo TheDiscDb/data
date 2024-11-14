@@ -48,7 +48,7 @@ static IHostBuilder CreateHostBuilder(string[] args) =>
                 config.AddJsonFile("appsettings.json", optional: false);
                 if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
                 {
-                    config.AddJsonFile("appSettings.linux.json", optional: false);
+                    config.AddJsonFile("appsettings.linux.json", optional: false);
                 }
             })
             .ConfigureLogging(logging =>

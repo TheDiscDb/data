@@ -28,7 +28,7 @@
         {
             if (index < parts.Length)
             {
-                if(Int32.TryParse(parts[index], out int val))
+                if (Int32.TryParse(parts[index], out int val))
                 {
                     return val;
                 }
