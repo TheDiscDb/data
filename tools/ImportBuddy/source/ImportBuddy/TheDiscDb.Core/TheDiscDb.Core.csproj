@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net8.0</TargetFramework>
+		<TargetFrameworks>net8.0;net9.0</TargetFrameworks>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<LangVersion>latest</LangVersion>
@@ -10,7 +10,7 @@
 
 	<PropertyGroup>
 		<PackageId>TheDiscDb.Core</PackageId>
-		<Version>1.0.0</Version>
+		<Version>1.1.0</Version>
 		<Authors>lfoust</Authors>
 		<Company>TheDiscDb</Company>
 		<PackageDescription>The base models and helper classes for thediscdb.com</PackageDescription>
@@ -18,9 +18,9 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="System.Net.Http.Json" Version="8.0.1" />
-		<PackageReference Include="System.Text.Json" Version="8.0.5" />
-		<PackageReference Include="HotChocolate.Data" Version="14.0.0" />
+		<PackageReference Include="System.Net.Http.Json" Version="9.0.0" />
+		<PackageReference Include="System.Text.Json" Version="9.0.0" />
+		<PackageReference Include="HotChocolate.Data" Version="14.1.0" />
 	</ItemGroup>
 
 </Project>
