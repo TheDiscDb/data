@@ -1,11 +1,10 @@
 name: Publish ImportBuddy
 
 on:
-  workflow_dispatch:
   release:
     types: [published]
 env:
-  DOTNET_CORE_VERSION: 8.0.x
+  DOTNET_CORE_VERSION: 9.0.x
 
 permissions:
   contents: write   # This is required to create/push the new git tag
@@ -31,15 +30,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup dotnet 8
+      - name: Setup dotnet
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: 8.0.x
-
-      - name: Setup dotnet 9
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: 9.0.x
+          dotnet-version: ${{ env.DOTNET_CORE_VERSION }}
 
       - name: Build
         shell: bash
