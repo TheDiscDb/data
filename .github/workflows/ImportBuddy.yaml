@@ -42,7 +42,7 @@ jobs:
           release_name="ImportBuddy-$tag-${{ matrix.target }}"
 
           # Build everything
-          dotnet publish tools/ImportBuddy/source/ImportBuddy/ImportBuddy.sln --runtime "${{ matrix.target }}" -c Release -o "$release_name" --self-contained true
+          dotnet publish tools/ImportBuddy/source/ImportBuddy/ImportBuddy.sln --runtime "${{ matrix.target }}" -c Release -o "$release_name" --self-contained true --framework net9.0
 
           # Pack files
           if [ "${{ matrix.target }}" == "win-x64" ]; then
