@@ -1,13 +1,89 @@
 {
   "Index": 1,
-  "Format": "DVD",
   "Slug": "paris-when-it-sizzles",
   "Name": "PARIS_WHEN_IT_SIZZLES",
-  "ContentHash": "",
-  "Episodes": [],
-  "Extras": [],
-  "DeletedScenes": [],
-  "Trailers": [],
-  "MainMovies": [],
-  "Unknown": []
+  "Format": "DVD",
+  "Titles": [
+    {
+      "Index": 0,
+      "Comment": "title_t00.mkv",
+      "SourceFile": "01",
+      "SegmentMap": "1-9,10-17",
+      "Duration": "1:50:09",
+      "Size": 5815586816,
+      "DisplaySize": "5.4 GB",
+      "Tracks": [
+        {
+          "Index": 0,
+          "Name": "Mpeg2",
+          "Type": "Video",
+          "Resolution": "720x480",
+          "AspectRatio": "16:9"
+        },
+        {
+          "Index": 1,
+          "Name": "Dolby Digital",
+          "Type": "Audio",
+          "AudioType": "Stereo",
+          "LanguageCode": "eng",
+          "Language": "English"
+        },
+        {
+          "Index": 2,
+          "Name": "Dolby Digital",
+          "Type": "Audio",
+          "AudioType": "Stereo",
+          "LanguageCode": "fre",
+          "Language": "French"
+        },
+        {
+          "Index": 3,
+          "Name": "Dvd Subtitles",
+          "Type": "Subtitles",
+          "LanguageCode": "eng",
+          "Language": "English"
+        },
+        {
+          "Index": 4,
+          "Name": "Dvd Subtitles",
+          "Type": "Subtitles",
+          "LanguageCode": "fre",
+          "Language": "French"
+        },
+        {
+          "Index": 5,
+          "Name": "Closed Captions",
+          "Type": "Subtitles",
+          "LanguageCode": "eng",
+          "Language": "English"
+        }
+      ]
+    },
+    {
+      "Index": 1,
+      "Comment": "title_t01.mkv",
+      "SourceFile": "04",
+      "SegmentMap": "1",
+      "Duration": "0:02:47",
+      "Size": 116338688,
+      "DisplaySize": "110.9 MB",
+      "Tracks": [
+        {
+          "Index": 0,
+          "Name": "Mpeg2",
+          "Type": "Video",
+          "Resolution": "720x480",
+          "AspectRatio": "16:9"
+        },
+        {
+          "Index": 1,
+          "Name": "Dolby Digital",
+          "Type": "Audio",
+          "AudioType": "Stereo",
+          "LanguageCode": "eng",
+          "Language": "English"
+        }
+      ]
+    }
+  ]
 }
