@@ -24,6 +24,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\TheDiscDb.Client\TheDiscDb.Client.csproj" />
 	  <ProjectReference Include="..\TheDiscDb.Core\TheDiscDb.Core.csproj" />
 	  <ProjectReference Include="..\TheDiscDb.MakeMkv\TheDiscDb.MakeMkv.csproj" />
 	</ItemGroup>

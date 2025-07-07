@@ -48,9 +48,19 @@ public class Startup
         services.AddSingleton<IConsoleTask, FinalizeTask>();
         services.AddSingleton<FinalizeTask>();
         services.AddSingleton<IConsoleTask, ExitTask>();
+        services.AddSingleton<DiscContentHashTask>();
 
         services.AddSingleton<IImportTask, RecentItemImportTask>();
         services.AddSingleton<IImportTask, TmdbByIdImportTask>();
+
+        services.AddSingleton<GetDriveImportMiddleware>();
+        services.AddSingleton<CalculateDiscContentHashMiddleware>();
+        services.AddSingleton<ExistingDiscLookupMiddleware>();
+        services.AddSingleton<ImportMiddlewareManager>();
+        services.AddSingleton<ImportFromExistingMiddleware>();
+
+        services.AddSingleton<DiscContentHashCache>();
+        services.AddTheDiscDbClient(new Uri(this.Configuration["ImportBuddy:GraphQLEndpoint"]!));
 
         services.AddSingleton<Shell>();
     }

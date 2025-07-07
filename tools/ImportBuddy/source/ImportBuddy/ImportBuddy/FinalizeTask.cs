@@ -163,53 +163,56 @@ public class FinalizeTask : IConsoleTask
     {
         var mapper = new Mapper();
 
-        var logDisc = mapper.Map(discInfo);
-
-        if (disc.Index == default(int))
+        using (var writer = new BufferedConsoleWriter($"Disc {discFile.Index}"))
         {
-            disc.Index = discFile.Index;
-        }
+            var logDisc = mapper.Map(discInfo);
 
-        if (string.IsNullOrEmpty(disc.Name))
-        {
-            disc.Name = logDisc.Name;
-        }
-
-        if (string.IsNullOrEmpty(disc.Format))
-        {
-            disc.Format = discFile.Format;
-        }
-
-        if (string.IsNullOrEmpty(disc.ContentHash))
-        {
-            disc.ContentHash = discFile.ContentHash;
-        }
-
-        disc.Titles = logDisc.Titles.Select(mapper.Map).ToList();
-
-        if (discFile.Unknown.Any())
-        {
-            AnsiConsole.MarkupLine($"[red bold]Warning:[/] There are unknown items in this summary (Disc {discFile.Index})");
-            foreach (var u in discFile.Unknown)
+            if (disc.Index == default(int))
             {
-                AnsiConsole.MarkupLine("\t" + u.Title);
+                disc.Index = discFile.Index;
             }
-        }
 
-        this.TryMapItems(discFile.Episodes, disc, "Episode");
-        this.TryMapItems(discFile.Extras, disc, "Extra");
-        this.TryMapItems(discFile.DeletedScenes, disc, "DeletedScene");
-        this.TryMapItems(discFile.Trailers, disc, "Trailer");
-        this.TryMapItems(discFile.MainMovies, disc, "MainMovie");
+            if (string.IsNullOrEmpty(disc.Name))
+            {
+                disc.Name = logDisc.Name;
+            }
+
+            if (string.IsNullOrEmpty(disc.Format))
+            {
+                disc.Format = discFile.Format;
+            }
+
+            if (string.IsNullOrEmpty(disc.ContentHash))
+            {
+                disc.ContentHash = discFile.ContentHash;
+            }
+
+            disc.Titles = logDisc.Titles.Select(mapper.Map).ToList();
+
+            if (discFile.Unknown.Any())
+            {
+                writer.Write($"[red bold]Warning:[/] There are unknown items in this summary (Disc {discFile.Index})");
+                foreach (var u in discFile.Unknown)
+                {
+                    writer.Write("\t" + u.Title);
+                }
+            }
+
+            this.TryMapItems(discFile.Episodes, disc, "Episode", writer);
+            this.TryMapItems(discFile.Extras, disc, "Extra", writer);
+            this.TryMapItems(discFile.DeletedScenes, disc, "DeletedScene", writer);
+            this.TryMapItems(discFile.Trailers, disc, "Trailer", writer);
+            this.TryMapItems(discFile.MainMovies, disc, "MainMovie", writer);
+        }
     }
 
-    private void TryMapItems(ICollection<TheDiscDb.ImportModels.DiscFileItem> items, TheDiscDb.InputModels.Disc disc, string type)
+    private void TryMapItems(ICollection<TheDiscDb.ImportModels.DiscFileItem> items, TheDiscDb.InputModels.Disc disc, string type, BufferedConsoleWriter writer)
     {
         foreach (var item in items)
         {
             if (!string.IsNullOrEmpty(item.Title) && item.Title.Contains(" (English)", StringComparison.OrdinalIgnoreCase))
             {
-                AnsiConsole.MarkupLine($"[red bold]Warning:[/] Language detected in '{item.Title}'");
+                writer.Write($"[red bold]Warning:[/] Language detected in '{item.Title}'");
             }
 
             var matchingTitles = disc.Titles.Where(title => title.SegmentMap == item.SegmentMap && title.SourceFile == item.SourceFile && item.Duration == title.Duration);
@@ -231,7 +234,24 @@ public class FinalizeTask : IConsoleTask
                     }
                     else
                     {
-                        AnsiConsole.MarkupLine($"[red bold]Warning:[/] Unable to find unique match for '{item.Comment}'");
+                        writer.Write($"[red bold]Warning:[/] Unable to find unique match for '{item.Comment}'");
+                    }
+                }
+
+                if (item.AudioTrackNames != null && item.AudioTrackNames.Any())
+                {
+                    foreach (var track in item.AudioTrackNames)
+                    {
+                        var audioTracks = match.Tracks.Where(t => t.Type == "Audio");
+                        var foundTrack = audioTracks.ElementAtOrDefault(track.Index);
+                        if (foundTrack != null)
+                        {
+                            foundTrack.Description = track.Name;
+                        }
+                        else
+                        {
+                            writer.Write($"[red bold]Warning:[/] Unable to find audio track '{track.Name}' at index '{track.Index}'. {audioTracks.Count()} total audio tracks found.");
+                        }
                     }
                 }
 
@@ -246,6 +266,37 @@ public class FinalizeTask : IConsoleTask
                 };
             }
         }
+    }
+}
+
+public class BufferedConsoleWriter : IDisposable
+{
+    private readonly List<string> messages = new List<string>();
+
+    public BufferedConsoleWriter(string context)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(context);
+        Context = context;
+    }
+
+    public string Context { get; }
+
+    public void Dispose()
+    {
+        if (messages.Count > 0)
+        {
+            AnsiConsole.WriteLine($"Warnings for {Context}:");
+
+            foreach (var warning in messages)
+            {
+                AnsiConsole.MarkupLine("\t" + warning);
+            }
+        }
+    }
+
+    public void Write(string message)
+    {
+        messages.Add(message);
     }
 }
 
