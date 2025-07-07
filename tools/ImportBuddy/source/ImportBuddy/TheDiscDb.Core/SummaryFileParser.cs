@@ -129,7 +129,7 @@
                 {
                     string index = matchResult.Groups[1].Value;
                     string name = matchResult.Groups[2].Value;
-                    result = new KeyValuePair<string, string>("AudioTrack", $"{index}|${name}");
+                    result = new KeyValuePair<string, string>("AudioTrack", $"{index}|{name}");
                     return true;
                 }
             }
@@ -248,7 +248,7 @@
                         {
                             int audioTrackIndex = Int32.Parse(parts[0]);
                             string audioTrackName = parts[1];
-                            //title.AudioTrackNames.Add(audioTrackIndex, audioTrackName);
+                            title.AudioTrackNames.Add(new AudioTrack(audioTrackIndex, audioTrackName));
                         }
                     }
                     else if (result.Key.Equals("Chapters", StringComparison.OrdinalIgnoreCase))

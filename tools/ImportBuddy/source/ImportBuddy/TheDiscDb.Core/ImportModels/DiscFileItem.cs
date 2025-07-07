@@ -3,6 +3,8 @@
     using System.Collections.Generic;
     using TheDiscDb.InputModels;
 
+    public record AudioTrack(int Index, string Name);
+
     public class DiscFileItem
     {
         public string? Title { get; set; }
@@ -20,5 +22,6 @@
         public string? Description { get; set; }
 
         public ICollection<Chapter> Chapters { get; set; } = new HashSet<Chapter>();
+        public ICollection<AudioTrack> AudioTrackNames { get; set; } = new HashSet<AudioTrack>();
     }
 }

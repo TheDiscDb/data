@@ -11,7 +11,7 @@ public class TmdbByIdImportTask : IImportTask
         this.tmdb = tmdb ?? throw new ArgumentNullException(nameof(tmdb));
     }
 
-    public bool CanHandle(string title, string itemType)
+    public bool CanHandle(string title)
     {
         if (string.IsNullOrEmpty(title))
         {
@@ -21,7 +21,7 @@ public class TmdbByIdImportTask : IImportTask
         return title.StartsWith("tmdb:", StringComparison.OrdinalIgnoreCase) || Int32.TryParse(title, out var _); // allow just the id to be passed
     }
 
-    public async Task<ImportItem?> GetImportItem(string title, string itemType, CancellationToken cancellationToken = default)
+    public async Task<ImportItem?> GetImportItem(string title, ImportItemType itemType, CancellationToken cancellationToken = default)
     {
         if (Int32.TryParse(title.Replace("tmdb:", "", StringComparison.OrdinalIgnoreCase), out int id))
         {
@@ -30,7 +30,7 @@ public class TmdbByIdImportTask : IImportTask
                 Type = itemType
             };
 
-            if (itemType.Equals("Series", StringComparison.OrdinalIgnoreCase))
+            if (itemType == ImportItemType.Series)
             {
                 result.Series = await this.tmdb.GetSeries(id.ToString(), cancellationToken: cancellationToken);
             }

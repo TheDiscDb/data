@@ -1,28 +1,30 @@
 ﻿
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 using System.Text.Json;
 using Fantastic.FileSystem;
 using Fantastic.TheMovieDb;
-using TheDiscDb.Imdb;
 using Microsoft.Extensions.Options;
 using Spectre.Console;
 using TheDiscDb;
+using TheDiscDb.Imdb;
 using TheDiscDb.ImportModels;
 using TheDiscDb.Tools.MakeMkv;
+using static ImportBuddy.ImportTask;
 
 namespace ImportBuddy;
 
 public class ImportTask : IConsoleTask
 {
     public const string Name = "Import";
-
+    private readonly ImportMiddlewareManager importManager;
     private readonly TheMovieDbClient tmdb;
     private readonly MakeMkvHelper makeMkv;
     private readonly IOptions<ImportBuddyOptions> options;
     private readonly IFileSystem fileSystem;
     private readonly HttpClient httpClient;
     private readonly IEnumerable<IImportTask> importTasks;
-
+    private readonly DiscContentHashCache discContentCache;
     public static Drive SkipImport = new Drive
     {
         Index = -1,
@@ -30,15 +32,16 @@ public class ImportTask : IConsoleTask
         Letter = "|"
     };
 
-    public ImportTask(TheMovieDbClient tmdb, MakeMkvHelper makeMkv, IOptions<ImportBuddyOptions> options, IFileSystem fileSystem, HttpClient httpClient, IEnumerable<IImportTask> importTasks)
+    public ImportTask(ImportMiddlewareManager importManager, TheMovieDbClient tmdb, MakeMkvHelper makeMkv, IOptions<ImportBuddyOptions> options, IFileSystem fileSystem, HttpClient httpClient, IEnumerable<IImportTask> importTasks, DiscContentHashCache discContentCache)
     {
+        this.importManager = importManager ?? throw new ArgumentNullException(nameof(importManager));
         this.tmdb = tmdb ?? throw new ArgumentNullException(nameof(tmdb));
         this.makeMkv = makeMkv ?? throw new ArgumentNullException(nameof(makeMkv));
         this.options = options ?? throw new ArgumentNullException(nameof(options));
         this.fileSystem = fileSystem ?? throw new ArgumentNullException(nameof(fileSystem));
         this.httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
         this.importTasks = importTasks ?? throw new ArgumentNullException(nameof(importTasks));
-
+        this.discContentCache = discContentCache ?? throw new ArgumentNullException(nameof(discContentCache));
         if (this.options.Value.DataRepositoryPath == null)
         {
             throw new Exception("DataRepositoryPath is not set in the configuration file");
@@ -51,21 +54,49 @@ public class ImportTask : IConsoleTask
 
     public async Task ExecuteAsync(CancellationToken cancellationToken)
     {
-        string title = AnsiConsole.Ask<string>("TMDB ID:");
+        var data = new ImportData();
+        await this.importManager.GetDrive.ProcessAsync(data, cancellationToken);
+        await this.importManager.CalculateHash.ProcessAsync(data, cancellationToken);
+        await this.importManager.ExistingDiscLookup.ProcessAsync(data, cancellationToken);
 
-        var itemPrompt = new SelectionPrompt<string>();
-        itemPrompt.AddChoice("Movie");
-        itemPrompt.AddChoice("Series");
+        string? title = null;
 
-        string itemType = AnsiConsole.Prompt(itemPrompt);
+        //if (data.ExistingDiscFound)
+        //{
+        //    bool copyFromExisting = AnsiConsole.Confirm("This disc is already in the database. If this is a new release would you like to copy it?", defaultValue: false);
+        //    if (copyFromExisting)
+        //    {
+        //        await this.importManager.ImportFromExisting.ProcessAsync(data, cancellationToken);
+
+        //        data.DiscFormat = data.ExistingDisc!.DiscFormat;
+        //        data.ItemType = ImportData.GetItemType(data.ExistingDisc.MediaType);
+        //        title = data.ExistingDisc.TmdbId;
+        //        await this.CopyExistingDisc(data, releaseFolder, cancellationToken);
+        //        return;
+        //    }
+        //}
+
+        if (string.IsNullOrEmpty(title))
+        {
+            title = AnsiConsole.Ask<string>("TMDB ID:");
+        }
+
+        if (!data.ItemType.HasValue)
+        {
+            var itemPrompt = new SelectionPrompt<string>();
+            itemPrompt.AddChoice("Movie");
+            itemPrompt.AddChoice("Series");
+
+            data.ItemType = ImportData.GetItemType(AnsiConsole.Prompt(itemPrompt));
+        }
 
         ImportItem? importItem = null;
 
         foreach (var task in importTasks)
         {
-            if (task.CanHandle(title, itemType))
+            if (task.CanHandle(title))
             {
-                var result = await task.GetImportItem(title, itemType, cancellationToken);
+                var result = await task.GetImportItem(title, data.ItemType ?? ImportItemType.Movie, cancellationToken);
                 if (result != null)
                 {
                     importItem = result;
@@ -83,21 +114,24 @@ public class ImportTask : IConsoleTask
         string? posterUrl = importItem.GetPosterUrl();
         int year = importItem.TryGetYear();
 
-        var format = AnsiConsole.Prompt(new SelectionPrompt<string>()
-            .Title("Disc Format")
-            .AddChoices("Blu-Ray", "UHD", "DVD"));
+        if (string.IsNullOrEmpty(data.DiscFormat))
+        {
+            data.DiscFormat = AnsiConsole.Prompt(new SelectionPrompt<string>()
+                .Title("Disc Format")
+                .AddChoices("Blu-Ray", "UHD", "DVD"));
+        }
 
-        var metadata = BuildMetadata(importItem.ImdbTitle, importItem.GetTmdbItemToSerialize() as Fantastic.TheMovieDb.Models.Movie, importItem.GetTmdbItemToSerialize() as Fantastic.TheMovieDb.Models.Series, year, itemType);
+        MetadataFile? metadata = BuildMetadata(importItem.ImdbTitle, importItem.GetTmdbItemToSerialize() as Fantastic.TheMovieDb.Models.Movie, importItem.GetTmdbItemToSerialize() as Fantastic.TheMovieDb.Models.Series, year, data.ItemType ?? ImportItemType.Movie);
 
-        if (metadata.Title == null)
+        if (metadata != null && metadata.Title == null)
         {
             AnsiConsole.WriteLine("Could not determine title for metadata");
             return;
         }
 
-        string folderName = $"{this.fileSystem.CleanPath(metadata.Title)} ({year})";
+        string folderName = $"{this.fileSystem.CleanPath(metadata!.Title!)} ({year})";
         string subFolderName = "movie";
-        if (itemType.Equals("Series", StringComparison.OrdinalIgnoreCase))
+        if (data.ItemType == ImportItemType.Series)
         {
             subFolderName = "series";
         }
@@ -258,32 +292,20 @@ public class ImportTask : IConsoleTask
         string discSlug = AnsiConsole.Ask<string>("Disc Slug:");
 
         string resolution = "1080p";
-        if (format.Equals("UHD", StringComparison.OrdinalIgnoreCase))
+        if (data.DiscFormat.Equals("UHD", StringComparison.OrdinalIgnoreCase))
         {
             resolution = "2160p";
         }
-        else if (format.Equals("DVD", StringComparison.OrdinalIgnoreCase))
+        else if (data.DiscFormat.Equals("DVD", StringComparison.OrdinalIgnoreCase))
         {
             resolution = "720p";
         }
 
         string formattedTitle = $"{folderName} [{resolution}].mkv";
-        string? contentHash = string.Empty;
 
         string makeMkvLogPath = this.fileSystem.Path.Combine(releaseFolder, $"{discName.Name}.txt");
         if (!await this.fileSystem.File.Exists(makeMkvLogPath))
         {
-            var driveChoices = new SelectionPrompt<Drive>();
-            driveChoices.Converter = d => $"{d.Index}: {d.Letter}: {d.Name}";
-            foreach (var drive in this.makeMkv.Drives)
-            {
-                driveChoices.AddChoice(drive);
-            }
-
-            driveChoices.AddChoice(SkipImport);
-
-            var driveChoice = AnsiConsole.Prompt(driveChoices);
-
             var summaryContents = new StringBuilder();
             summaryContents.AppendLine($"Name: {metadata.Title}");
             summaryContents.AppendLine("Type: MainMovie");
@@ -296,63 +318,83 @@ public class ImportTask : IConsoleTask
                 await this.fileSystem.File.WriteAllText(summaryPath, summaryContents.ToString());
             }
 
-            if (driveChoice.Index != SkipImport.Index)
+            string discJsonFilePath = this.fileSystem.Path.Combine(releaseFolder, $"{discName.Name}.json");
+            if (!await this.fileSystem.File.Exists(discJsonFilePath))
+            {
+                var discJsonFile = new DiscFile
+                {
+                    Index = discName.Index,
+                    Slug = discSlug,
+                    Name = discTitle,
+                    Format = data.DiscFormat,
+                    ContentHash = data.HashInfo?.Hash
+                };
+
+#pragma warning disable IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
+                await this.fileSystem.File.WriteAllText(discJsonFilePath, JsonSerializer.Serialize(discJsonFile, JsonHelper.JsonOptions));
+#pragma warning restore IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
+            }
+
+            if (AnsiConsole.Confirm("Start MakeMKV import?", defaultValue: true))
             {
                 AnsiConsole.WriteLine("Importing MakeMkv logs...");
                 try
                 {
-                    await this.makeMkv.WriteLogs(driveChoice.Index, makeMkvLogPath);
+                    await this.makeMkv.WriteLogs(data.Drive!.Index, makeMkvLogPath);
+
+                    if (data.HashInfo != null)
+                    {
+                        await DiskContentHash.TryAppendHashInfo(this.fileSystem, makeMkvLogPath, data.HashInfo, cancellationToken);
+                    }
                 }
                 catch (CleanLogFileException e)
                 {
                     AnsiConsole.WriteLine(e.Message);
                 }
-
-                AnsiConsole.WriteLine("Calculating disk content hash...");
-                if (driveChoice.Letter == null)
-                {
-                    AnsiConsole.WriteLine("The selected drive does not have a Letter configured. No Hash will be calculated.");
-                }
-                else
-                {
-                    var hashInfo = await this.fileSystem.HashMediaDisc(driveChoice.Letter[0]);
-                    if (hashInfo == null)
-                    {
-                        AnsiConsole.WriteLine("Warning: Could not calculate disc hash");
-                    }
-                    else
-                    {
-                        contentHash = hashInfo.Hash;
-                        await DiskContentHash.TryAppendHashInfo(this.fileSystem, makeMkvLogPath, hashInfo, cancellationToken);
-                    }
-                }
             }
-        }
-
-        string discJsonFilePath = this.fileSystem.Path.Combine(releaseFolder, $"{discName.Name}.json");
-        if (!await this.fileSystem.File.Exists(discJsonFilePath))
-        {
-            var discJsonFile = new DiscFile
-            {
-                Index = discName.Index,
-                Slug = discSlug,
-                Name = discTitle,
-                Format = format,
-                ContentHash = contentHash
-            };
-
-#pragma warning disable IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
-            await this.fileSystem.File.WriteAllText(discJsonFilePath, JsonSerializer.Serialize(discJsonFile, JsonHelper.JsonOptions));
-#pragma warning restore IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
         }
     }
 
-    private MetadataFile BuildMetadata(TitleData? imdbTitle, Fantastic.TheMovieDb.Models.Movie? movie, Fantastic.TheMovieDb.Models.Series? series, int year, string type)
+    private async Task CopyExistingDisc(ImportData data, string releaseFolder, CancellationToken cancellationToken)
+    {
+        var discName = await this.GetDiscName(releaseFolder);
+        string discTitle = AnsiConsole.Ask<string>("Disc Name:");
+        string discSlug = AnsiConsole.Ask<string>("Disc Slug:");
+
+        string inputDirectory = this.fileSystem.Path.GetDirectoryName(this.fileSystem.Path.Combine(this.options.Value.DataRepositoryPath!, data.ExistingDisc!.RelativePath));
+
+        // copy make mkv log file
+        string sourceMkvLogPath = this.fileSystem.Path.Combine(inputDirectory, $"{discName.Name}.txt");
+        string destinationMkvLogPath = this.fileSystem.Path.Combine(releaseFolder, $"{discName.Name}.txt");
+        await this.fileSystem.File.Copy(sourceMkvLogPath, destinationMkvLogPath, overwrite: true);
+
+        // copy summary file
+        string sourceSummaryPath = this.fileSystem.Path.Combine(inputDirectory, $"{discName.Name}-summary.txt");
+        string destinationSummaryPath = this.fileSystem.Path.Combine(releaseFolder, $"{discName.Name}-summary.txt");
+        await this.fileSystem.File.Copy(sourceSummaryPath, destinationSummaryPath, overwrite: true);
+
+        // copy disc json file
+        string sourceDiscJsonPath = this.fileSystem.Path.Combine(inputDirectory, $"{discName.Name}.json");
+        string destinationDiscJsonPath = this.fileSystem.Path.Combine(releaseFolder, $"{discName.Name}.json");
+        await this.fileSystem.File.Copy(sourceDiscJsonPath, destinationDiscJsonPath, overwrite: true);
+
+        // update disc json file
+        var discFileJson = await this.fileSystem.File.ReadAllText(destinationDiscJsonPath);
+#pragma warning disable IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
+        var discFile = JsonSerializer.Deserialize<DiscFile>(discFileJson, JsonHelper.JsonOptions);
+        discFile!.Name = discTitle;
+        discFile!.Slug = discSlug;
+        discFileJson = JsonSerializer.Serialize(discFile, JsonHelper.JsonOptions);
+        await this.fileSystem.File.WriteAllText(destinationDiscJsonPath, discFileJson);
+#pragma warning restore IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
+    }
+
+    private MetadataFile BuildMetadata(TitleData? imdbTitle, Fantastic.TheMovieDb.Models.Movie? movie, Fantastic.TheMovieDb.Models.Series? series, int year, ImportItemType type)
     {
         var metadata = new MetadataFile
         {
             Year = year,
-            Type = type,
+            Type = type.ToString(),
             DateAdded = DateTimeOffset.UtcNow.Date
         };
 
@@ -360,6 +402,7 @@ public class ImportTask : IConsoleTask
         {
             metadata.Title = imdbTitle.Title;
             metadata.FullTitle = imdbTitle.FullTitle;
+            metadata.ExternalIds.Imdb = imdbTitle.Id;
             if (imdbTitle?.Title != null)
             {
                 metadata.Slug = this.CreateSlug(imdbTitle.Title, year);
@@ -379,6 +422,15 @@ public class ImportTask : IConsoleTask
             {
                 metadata.Slug = this.CreateSlug(movie.Title, year);
             }
+
+            if (string.IsNullOrEmpty(metadata.ExternalIds.Imdb))
+            {
+                metadata.ExternalIds.Imdb = movie!.ImdbId;
+                if (string.IsNullOrEmpty(metadata.ExternalIds.Imdb))
+                {
+                    metadata.ExternalIds.Imdb = movie!.ExternalIds?.ImdbId;
+                }
+            }
         }
         else if (series != null)
         {
@@ -396,9 +448,12 @@ public class ImportTask : IConsoleTask
             {
                 metadata.Slug = this.CreateSlug(series.Name, year);
             }
-        }
 
-        metadata.ExternalIds.Imdb = imdbTitle?.Id;
+            if (string.IsNullOrEmpty(metadata.ExternalIds.Imdb))
+            {
+                metadata.ExternalIds.Imdb = series!.ExternalIds?.ImdbId;
+            }
+        }
 
         if (imdbTitle != null && string.IsNullOrEmpty(imdbTitle.ErrorMessage))
         {

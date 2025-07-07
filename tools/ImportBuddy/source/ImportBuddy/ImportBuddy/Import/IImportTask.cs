@@ -2,6 +2,6 @@
 
 public interface IImportTask
 {
-    bool CanHandle(string title, string itemType);
-    Task<ImportItem?> GetImportItem(string title, string itemType, CancellationToken cancellationToken = default);
+    bool CanHandle(string title);
+    Task<ImportItem?> GetImportItem(string title, ImportItemType itemType, CancellationToken cancellationToken = default);
 }

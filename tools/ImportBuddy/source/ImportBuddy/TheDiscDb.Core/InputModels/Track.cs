@@ -16,6 +16,7 @@
         public string? AudioType { get; set; }
         public string? LanguageCode { get; set; }
         public string? Language { get; set; }
+        public string? Description { get; set; }
 
         [System.Text.Json.Serialization.JsonIgnore]
         public Title? Title { get; set; }
