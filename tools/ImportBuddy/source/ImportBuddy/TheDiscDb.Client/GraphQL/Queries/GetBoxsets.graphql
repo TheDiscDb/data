@@ -1,0 +1,18 @@
+query GetBoxsets ($after: String, $order: [BoxsetSortInput!]) {
+  boxsets (
+    order: $order
+    after: $after
+    ) {
+    nodes {
+      title
+      slug
+      imageUrl
+    }
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+  }
+}

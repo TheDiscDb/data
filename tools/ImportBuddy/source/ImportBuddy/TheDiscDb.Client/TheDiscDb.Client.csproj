@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<NoDefaultLaunchSettingsFile>true</NoDefaultLaunchSettingsFile>
+		<StaticWebAssetProjectMode>Default</StaticWebAssetProjectMode>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<GraphQL Remove="GraphQL\Queries\GetAllDiscContentHash.graphql" />
+		<GraphQL Remove="graphql\queries\GetMediaItemsByGroup.graphql" />
+		<GraphQL Remove="graphql\queries\GetBoxsetDiscs.graphql" />
+		<GraphQL Remove="graphql\queries\GetBoxsets.graphql" />
+		<GraphQL Remove="graphql\queries\GetDiscDetail.graphql" />
+		<GraphQL Remove="GraphQL\Queries\GetDiscDetailByContentHash.graphql" />
+		<GraphQL Remove="graphql\queries\GetMediaItemDetail.graphql" />
+		<GraphQL Remove="graphql\queries\GetMovies.graphql" />
+		<GraphQL Remove="graphql\queries\GetRelease.graphql" />
+		<GraphQL Remove="graphql\queries\GetSeries.graphql" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="StrawberryShake.Blazor" Version="15.1.8" />
+	</ItemGroup>
+
+</Project>

@@ -1,0 +1,37 @@
+query GetAllDiscContentHash($after: String) {
+  mediaItems(
+    where: {
+      releases: { some: { discs: { some: { contentHash: { neq: null } } } } }
+    }
+    after: $after
+  ) {
+    nodes {
+      title
+      slug
+      year
+      type
+      externalids {
+        tmdb
+      }
+      releases {
+        title
+        slug
+        upc
+        asin
+        discs {
+          contentHash
+          index
+          slug
+          name
+          format
+        }
+      }
+    }
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+  }
+}

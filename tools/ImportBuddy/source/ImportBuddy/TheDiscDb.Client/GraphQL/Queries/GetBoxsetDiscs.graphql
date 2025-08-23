@@ -1,0 +1,43 @@
+query GetBoxsetDiscs($slug: String, $discNumber: Int, $discSlug: String) {
+  boxsets(where: { slug: { eq: $slug } }) {
+    nodes {
+      id
+      title
+      slug
+      release {
+        slug
+        isbn
+        locale
+        regionCode
+        year
+        upc
+        title
+        imageUrl
+        discs (order: { index: ASC }, where: { or: [ { index: { eq:  $discNumber } } , { slug: {eq: $discSlug } } ] }) {
+          index
+          name
+          format
+          slug
+          titles (order: { index: ASC }) {
+            index
+            duration
+            displaySize
+            sourceFile
+            size
+            segmentMap
+            item {
+              title
+              season
+              episode
+              type
+              chapters (order: { index: ASC }) {
+                index
+                title
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

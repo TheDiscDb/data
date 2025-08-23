@@ -1,0 +1,50 @@
+query GetDiscDetailByContentHash($hash: String) {
+  mediaItems(
+    where: {
+      releases: { some: { discs: { some: { contentHash: { eq: $hash } } } } }
+    }
+  ) {
+    nodes {
+      id
+      title
+      year
+      slug
+      imageUrl
+      type
+      releases {
+        slug
+        isbn
+        locale
+        regionCode
+        year
+        upc
+        title
+        imageUrl
+        discs(order: { index: ASC }) {
+          index
+          name
+          format
+          slug
+          titles(order: { index: ASC }) {
+            index
+            duration
+            displaySize
+            sourceFile
+            size
+            segmentMap
+            item {
+              title
+              season
+              episode
+              type
+              chapters(order: { index: ASC }) {
+                index
+                title
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

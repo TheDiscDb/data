@@ -1,0 +1,52 @@
+query GetDiscDetail($slug: String, $releaseSlug: String, $discNumber: Int, $discSlug: String, $mediaType: String) {
+    mediaItems (where: 
+    { 
+      and: [
+          {slug: { eq: $slug }},
+          {type: { eq: $mediaType }}
+      ]
+    }) {
+      nodes {
+        id
+        title
+        year
+        slug
+        imageUrl
+        type
+        releases (where: { slug: { eq: $releaseSlug } }) {
+          slug
+          isbn
+          locale
+          regionCode
+          year
+          upc
+          title
+          imageUrl
+          discs (order: { index: ASC }, where: { or: [ { index: { eq:  $discNumber } } , { slug: {eq: $discSlug } } ] }) {
+            index
+            name
+            format
+            slug
+            titles (order: { index: ASC }) {
+              index
+              duration
+              displaySize
+              sourceFile
+              size
+              segmentMap
+              item {
+                title
+                season
+                episode
+                type
+                chapters (order: { index: ASC }) {
+                  index
+                  title
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }

@@ -1,0 +1,41 @@
+query GetRelease($slug: String, $releaseSlug: String, $mediaType: String) {
+  mediaItems(
+    where: { and: [{ slug: { eq: $slug } }, { type: { eq: $mediaType } }] }
+  ) {
+    nodes {
+      id
+      title
+      year
+      slug
+      imageUrl
+      type
+      releases(where: { slug: { eq: $releaseSlug } }) {
+        slug
+        locale
+        year
+        title
+        imageUrl
+        asin
+        upc
+        releaseDate
+        discs(order: { index: ASC }) {
+          index
+          name
+          format
+          slug
+          titles(
+            where: { discItemReferenceId: { neq:  null } }
+            order: { index: ASC }
+          ) {
+            item {
+              type
+              chapters(order: { index: ASC }) {
+                index
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

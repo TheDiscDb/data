@@ -1,0 +1,36 @@
+query GetMediaItemsByGroup($slug: String!, $role: String, $after: String, $order: [MediaItemSortInput!]) {
+  mediaItemsByGroup(slug: $slug, role: $role, after: $after, order: $order) {
+    nodes {
+      slug
+      year
+      title
+      type
+      imageUrl
+      mediaItemGroups(where: { group: { slug: { eq: $slug } } }) {
+        role
+        group {
+          name
+          slug
+          imageUrl
+        }
+      }
+      releases {
+        slug
+        locale
+        year
+        title
+        discs {
+          index
+          name
+          format
+        }
+      }
+    }
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+  }
+}

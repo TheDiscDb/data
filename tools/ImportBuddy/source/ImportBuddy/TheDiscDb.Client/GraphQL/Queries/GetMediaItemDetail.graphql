@@ -1,0 +1,54 @@
+query GetMediaItemDetail ($slug: String, $mediaType: String) {
+    mediaItems(
+      where: { and: [{ slug: { eq: $slug } }, { type: { eq: $mediaType } }] }
+    ) {
+      nodes {
+        id
+        title
+        year
+        slug
+        imageUrl
+        type
+        plot
+        tagline
+        directors
+        writers
+        stars
+        genres
+        runtime
+        contentRating
+        releases(order: { year: ASC }) {
+          slug
+          isbn
+          locale
+          regionCode
+          year
+          upc
+          asin
+          title
+          imageUrl
+          discs(order: { index: ASC }) {
+            index
+            name
+            format
+            slug
+            titles (where: { discItemReferenceId: { neq:  null } }) {
+              item {
+                type
+                chapters {
+                  index
+                }
+              }
+            }
+          }
+        }
+        mediaItemGroups {
+          role
+          group {
+            slug
+            name
+          }
+        }
+      }
+    }
+  }

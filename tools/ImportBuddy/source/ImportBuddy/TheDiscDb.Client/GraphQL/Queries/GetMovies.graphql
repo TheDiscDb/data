@@ -1,0 +1,32 @@
+query GetMovies($after: String, $order: [MediaItemSortInput!]) {
+  mediaItems(
+    where: { type: { eq: "Movie" } }
+    order: $order
+    after: $after
+  ) {
+    nodes {
+      slug
+      year
+      title
+      type
+      imageUrl
+      releases {
+        slug
+        locale
+        year
+        title
+        discs {
+          index
+          name
+          format
+        }
+      }
+    }
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+  }
+}
