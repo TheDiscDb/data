@@ -4,8 +4,8 @@ on:
 
 name: Verify file integrity
 jobs:
-  setup:
-    name: Checkout & install
+  summaries:
+    name: Disc summaries
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -14,10 +14,5 @@ jobs:
         uses: oven-sh/setup-bun@v2
       - name: Install dependencies
         run: cd housekeeping && bun install
-
-  summaries:
-    name: Disc summaries
-    needs: setup
-    runs-on: ubuntu-latest
-    steps:
-      - run: cd housekeeping && bun run summaries
+      - name: Start appliance
+        run: cd housekeeping && bun run summaries
