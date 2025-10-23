@@ -1,6 +1,4 @@
-const rules = {
-  empty_chunk: false,
-};
+import rules from "../rules.json";
 
 interface ChunkLine {
   index: number;
@@ -31,8 +29,8 @@ for await (const file of files.scan()) {
   const chunks: Record<string, ChunkLine>[] = [];
   let i = -1;
   let totalI = 0;
-  const content = await Bun.file(file).text();
 
+  const content = await Bun.file(file).text();
   for (const line of content.trim().split("\n")) {
     i += 1;
     totalI += 1;

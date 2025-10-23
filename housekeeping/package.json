@@ -4,7 +4,8 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "summaries": "bun run appliances/check-summaries.ts"
+    "summaries": "bun run appliances/check-summaries.ts",
+    "finalize": "bun run appliances/check-finalize.ts"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.2.7",
