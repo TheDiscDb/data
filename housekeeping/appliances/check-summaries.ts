@@ -5,9 +5,11 @@ const rules = {
 interface ChunkLine {
   index: number;
   content: string;
+  lineNumber: number;
 }
 
-const errors: Record<string, string[]> = {};
+const errors: Record<string, (string | { line: number; content: string })[]> =
+  {};
 
 const ChunkTypes = [
   "MainMovie",
@@ -22,9 +24,9 @@ const RANGE_RE = /^\d+(?:-\d+)?$/;
 
 const files = new Bun.Glob("../data/**/disc*-summary.txt");
 for await (const file of files.scan()) {
-  const prettyFile = file.replace(/\.\.\/data\//, "");
-  errors[prettyFile] = [];
-  const e = errors[prettyFile];
+  const absFile = file.replace(/^\.\.\/data/, "data");
+  errors[absFile] = [];
+  const e = errors[absFile];
 
   const chunks: Record<string, ChunkLine>[] = [];
   let i = -1;
@@ -56,7 +58,7 @@ for await (const file of files.scan()) {
       // e.push(`Invalid line (${totalI}) in ${file}: ${line}`);
       continue;
     }
-    chunk[type] = { index: i, content: content.trim() };
+    chunk[type] = { index: i, content: content.trim(), lineNumber: totalI };
   }
 
   for (const chunk of chunks) {
@@ -70,30 +72,40 @@ for await (const file of files.scan()) {
       continue;
     }
 
-    for (const [key, { index, content }] of Object.entries(chunk)) {
+    for (const [key, { index, content, lineNumber: line }] of Object.entries(
+      chunk,
+    )) {
       switch (key) {
         case "Type": {
           // @ts-expect-error string does not overlap with this const, duh
           if (!ChunkTypes.includes(content)) {
-            e.push(
-              `Received invalid type "${content}" for "${chunk.Name?.content}"`,
-            );
+            e.push({
+              line,
+              content: `Received invalid type "${content}" for "${chunk.Name?.content}"`,
+            });
           }
           if (content === "Episode") {
             if (!chunk.Season) {
-              e.push(`Missing season for "${chunk.Name?.content}"`);
+              e.push({
+                line,
+                content: `Missing season for "${chunk.Name?.content}"`,
+              });
             }
             if (!chunk.Episode) {
-              e.push(`Missing episode for "${chunk.Name?.content}"`);
+              e.push({
+                line,
+                content: `Missing episode for "${chunk.Name?.content}"`,
+              });
             }
           }
           break;
         }
         case "File name": {
           if (index !== largestIndex) {
-            e.push(
-              `File name "${content}" was not the last entry in its chunk`,
-            );
+            e.push({
+              line,
+              content: `File name "${content}" was not the last entry in its chunk`,
+            });
           }
           break;
         }
@@ -101,13 +113,19 @@ for await (const file of files.scan()) {
         case "Chapters count":
         case "Segment count": {
           if (!INT_RE.test(content)) {
-            e.push(`${key} value "${content}" is not an integer`);
+            e.push({
+              line,
+              content: `${key} value "${content}" is not an integer`,
+            });
           }
           break;
         }
         case "Episode": {
           if (!RANGE_RE.test(content)) {
-            e.push(`Episode value "${content}" is not an integer or range`);
+            e.push({
+              line,
+              content: `Episode value "${content}" is not an integer or range`,
+            });
           }
           break;
         }
@@ -117,9 +135,17 @@ for await (const file of files.scan()) {
 }
 
 if (Object.keys(errors).length !== 0) {
-  for (const [prettyFile, es] of Object.entries(errors)) {
+  for (const [file, es] of Object.entries(errors)) {
     if (es.length === 0) continue;
-    console.error([`${prettyFile}:`, `- ${es.join("\n- ")}`, ""].join("\n"));
+    console.log(`::group::${file.replace(/^data\//, "")}`);
+    for (const e of es) {
+      console.log(
+        `::error file=${file}${
+          typeof e === "string" ? "" : `,line=${e.line}`
+        }::${typeof e === "string" ? e : e.content}`,
+      );
+    }
+    console.log("::endgroup::");
   }
   process.exit(1);
 } else {
