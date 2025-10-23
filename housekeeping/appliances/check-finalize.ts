@@ -1,15 +1,15 @@
 // import rules from "../rules.json";
 
-const errors: Record<
-  string,
-  { line?: number; content: string; type?: "warning" | "error" }[]
-> = {};
+const errors: Record<string, { line?: number; content: string }[]> = {};
+const warnings: Record<string, { line?: number; content: string }[]> = {};
 
 const files = new Bun.Glob("../data/**/disc*.json");
 for await (const file of files.scan()) {
   const absFile = file.replace(/^\.\.\/data/, "data");
   errors[absFile] = [];
   const e = errors[absFile];
+  warnings[absFile] = [];
+  const w = warnings[absFile];
 
   // biome-ignore lint/style/noNonNullAssertion: the path will have at least one slash
   const filename = file.split("/").slice(-1)[0]!;
@@ -30,9 +30,8 @@ for await (const file of files.scan()) {
   }
 
   if (!content.ContentHash) {
-    e.push({
+    w.push({
       content: "Missing `ContentHash` in JSON file",
-      type: "warning",
     });
   }
 
@@ -44,24 +43,39 @@ for await (const file of files.scan()) {
   }
 }
 
-if (Object.keys(errors).length !== 0) {
+if (Object.keys(errors).length !== 0 || Object.keys(warnings).length !== 0) {
   let code = 0;
-  for (const [file, es] of Object.entries(errors)) {
-    if (es.length === 0) continue;
+  console.log(`::group::Warnings`);
+  for (const [file, ws] of Object.entries(warnings)) {
+    if (ws.length === 0) continue;
     console.log(`::group::${file.replace(/^data\//, "")}`);
-    for (const e of es) {
-      const type = e.type ?? "error";
-      // Exit with 1 if there is any error entry
-      if (type === "error") code = 1;
-
+    for (const e of ws) {
       console.log(
-        `::${type} file=${file}${
+        `::warning file=${file}${
           e.line === undefined ? "" : `,line=${e.line}`
         }::${e.content}`,
       );
     }
     console.log("::endgroup::");
   }
+  console.log("::endgroup::");
+  console.log(`::group::Errors`);
+  for (const [file, es] of Object.entries(errors)) {
+    if (es.length === 0) continue;
+    // Exit with 1 if there is any error entry
+    code = 1;
+
+    console.log(`::group::${file.replace(/^data\//, "")}`);
+    for (const e of es) {
+      console.log(
+        `::error file=${file}${
+          e.line === undefined ? "" : `,line=${e.line}`
+        }::${e.content}`,
+      );
+    }
+    console.log("::endgroup::");
+  }
+  console.log("::endgroup::");
   process.exit(code);
 } else {
   console.log("Everything looks good!");
