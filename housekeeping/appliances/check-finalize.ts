@@ -48,7 +48,6 @@ if (Object.keys(errors).length !== 0 || Object.keys(warnings).length !== 0) {
   console.log(`::group::Warnings`);
   for (const [file, ws] of Object.entries(warnings)) {
     if (ws.length === 0) continue;
-    console.log(`::group::${file.replace(/^data\//, "")}`);
     for (const e of ws) {
       console.log(
         `::warning file=${file}${
@@ -56,7 +55,6 @@ if (Object.keys(errors).length !== 0 || Object.keys(warnings).length !== 0) {
         }::${e.content}`,
       );
     }
-    console.log("::endgroup::");
   }
   console.log("::endgroup::");
   console.log(`::group::Errors`);
@@ -65,7 +63,6 @@ if (Object.keys(errors).length !== 0 || Object.keys(warnings).length !== 0) {
     // Exit with 1 if there is any error entry
     code = 1;
 
-    console.log(`::group::${file.replace(/^data\//, "")}`);
     for (const e of es) {
       console.log(
         `::error file=${file}${
@@ -73,7 +70,6 @@ if (Object.keys(errors).length !== 0 || Object.keys(warnings).length !== 0) {
         }::${e.content}`,
       );
     }
-    console.log("::endgroup::");
   }
   console.log("::endgroup::");
   process.exit(code);
