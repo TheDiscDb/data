@@ -70,6 +70,15 @@ for await (const file of files.scan()) {
       continue;
     }
 
+    if (!chunk.Name) {
+      e.push(`Missing name for an item`);
+      continue;
+    }
+    if (!chunk.Type) {
+      e.push(`Missing type for "${chunk.Name?.content}"`);
+      continue;
+    }
+
     for (const [key, { index, content, lineNumber: line }] of Object.entries(
       chunk,
     )) {
