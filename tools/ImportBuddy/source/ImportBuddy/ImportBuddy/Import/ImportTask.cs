@@ -181,6 +181,11 @@ public class ImportTask : IConsoleTask
 #pragma warning restore IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
         }
 
+
+        // Construct a default slug from the title year and disc format.
+        //  If this slug already exists, it will be detected and handled at the "Create Release" conditional.
+        string defaultReleaseSlug = CreateSlug(data.DiscFormat, year);
+
         var releaseFolders = await this.fileSystem.Directory.GetDirectories(basePath, cancellationToken);
         bool hasReleases = releaseFolders.Any();
         string releaseSlug = "release";
@@ -191,7 +196,8 @@ public class ImportTask : IConsoleTask
             bool addNewRelease = AnsiConsole.Confirm("Add New release?");
             if (addNewRelease)
             {
-                releaseSlug = AnsiConsole.Ask<string>("New Release Slug:");
+                // Prompt for the user to input a release slug, including the default release slug if it exists.
+                releaseSlug = string.IsNullOrEmpty(defaultReleaseSlug) ? AnsiConsole.Ask<string>("New Release Slug:") : AnsiConsole.Ask<string>("New Release Slug", defaultReleaseSlug);
                 releaseFolder = this.fileSystem.Path.Combine(basePath, releaseSlug);
             }
             else
@@ -224,7 +230,8 @@ public class ImportTask : IConsoleTask
         }
         else
         {
-            releaseSlug = AnsiConsole.Ask<string>("New Release Slug:");
+            // Prompt for the user to input a release slug, including the default release slug if it exists.
+            releaseSlug = string.IsNullOrEmpty(defaultReleaseSlug) ? AnsiConsole.Ask<string>("New Release Slug:") : AnsiConsole.Ask<string>("New Release Slug", defaultReleaseSlug);
             releaseFolder = this.fileSystem.Path.Combine(basePath, releaseSlug);
         }
 
