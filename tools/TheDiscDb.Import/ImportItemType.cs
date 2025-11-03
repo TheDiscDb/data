@@ -1,4 +1,4 @@
-﻿namespace ImportBuddy;
+﻿namespace TheDiscDb.Import;
 
 public enum ImportItemType
 {

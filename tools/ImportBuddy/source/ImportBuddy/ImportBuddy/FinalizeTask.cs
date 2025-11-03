@@ -3,6 +3,7 @@ using Fantastic.FileSystem;
 using MakeMkv;
 using Spectre.Console;
 using TheDiscDb;
+using TheDiscDb.Import;
 using TheDiscDb.ImportModels;
 
 namespace ImportBuddy;
@@ -120,7 +121,7 @@ public class FinalizeTask : IConsoleTask
                 disc = new TheDiscDb.InputModels.Disc();
             }
 
-            Map(disc, discFile, discInfo);
+            DiscFileFinalizer.Map(disc, discFile, discInfo);
 
 #pragma warning disable IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
             string json = JsonSerializer.Serialize(disc, JsonHelper.JsonOptions);
@@ -155,115 +156,6 @@ public class FinalizeTask : IConsoleTask
                     await this.fileSystem.File.WriteAllText(releaseFile, JsonSerializer.Serialize(file, JsonHelper.JsonOptions), cancellationToken);
 #pragma warning restore IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
                 }
-            }
-        }
-    }
-
-    private void Map(TheDiscDb.InputModels.Disc disc, DiscFile discFile, DiscInfo discInfo)
-    {
-        var mapper = new Mapper();
-
-        using (var writer = new BufferedConsoleWriter($"Disc {discFile.Index}"))
-        {
-            var logDisc = mapper.Map(discInfo);
-
-            if (disc.Index == default(int))
-            {
-                disc.Index = discFile.Index;
-            }
-
-            if (string.IsNullOrEmpty(disc.Name))
-            {
-                disc.Name = logDisc.Name;
-            }
-
-            if (string.IsNullOrEmpty(disc.Format))
-            {
-                disc.Format = discFile.Format;
-            }
-
-            if (string.IsNullOrEmpty(disc.ContentHash))
-            {
-                disc.ContentHash = discFile.ContentHash;
-            }
-
-            disc.Titles = logDisc.Titles.Select(mapper.Map).ToList();
-
-            if (discFile.Unknown.Any())
-            {
-                writer.Write($"[red bold]Warning:[/] There are unknown items in this summary (Disc {discFile.Index})");
-                foreach (var u in discFile.Unknown)
-                {
-                    writer.Write("\t" + u.Title);
-                }
-            }
-
-            this.TryMapItems(discFile.Episodes, disc, "Episode", writer);
-            this.TryMapItems(discFile.Extras, disc, "Extra", writer);
-            this.TryMapItems(discFile.DeletedScenes, disc, "DeletedScene", writer);
-            this.TryMapItems(discFile.Trailers, disc, "Trailer", writer);
-            this.TryMapItems(discFile.MainMovies, disc, "MainMovie", writer);
-        }
-    }
-
-    private void TryMapItems(ICollection<TheDiscDb.ImportModels.DiscFileItem> items, TheDiscDb.InputModels.Disc disc, string type, BufferedConsoleWriter writer)
-    {
-        foreach (var item in items)
-        {
-            if (!string.IsNullOrEmpty(item.Title) && item.Title.Contains(" (English)", StringComparison.OrdinalIgnoreCase))
-            {
-                writer.Write($"[red bold]Warning:[/] Language detected in '{item.Title}'");
-            }
-
-            var matchingTitles = disc.Titles.Where(title => title.SegmentMap == item.SegmentMap && title.SourceFile == item.SourceFile && item.Duration == title.Duration);
-            if (!string.IsNullOrEmpty(disc.Format) && disc.Format.Equals("dvd", StringComparison.OrdinalIgnoreCase))
-            {
-                matchingTitles = matchingTitles.Where(title => title.DisplaySize == item.Size);
-            }
-
-            if (matchingTitles.Count() > 0)
-            {
-                var match = matchingTitles.First();
-                if (matchingTitles.Count() > 1)
-                {
-                    // try to select based on comment
-                    var primaryMatch = matchingTitles.SingleOrDefault(title => !string.IsNullOrEmpty(title.Comment) && title.Comment == item.Comment);
-                    if (primaryMatch != null)
-                    {
-                        match = primaryMatch;
-                    }
-                    else
-                    {
-                        writer.Write($"[red bold]Warning:[/] Unable to find unique match for '{item.Comment}'");
-                    }
-                }
-
-                if (item.AudioTrackNames != null && item.AudioTrackNames.Any())
-                {
-                    foreach (var track in item.AudioTrackNames)
-                    {
-                        var audioTracks = match.Tracks.Where(t => t.Type == "Audio");
-                        var foundTrack = audioTracks.ElementAtOrDefault(track.Index);
-                        if (foundTrack != null)
-                        {
-                            foundTrack.Description = track.Name;
-                        }
-                        else
-                        {
-                            writer.Write($"[red bold]Warning:[/] Unable to find audio track '{track.Name}' at index '{track.Index}'. {audioTracks.Count()} total audio tracks found.");
-                        }
-                    }
-                }
-
-                match.Item = new TheDiscDb.InputModels.DiscItemReference
-                {
-                    Title = item.Title,
-                    Type = type,
-                    Chapters = item.Chapters,
-                    Season = item.Season,
-                    Episode = item.Episode,
-                    Description = item.Description
-                };
             }
         }
     }

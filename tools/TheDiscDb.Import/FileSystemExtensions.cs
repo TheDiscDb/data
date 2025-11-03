@@ -2,7 +2,7 @@
 using System.Text.RegularExpressions;
 using Fantastic.FileSystem;
 
-namespace ImportBuddy;
+namespace TheDiscDb.Import;
 
 public static class FileSystemExtensions
 {
