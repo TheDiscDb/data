@@ -1,7 +1,7 @@
 ﻿
 using TheDiscDb.Imdb;
 
-namespace ImportBuddy;
+namespace TheDiscDb.Import;
 
 public class ImportItem
 {

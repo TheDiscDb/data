@@ -14,14 +14,13 @@
 		<PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.8" />
 		<PackageReference Include="Microsoft.Extensions.Http" Version="9.0.8" />
 		<PackageReference Include="Microsoft.Extensions.Http.Polly" Version="9.0.8" />
-		<PackageReference Include="Fantastic.TheMovieDb" Version="1.2.2" />
 		<PackageReference Include="Spectre.Console" Version="0.50.0" />
 		<PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\..\..\..\TheDiscDb.Import\TheDiscDb.Import.csproj" />
 	  <ProjectReference Include="..\TheDiscDb.Client\TheDiscDb.Client.csproj" />
-	  <ProjectReference Include="..\TheDiscDb.Core\TheDiscDb.Core.csproj" />
 	  <ProjectReference Include="..\TheDiscDb.MakeMkv\TheDiscDb.MakeMkv.csproj" />
 	</ItemGroup>
 

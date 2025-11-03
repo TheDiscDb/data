@@ -8,6 +8,7 @@ using Microsoft.Extensions.Options;
 using Spectre.Console;
 using TheDiscDb;
 using TheDiscDb.Imdb;
+using TheDiscDb.Import;
 using TheDiscDb.ImportModels;
 using TheDiscDb.Tools.MakeMkv;
 using static ImportBuddy.ImportTask;
@@ -61,20 +62,25 @@ public class ImportTask : IConsoleTask
 
         string? title = null;
 
-        //if (data.ExistingDiscFound)
-        //{
-        //    bool copyFromExisting = AnsiConsole.Confirm("This disc is already in the database. If this is a new release would you like to copy it?", defaultValue: false);
-        //    if (copyFromExisting)
-        //    {
-        //        await this.importManager.ImportFromExisting.ProcessAsync(data, cancellationToken);
+        if (data.ExistingDiscFound)
+        {
+            //AnsiConsole.WriteLine($"Warning: This disc is already in the database. {data.ExistingDisc!.RelativePath}");
+            bool copyFromExisting = AnsiConsole.Confirm("This disc is already in the database. If this is a new release would you like to copy it?", defaultValue: false);
+            if (copyFromExisting)
+            {
+                // Get the number of the target disc
 
-        //        data.DiscFormat = data.ExistingDisc!.DiscFormat;
-        //        data.ItemType = ImportData.GetItemType(data.ExistingDisc.MediaType);
-        //        title = data.ExistingDisc.TmdbId;
-        //        await this.CopyExistingDisc(data, releaseFolder, cancellationToken);
-        //        return;
-        //    }
-        //}
+                // Get the destination release folder
+
+                //await this.importManager.ImportFromExisting.ProcessAsync(data, cancellationToken);
+
+                //data.DiscFormat = data.ExistingDisc!.DiscFormat;
+                //data.ItemType = ImportData.GetItemType(data.ExistingDisc.MediaType);
+                //title = data.ExistingDisc.TmdbId;
+                //await this.CopyExistingDisc(data, releaseFolder, cancellationToken);
+                //return;
+            }
+        }
 
         if (string.IsNullOrEmpty(title))
         {
@@ -121,7 +127,7 @@ public class ImportTask : IConsoleTask
                 .AddChoices("Blu-Ray", "UHD", "DVD"));
         }
 
-        MetadataFile? metadata = BuildMetadata(importItem.ImdbTitle, importItem.GetTmdbItemToSerialize() as Fantastic.TheMovieDb.Models.Movie, importItem.GetTmdbItemToSerialize() as Fantastic.TheMovieDb.Models.Series, year, data.ItemType ?? ImportItemType.Movie);
+        MetadataFile? metadata = ImportHelper.BuildMetadata(importItem.ImdbTitle, importItem.GetTmdbItemToSerialize() as Fantastic.TheMovieDb.Models.Movie, importItem.GetTmdbItemToSerialize() as Fantastic.TheMovieDb.Models.Series, year, data.ItemType ?? ImportItemType.Movie);
 
         if (metadata != null && metadata.Title == null)
         {
@@ -269,7 +275,7 @@ public class ImportTask : IConsoleTask
                 var release = new ReleaseFile
                 {
                     Title = releaseName,
-                    SortTitle = $"{releaseYear} {GetSortTitle(releaseName)}",
+                    SortTitle = $"{releaseYear} {ImportHelper.GetSortTitle(releaseName)}",
                     Slug = releaseSlug,
                     Upc = upc,
                     Locale = "en-us",
@@ -287,7 +293,7 @@ public class ImportTask : IConsoleTask
             }
         }
 
-        var discName = await this.GetDiscName(releaseFolder);
+        var discName = await this.fileSystem.GetDiscName(releaseFolder);
         string discTitle = AnsiConsole.Ask<string>("Disc Name:");
         string discSlug = AnsiConsole.Ask<string>("Disc Slug:");
 
@@ -357,7 +363,7 @@ public class ImportTask : IConsoleTask
 
     private async Task CopyExistingDisc(ImportData data, string releaseFolder, CancellationToken cancellationToken)
     {
-        var discName = await this.GetDiscName(releaseFolder);
+        var discName = await this.fileSystem.GetDiscName(releaseFolder);
         string discTitle = AnsiConsole.Ask<string>("Disc Name:");
         string discSlug = AnsiConsole.Ask<string>("Disc Slug:");
 
@@ -387,186 +393,5 @@ public class ImportTask : IConsoleTask
         discFileJson = JsonSerializer.Serialize(discFile, JsonHelper.JsonOptions);
         await this.fileSystem.File.WriteAllText(destinationDiscJsonPath, discFileJson);
 #pragma warning restore IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
-    }
-
-    private MetadataFile BuildMetadata(TitleData? imdbTitle, Fantastic.TheMovieDb.Models.Movie? movie, Fantastic.TheMovieDb.Models.Series? series, int year, ImportItemType type)
-    {
-        var metadata = new MetadataFile
-        {
-            Year = year,
-            Type = type.ToString(),
-            DateAdded = DateTimeOffset.UtcNow.Date
-        };
-
-        if (imdbTitle != null && string.IsNullOrEmpty(imdbTitle.ErrorMessage))
-        {
-            metadata.Title = imdbTitle.Title;
-            metadata.FullTitle = imdbTitle.FullTitle;
-            metadata.ExternalIds.Imdb = imdbTitle.Id;
-            if (imdbTitle?.Title != null)
-            {
-                metadata.Slug = this.CreateSlug(imdbTitle.Title, year);
-            }
-        }
-        else if (movie != null)
-        {
-            if (movie.ReleaseDate.HasValue)
-            {
-                metadata.ReleaseDate = movie.ReleaseDate.Value;
-            }
-
-            metadata.Title = movie.Title;
-            metadata.FullTitle = movie.OriginalTitle;
-
-            if (movie?.Title != null)
-            {
-                metadata.Slug = this.CreateSlug(movie.Title, year);
-            }
-
-            if (string.IsNullOrEmpty(metadata.ExternalIds.Imdb))
-            {
-                metadata.ExternalIds.Imdb = movie!.ImdbId;
-                if (string.IsNullOrEmpty(metadata.ExternalIds.Imdb))
-                {
-                    metadata.ExternalIds.Imdb = movie!.ExternalIds?.ImdbId;
-                }
-            }
-        }
-        else if (series != null)
-        {
-            if (series.FirstAirDate.HasValue)
-            {
-                metadata.ReleaseDate = series.FirstAirDate.Value;
-            }
-
-            metadata.Title = series.Name;
-            metadata.SortTitle = GetSortTitle(series.Name);
-            metadata.SortTitle = GetSortTitle(metadata.Title);
-            metadata.FullTitle = series.OriginalName;
-
-            if (series?.Name != null)
-            {
-                metadata.Slug = this.CreateSlug(series.Name, year);
-            }
-
-            if (string.IsNullOrEmpty(metadata.ExternalIds.Imdb))
-            {
-                metadata.ExternalIds.Imdb = series!.ExternalIds?.ImdbId;
-            }
-        }
-
-        if (imdbTitle != null && string.IsNullOrEmpty(imdbTitle.ErrorMessage))
-        {
-            metadata.Plot = imdbTitle.Plot;
-            metadata.Directors = imdbTitle.Directors;
-            metadata.Stars = imdbTitle.Stars;
-            metadata.Writers = imdbTitle.Writers;
-            metadata.Genres = imdbTitle.Genres;
-            metadata.Runtime = imdbTitle.RuntimeStr;
-            metadata.ContentRating = imdbTitle.ContentRating;
-            metadata.Tagline = imdbTitle.Tagline;
-            if (metadata.ReleaseDate == default(DateTimeOffset) && !string.IsNullOrEmpty(imdbTitle.ReleaseDate))
-            {
-                metadata.ReleaseDate = DateTimeOffset.Parse(imdbTitle.ReleaseDate + "T00:00:00+00:00");
-            }
-
-            if (Int32.TryParse(imdbTitle.RuntimeMins, out int minutes))
-            {
-                metadata.RuntimeMinutes = minutes;
-            }
-        }
-
-        if (movie != null)
-        {
-            metadata.ExternalIds.Tmdb = movie.Id.ToString();
-
-            if (string.IsNullOrEmpty(metadata.Plot))
-            {
-                metadata.Plot = movie.Overview;
-            }
-
-            if (string.IsNullOrEmpty(metadata.Tagline))
-            {
-                metadata.Tagline = movie.Tagline;
-            }
-        }
-        else if (series != null)
-        {
-            metadata.ExternalIds.Tmdb = series.Id.ToString();
-
-            if (string.IsNullOrEmpty(metadata.Plot))
-            {
-                metadata.Plot = series.Overview;
-            }
-        }
-
-        if (metadata.Title != null && metadata.Title.StartsWith("the", StringComparison.OrdinalIgnoreCase))
-        {
-            metadata.SortTitle = metadata.Title.Substring(4, metadata.Title.Length - 4).Trim() + ", The";
-        }
-        else
-        {
-            metadata.SortTitle = metadata.Title;
-        }
-
-        return metadata;
-    }
-
-    private string? GetSortTitle(string? title)
-    {
-        if (string.IsNullOrEmpty(title))
-        {
-            return title;
-        }
-
-        if (title.StartsWith("the", StringComparison.OrdinalIgnoreCase))
-        {
-            return title.Substring(4, title.Length - 4).Trim() + ", The";
-        }
-        else
-        {
-            return title;
-        }
-    }
-
-    private string CreateSlug(string name, int year)
-    {
-        if (year != default(int))
-        {
-            return string.Format("{0}-{1}", name.Slugify(), year);
-        }
-
-        return name.Slugify();
-    }
-
-    internal struct DiscName
-    {
-        public string Name;
-        public int Index;
-    }
-
-    private async Task<DiscName> GetDiscName(string path)
-    {
-        var files = await this.fileSystem.Directory.GetFiles(path, "*disc*");
-        var name = new DiscName
-        {
-            Name = "disc01",
-            Index = 1
-        };
-
-        for (int i = 1; i < 100; i++)
-        {
-            name.Name = string.Format("disc{0:00}", i);
-            name.Index = i;
-
-            if (files.Any(f => f.Contains(name.Name)))
-            {
-                continue;
-            }
-
-            break;
-        }
-
-        return name;
     }
 }
