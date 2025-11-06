@@ -1,12 +1,13 @@
 {
-  "Index": 1,
-  "Slug": "blu-ray",
-  "Name": "Blu-Ray (Movie)",
+  "Index": 2,
+  "Slug": "blu-ray-1",
+  "Name": "Blu-ray 1",
   "Format": "Blu-Ray",
+  "ContentHash": "91EA82748BD08D6432958A23420F3DE4",
   "Titles": [
     {
       "Index": 0,
-      "Comment": "ANORA - DISC 1_t00.mkv",
+      "Comment": "ANORA - DISC 1.mkv",
       "SourceFile": "00004.mpls",
       "SegmentMap": "5,7",
       "Duration": "0:05:36",
@@ -32,7 +33,7 @@
     },
     {
       "Index": 1,
-      "Comment": "ANORA - DISC 1_t01.mkv",
+      "Comment": "ANORA - DISC 1.mkv",
       "SourceFile": "00005.mpls",
       "SegmentMap": "9",
       "Duration": "2:18:55",
@@ -199,7 +200,33 @@
     },
     {
       "Index": 2,
-      "Comment": "ANORA - DISC 1_t02.mkv",
+      "Comment": "ANORA - DISC 1.mkv",
+      "SourceFile": "00001.m2ts",
+      "SegmentMap": "1",
+      "Duration": "0:00:10",
+      "Size": 68167680,
+      "DisplaySize": "65.0 MB",
+      "Tracks": [
+        {
+          "Index": 0,
+          "Name": "Mpeg4 AVC High@L4.1",
+          "Type": "Video",
+          "Resolution": "1920x1080",
+          "AspectRatio": "16:9"
+        },
+        {
+          "Index": 1,
+          "Name": "Dolby Digital",
+          "Type": "Audio",
+          "AudioType": "Surround 5.1",
+          "LanguageCode": "eng",
+          "Language": "English"
+        }
+      ]
+    },
+    {
+      "Index": 3,
+      "Comment": "ANORA - DISC 1.mkv",
       "SourceFile": "00003.m2ts",
       "SegmentMap": "3",
       "Duration": "0:02:47",
@@ -224,8 +251,8 @@
       ]
     },
     {
-      "Index": 3,
-      "Comment": "ANORA - DISC 1_t03.mkv",
+      "Index": 4,
+      "Comment": "ANORA - DISC 1.mkv",
       "SourceFile": "00007.m2ts",
       "SegmentMap": "7",
       "Duration": "0:02:47",
@@ -246,6 +273,50 @@
           "AudioType": "Surround 5.1",
           "LanguageCode": "eng",
           "Language": "English"
+        }
+      ]
+    },
+    {
+      "Index": 5,
+      "Comment": "ANORA - DISC 1.mkv",
+      "SourceFile": "00011.m2ts",
+      "SegmentMap": "11",
+      "Duration": "0:00:20",
+      "Size": 89358336,
+      "DisplaySize": "85.2 MB",
+      "Tracks": [
+        {
+          "Index": 0,
+          "Name": "Mpeg4 AVC High@L4.1",
+          "Type": "Video",
+          "Resolution": "1920x1080",
+          "AspectRatio": "16:9"
+        },
+        {
+          "Index": 1,
+          "Name": "Dolby Digital",
+          "Type": "Audio",
+          "AudioType": "Stereo",
+          "LanguageCode": "eng",
+          "Language": "English"
+        }
+      ]
+    },
+    {
+      "Index": 6,
+      "Comment": "ANORA - DISC 1.mkv",
+      "SourceFile": "00013.m2ts",
+      "SegmentMap": "13",
+      "Duration": "0:00:05",
+      "Size": 6580224,
+      "DisplaySize": "6.2 MB",
+      "Tracks": [
+        {
+          "Index": 0,
+          "Name": "Mpeg4 AVC High@L4.1",
+          "Type": "Video",
+          "Resolution": "1920x1080",
+          "AspectRatio": "16:9"
         }
       ]
     }
