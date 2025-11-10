@@ -68,6 +68,8 @@ if (Object.keys(filteredErrors).length !== 0) {
   let code = 0;
 
   for (const [file, es] of Object.entries(errors)) {
+    if (es.length === 0) continue;
+
     console.log(`::group::${file.replace(/^data\//, "")}`);
     for (const e of es) {
       if (e.type === "warning") {

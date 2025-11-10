@@ -163,6 +163,8 @@ const filteredErrors = Object.fromEntries(
 );
 if (Object.keys(filteredErrors).length !== 0) {
   for (const [file, es] of Object.entries(filteredErrors)) {
+    if (es.length === 0) continue;
+
     console.log(`::group::${file.replace(/^data\//, "")}`);
     for (const e of es) {
       console.log(
