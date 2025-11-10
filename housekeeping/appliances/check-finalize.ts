@@ -1,15 +1,30 @@
 // import rules from "../rules.json";
+import { fileInReleaseFolder, getModifiedReleases } from "./files";
 
-const errors: Record<string, { line?: number; content: string }[]> = {};
-const warnings: Record<string, { line?: number; content: string }[]> = {};
+const errors: Record<
+  string,
+  { line?: number; content: string; type?: "error" | "warning" }[]
+> = {};
+
+const releaseFolders = await getModifiedReleases();
+if (releaseFolders.length !== 0) {
+  console.log(
+    `Validating ${releaseFolders.length} applicable folders:\n- ${releaseFolders.join("\n- ")}\n`,
+  );
+}
 
 const files = new Bun.Glob("../data/**/disc*.json");
 for await (const file of files.scan()) {
+  if (
+    releaseFolders.length !== 0 &&
+    !fileInReleaseFolder(file, releaseFolders)
+  ) {
+    continue;
+  }
+
   const absFile = file.replace(/^\.\.\/data/, "data");
   errors[absFile] = [];
   const e = errors[absFile];
-  warnings[absFile] = [];
-  const w = warnings[absFile];
 
   // biome-ignore lint/style/noNonNullAssertion: the path will have at least one slash
   const filename = file.split("/").slice(-1)[0]!;
@@ -30,8 +45,9 @@ for await (const file of files.scan()) {
   }
 
   if (!content.ContentHash) {
-    w.push({
+    e.push({
       content: "Missing `ContentHash` in JSON file",
+      type: "warning",
     });
   }
 
@@ -43,35 +59,35 @@ for await (const file of files.scan()) {
   }
 }
 
-if (Object.keys(errors).length !== 0 || Object.keys(warnings).length !== 0) {
+const filteredErrors = Object.fromEntries(
+  Object.entries(errors)
+    .filter(([, v]) => v.length !== 0)
+    .map(([k, v]) => [k, v]),
+);
+if (Object.keys(filteredErrors).length !== 0) {
   let code = 0;
-  console.log(`::group::Warnings`);
-  for (const [file, ws] of Object.entries(warnings)) {
-    if (ws.length === 0) continue;
-    for (const e of ws) {
-      console.log(
-        `::warning file=${file}${
-          e.line === undefined ? "" : `,line=${e.line}`
-        }::${e.content}`,
-      );
-    }
-  }
-  console.log("::endgroup::");
-  console.log(`::group::Errors`);
-  for (const [file, es] of Object.entries(errors)) {
-    if (es.length === 0) continue;
-    // Exit with 1 if there is any error entry
-    code = 1;
 
+  for (const [file, es] of Object.entries(errors)) {
+    console.log(`::group::${file.replace(/^data\//, "")}`);
     for (const e of es) {
-      console.log(
-        `::error file=${file}${
-          e.line === undefined ? "" : `,line=${e.line}`
-        }::${e.content}`,
-      );
+      if (e.type === "warning") {
+        console.log(
+          `::warning file=${file}${
+            e.line === undefined ? "" : `,line=${e.line}`
+          }::${e.content}`,
+        );
+      } else {
+        // Exit with 1 if there is any error entry
+        code = 1;
+        console.log(
+          `::error file=${file}${
+            e.line === undefined ? "" : `,line=${e.line}`
+          }::${e.content}`,
+        );
+      }
     }
+    console.log("::endgroup::");
   }
-  console.log("::endgroup::");
   process.exit(code);
 } else {
   console.log("Everything looks good!");

@@ -1,4 +1,5 @@
 import rules from "../rules.json";
+import { fileInReleaseFolder, getModifiedReleases } from "./files";
 
 interface ChunkLine {
   index: number;
@@ -20,8 +21,22 @@ const ChunkTypes = [
 const INT_RE = /^\d+$/;
 const RANGE_RE = /^\d+(?:-\d+)?$/;
 
+const releaseFolders = await getModifiedReleases();
+if (releaseFolders.length !== 0) {
+  console.log(
+    `Validating ${releaseFolders.length} applicable folders:\n- ${releaseFolders.join("\n- ")}\n`,
+  );
+}
+
 const files = new Bun.Glob("../data/**/disc*-summary.txt");
 for await (const file of files.scan()) {
+  if (
+    releaseFolders.length !== 0 &&
+    !fileInReleaseFolder(file, releaseFolders)
+  ) {
+    continue;
+  }
+
   const absFile = file.replace(/^\.\.\/data/, "data");
   errors[absFile] = [];
   const e = errors[absFile];
@@ -141,9 +156,13 @@ for await (const file of files.scan()) {
   }
 }
 
-if (Object.keys(errors).length !== 0) {
-  for (const [file, es] of Object.entries(errors)) {
-    if (es.length === 0) continue;
+const filteredErrors = Object.fromEntries(
+  Object.entries(errors)
+    .filter(([, v]) => v.length !== 0)
+    .map(([k, v]) => [k, v]),
+);
+if (Object.keys(filteredErrors).length !== 0) {
+  for (const [file, es] of Object.entries(filteredErrors)) {
     console.log(`::group::${file.replace(/^data\//, "")}`);
     for (const e of es) {
       console.log(

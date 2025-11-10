@@ -4,6 +4,8 @@
   "private": true,
   "license": "MIT",
   "scripts": {
+    "lint": "biome check .",
+    "format": "biome format . --write",
     "summaries": "bun run appliances/check-summaries.ts",
     "finalize": "bun run appliances/check-finalize.ts"
   },
@@ -13,5 +15,8 @@
   },
   "peerDependencies": {
     "typescript": "^5"
+  },
+  "dependencies": {
+    "octokit": "^5.0.5"
   }
 }
