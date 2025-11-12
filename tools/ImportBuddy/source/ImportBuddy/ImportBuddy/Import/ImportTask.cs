@@ -190,7 +190,7 @@ public class ImportTask : IConsoleTask
 
         // Construct a default slug from the title year and disc format.
         //  If this slug already exists, it will be detected and handled at the "Create Release" conditional.
-        string defaultReleaseSlug = CreateSlug(data.DiscFormat, year);
+        string defaultReleaseSlug = ImportHelper.CreateSlug(data.DiscFormat, year);
 
         var releaseFolders = await this.fileSystem.Directory.GetDirectories(basePath, cancellationToken);
         bool hasReleases = releaseFolders.Any();
