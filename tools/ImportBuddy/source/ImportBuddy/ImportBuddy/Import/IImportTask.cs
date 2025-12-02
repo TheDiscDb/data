@@ -1,4 +1,6 @@
-﻿namespace ImportBuddy;
+﻿using TheDiscDb.Import;
+
+namespace ImportBuddy;
 
 public interface IImportTask
 {

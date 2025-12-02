@@ -12,6 +12,7 @@
         public const int PlaylistId = 16;
         public const int SegmentMapId = 26;
         public const int CommentId = 27;
+        public const int JavaCommentId = 49;
         public const int SourceTitleId = 24; // Used on DVD discs
 
         public int Index { get; set; }
@@ -22,6 +23,7 @@
         public string? Playlist { get; set; } //16
         public string? SegmentMap { get; set; } //26
         public string? Comment { get; set; } //27
+        public string? JavaComment { get; set; } //49
         public IList<Segment> Segments { get; set; } = new List<Segment>();
     }
 }

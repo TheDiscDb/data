@@ -1,0 +1,31 @@
+on:
+  # - push
+  - pull_request
+
+name: Verify file integrity
+jobs:
+  summaries:
+    name: Disc summaries
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Install bun
+        uses: oven-sh/setup-bun@v2
+      - name: Install dependencies
+        run: cd housekeeping && bun install
+      - name: Start appliance
+        run: cd housekeeping && bun run summaries
+
+  finalize:
+    name: Disc JSON files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Install bun
+        uses: oven-sh/setup-bun@v2
+      - name: Install dependencies
+        run: cd housekeeping && bun install
+      - name: Start appliance
+        run: cd housekeeping && bun run finalize
