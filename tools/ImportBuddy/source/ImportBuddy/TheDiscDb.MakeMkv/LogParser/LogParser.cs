@@ -59,6 +59,91 @@ public class LogParser
         }
     }
 
+    public static async Task CleanInPlace(string inputPath)
+    {
+        var lines = await File.ReadAllLinesAsync(inputPath);
+        var cleanedLines = CleanLogs(lines, out bool fileChanged);
+        if (fileChanged)
+        {
+            await File.WriteAllLinesAsync(inputPath, cleanedLines);
+        }
+    }
+
+    public static IEnumerable<string> CleanLogs(IEnumerable<string> lines, out bool fileChanged)
+    {
+        List<string> output = new();
+        fileChanged = false;
+        foreach (var originalLine in lines)
+        {
+            // Remove empty lines from the output
+            if (originalLine == string.Empty)
+            {
+                fileChanged = true;
+                continue;
+            }
+
+            string? line = null;
+            if (originalLine.StartsWith("MSG"))
+            {
+                var msgLine = MessageLogLine.Parse(originalLine);
+                var (toRedact, replacement) = msgLine.Code switch
+                {
+                    // The debug file path is usually in the user's home directory
+                    "1004" => (msgLine.Params[0], "***"),
+                    // The drive name can sometimes contain a serial number
+                    "2003" => (msgLine.Params[1], "***"),
+                    // The .MakeMKV folder is usually in the user's home directory
+                    "3338" => (msgLine.Params[1], "***"),
+                    // No other messages are known to contain sensitive information
+                    _ => (null, ""),
+                };
+
+                if (toRedact is not null)
+                {
+                    line = originalLine.Replace(toRedact, replacement);
+                }
+            }
+            else if (originalLine.StartsWith("DRV"))
+            {
+                // DRV:1,2,999,12,"BD-ROM HL-DT-ST BDDVDRW UH12NS30 1.03","42","E:"
+                // becomes
+                // DRV:1,2,999,12,"***","42","***"
+                var driveLine = DriveScanLogLine.Parse(originalLine);
+                if (!string.IsNullOrEmpty(driveLine.DriveName))
+                {
+                    // Always redact the drive name, since it could contain a serial number
+                    line = originalLine.Replace(driveLine.DriveName, "***");
+
+                    if (!string.IsNullOrEmpty(driveLine.DiscName))
+                    {
+                        line = line.Replace(driveLine.DiscName, "***");
+                    }
+
+                    // Always redact the drive letter or path
+                    if (!string.IsNullOrEmpty(driveLine.DriveLetter))
+                    {
+                        line = line.Replace(driveLine.DriveLetter, "***");
+                    }
+                }
+            }
+
+            if (line is null)
+            {
+                // This line wasn't modified, use the original line
+                line = originalLine;
+            }
+            else
+            {
+                // Something was changed, ensure the file is overwritten
+                fileChanged = true;
+            }
+
+            output.Add(line);
+        }
+
+        return output;
+    }
+
     public static DiscInfo Organize(string inputPath)
     {
         if (File.Exists(inputPath))
@@ -151,6 +236,9 @@ public class LogParser
                             break;
                         case Title.CommentId:
                             currentTrack.Comment = track.Message;
+                            break;
+                        case Title.JavaCommentId:
+                            currentTrack.JavaComment = track.Message;
                             break;
                         case Title.LengthId:
                             currentTrack.Length = track.Message;

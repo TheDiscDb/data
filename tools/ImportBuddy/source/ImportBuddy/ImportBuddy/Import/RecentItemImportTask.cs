@@ -2,6 +2,7 @@
 using Fantastic.TheMovieDb.Models;
 using Microsoft.Extensions.Options;
 using Spectre.Console;
+using TheDiscDb.Import;
 
 namespace ImportBuddy;
 
