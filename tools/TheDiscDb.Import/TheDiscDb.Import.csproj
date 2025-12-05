@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net9.0</TargetFramework>
+		<TargetFramework>net10.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
@@ -16,12 +16,12 @@
 	</PropertyGroup>
 	
 	<ItemGroup>
-		<PackageReference Include="Fantastic.TheMovieDb" Version="1.2.2" />
-		<PackageReference Include="TheDiscDb.MakeMkv" Version="2.0.0" />
+		<PackageReference Include="Fantastic.TheMovieDb" Version="2.1.0" />
 	</ItemGroup>
 	
 	<ItemGroup>
 	  <ProjectReference Include="..\ImportBuddy\source\ImportBuddy\TheDiscDb.Core\TheDiscDb.Core.csproj" />
+	  <ProjectReference Include="..\ImportBuddy\source\ImportBuddy\TheDiscDb.MakeMkv\TheDiscDb.MakeMkv.csproj" />
 	</ItemGroup>
 
 </Project>

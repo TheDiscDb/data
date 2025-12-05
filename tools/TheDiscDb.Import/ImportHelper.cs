@@ -10,6 +10,12 @@ using TheDiscDb.ImportModels;
 
 namespace TheDiscDb.Import;
 
+public struct DiscName
+{
+    public string Name;
+    public int Index;
+}
+
 public static class ImportHelper
 {
     public static string CreateSlug(string name, int year)
@@ -37,12 +43,6 @@ public static class ImportHelper
         {
             return title;
         }
-    }
-
-    public struct DiscName
-    {
-        public string Name;
-        public int Index;
     }
 
     public static async Task<DiscName> GetDiscName(this IFileSystem fileSystem, string path)
@@ -277,7 +277,7 @@ public static class DiscFileFinalizer
                     foreach (var track in item.AudioTrackNames)
                     {
                         var audioTracks = match.Tracks.Where(t => t.Type == "Audio");
-                        var foundTrack = audioTracks.ElementAtOrDefault(track.Index);
+                        var foundTrack = audioTracks.ElementAtOrDefault(track.Index - 1);
                         if (foundTrack != null)
                         {
                             foundTrack.Description = track.Name;
