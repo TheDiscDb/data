@@ -1,20 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Fantastic.FileSystem;
+﻿using Fantastic.FileSystem;
 using MakeMkv;
 using TheDiscDb.Imdb;
 using TheDiscDb.ImportModels;
 
 namespace TheDiscDb.Import;
 
+public struct DiscName
+{
+    public string Name;
+    public int Index;
+}
+
 public static class ImportHelper
 {
     public static string CreateSlug(string name, int year)
     {
-        if (year != default(int))
+        string yearAsString = year != default(int) ? year.ToString() : string.Empty;
+        return CreateSlug(name, yearAsString);
+    }
+
+    public static string CreateSlug(string name, string year)
+    {
+        if (!string.IsNullOrEmpty(year))
         {
             return string.Format("{0}-{1}", name.Slugify(), year);
         }
@@ -37,12 +44,6 @@ public static class ImportHelper
         {
             return title;
         }
-    }
-
-    public struct DiscName
-    {
-        public string Name;
-        public int Index;
     }
 
     public static async Task<DiscName> GetDiscName(this IFileSystem fileSystem, string path)
@@ -277,7 +278,7 @@ public static class DiscFileFinalizer
                     foreach (var track in item.AudioTrackNames)
                     {
                         var audioTracks = match.Tracks.Where(t => t.Type == "Audio");
-                        var foundTrack = audioTracks.ElementAtOrDefault(track.Index);
+                        var foundTrack = audioTracks.ElementAtOrDefault(track.Index - 1);
                         if (foundTrack != null)
                         {
                             foundTrack.Description = track.Name;
