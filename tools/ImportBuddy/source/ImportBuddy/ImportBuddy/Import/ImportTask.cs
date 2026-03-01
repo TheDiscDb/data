@@ -311,7 +311,7 @@ public class ImportTask : IConsoleTask
         }
         else if (data.DiscFormat.Equals("DVD", StringComparison.OrdinalIgnoreCase))
         {
-            resolution = "720p";
+            resolution = "DVD";
         }
 
         string formattedTitle = $"{folderName} [{resolution}].mkv";
