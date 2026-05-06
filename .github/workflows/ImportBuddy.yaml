@@ -23,8 +23,11 @@ jobs:
             os: windows-latest
             target: win-x64
           - kind: macOS
-            os: macos-latest
+            os: macos-26-intel
             target: osx-x64
+          - kind: macOS
+            os: macos-latest
+            target: osx-arm64
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout
