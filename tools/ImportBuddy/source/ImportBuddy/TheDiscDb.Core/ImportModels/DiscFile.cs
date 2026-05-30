@@ -15,6 +15,18 @@
         public ICollection<DiscFileItem> DeletedScenes { get; set; } = new HashSet<DiscFileItem>();
         public ICollection<DiscFileItem> Trailers { get; set; } = new HashSet<DiscFileItem>();
         public ICollection<DiscFileItem> MainMovies { get; set; } = new HashSet<DiscFileItem>();
+
+        // Sub-categories of Extra. Each is bucketed separately so the
+        // finalize step can preserve the granular Type when writing back to
+        // the disc file, while still being treated as Extras by anything
+        // that calls ItemTypeNames.IsExtra(...).
+        public ICollection<DiscFileItem> Others { get; set; } = new HashSet<DiscFileItem>();
+        public ICollection<DiscFileItem> Interviews { get; set; } = new HashSet<DiscFileItem>();
+        public ICollection<DiscFileItem> Featurettes { get; set; } = new HashSet<DiscFileItem>();
+        public ICollection<DiscFileItem> Scenes { get; set; } = new HashSet<DiscFileItem>();
+        public ICollection<DiscFileItem> Musics { get; set; } = new HashSet<DiscFileItem>();
+        public ICollection<DiscFileItem> Shorts { get; set; } = new HashSet<DiscFileItem>();
+
         public ICollection<DiscFileItem> Unknown { get; set; } = new HashSet<DiscFileItem>();
     }
 }

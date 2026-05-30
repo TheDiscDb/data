@@ -97,6 +97,30 @@
                 {
                     disc.MainMovies.Add(item);
                 }
+                else if (item.Type.Equals("Featurette", StringComparison.OrdinalIgnoreCase))
+                {
+                    disc.Featurettes.Add(item);
+                }
+                else if (item.Type.Equals("Interview", StringComparison.OrdinalIgnoreCase))
+                {
+                    disc.Interviews.Add(item);
+                }
+                else if (item.Type.Equals("Scene", StringComparison.OrdinalIgnoreCase))
+                {
+                    disc.Scenes.Add(item);
+                }
+                else if (item.Type.Equals("Music", StringComparison.OrdinalIgnoreCase))
+                {
+                    disc.Musics.Add(item);
+                }
+                else if (item.Type.Equals("Short", StringComparison.OrdinalIgnoreCase))
+                {
+                    disc.Shorts.Add(item);
+                }
+                else if (item.Type.Equals("Other", StringComparison.OrdinalIgnoreCase))
+                {
+                    disc.Others.Add(item);
+                }
                 else
                 {
                     disc.Unknown.Add(item);
