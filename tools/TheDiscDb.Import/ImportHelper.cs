@@ -239,6 +239,12 @@ public static class DiscFileFinalizer
         TryMapItems(discFile.DeletedScenes, disc, "DeletedScene");
         TryMapItems(discFile.Trailers, disc, "Trailer");
         TryMapItems(discFile.MainMovies, disc, "MainMovie");
+        TryMapItems(discFile.Featurettes, disc, "Featurette");
+        TryMapItems(discFile.Interviews, disc, "Interview");
+        TryMapItems(discFile.Scenes, disc, "Scene");
+        TryMapItems(discFile.Musics, disc, "Music");
+        TryMapItems(discFile.Shorts, disc, "Short");
+        TryMapItems(discFile.Others, disc, "Other");
     }
 
     private static void TryMapItems(ICollection<TheDiscDb.ImportModels.DiscFileItem> items, TheDiscDb.InputModels.Disc disc, string type)
