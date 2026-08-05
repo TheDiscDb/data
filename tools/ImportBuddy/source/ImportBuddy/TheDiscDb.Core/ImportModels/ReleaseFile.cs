@@ -18,5 +18,9 @@
         public string? ImageUrl { get; set; }
         public DateTimeOffset ReleaseDate { get; set; }
         public DateTimeOffset DateAdded { get; set; }
+        public ICollection<Contributor> Contributors { get; set; } = new HashSet<Contributor>();
+        public ICollection<string> Groups { get; set; } = new List<string>();
     }
+
+    public record Contributor(string Name, string Source);
 }

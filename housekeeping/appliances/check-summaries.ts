@@ -16,6 +16,12 @@ const ChunkTypes = [
   "Extra",
   "Trailer",
   "DeletedScene",
+  "Other",
+  "Interview",
+  "Featurette",
+  "Scene",
+  "Music",
+  "Short",
 ] as const;
 
 const INT_RE = /^\d+$/;

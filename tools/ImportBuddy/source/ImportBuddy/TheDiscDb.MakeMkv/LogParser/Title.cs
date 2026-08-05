@@ -1,6 +1,7 @@
 ﻿namespace MakeMkv
 {
     using System.Collections.Generic;
+    using System.Text.Json.Serialization;
 
     public class Title
     {
@@ -25,5 +26,19 @@
         public string? Comment { get; set; } //27
         public string? JavaComment { get; set; } //49
         public IList<Segment> Segments { get; set; } = new List<Segment>();
+
+        [JsonIgnore]
+        public TimeSpan LengthAsTimeSpan
+        {
+            get
+            {
+                if (TimeSpan.TryParse(this.Length, out var result))
+                {
+                    return result;
+                }
+
+                return TimeSpan.Zero;
+            }
+        }
     }
 }
