@@ -11,7 +11,7 @@ Use the supported website workflows instead:
 
 The complete disc-scanning flow currently requires Chrome or Edge. Broader
 browser support is tracked in
-[issue #177](https://github.com/TheDiscDb/data/issues/177).
+[TheDiscDb/web issue #61](https://github.com/TheDiscDb/web/issues/61).
 
 See the
 [retirement announcement](https://github.com/orgs/TheDiscDb/discussions/629)
