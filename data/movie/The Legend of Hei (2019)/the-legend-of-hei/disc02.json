@@ -1,0 +1,87 @@
+{
+  "Index": 2,
+  "Slug": "dvd",
+  "Name": "DVD",
+  "Format": "DVD",
+  "ContentHash": "1C457C66D78E50AAF0E734F2CD248945",
+  "Titles": [
+    {
+      "Index": 0,
+      "Comment": "A1_t00.mkv",
+      "SourceFile": "01",
+      "SegmentMap": "1,2",
+      "Duration": "0:00:10",
+      "Size": 8689664,
+      "DisplaySize": "8.2 MB",
+      "Tracks": [
+        {
+          "Index": 0,
+          "Name": "Mpeg2",
+          "Type": "Video",
+          "Resolution": "720x480",
+          "AspectRatio": "16:9"
+        }
+      ]
+    },
+    {
+      "Index": 1,
+      "Comment": "B1_t01.mkv",
+      "SourceFile": "02",
+      "SegmentMap": "1-13",
+      "Duration": "1:41:37",
+      "Size": 6924861440,
+      "DisplaySize": "6.4 GB",
+      "Item": {
+        "Title": "The Legend of Hei",
+        "Type": "MainMovie",
+        "Chapters": []
+      },
+      "Tracks": [
+        {
+          "Index": 0,
+          "Name": "Mpeg2",
+          "Type": "Video",
+          "Resolution": "720x480",
+          "AspectRatio": "16:9"
+        },
+        {
+          "Index": 1,
+          "Name": "Dolby Digital",
+          "Type": "Audio",
+          "AudioType": "Surround 5.1",
+          "LanguageCode": "chi",
+          "Language": "Chinese"
+        },
+        {
+          "Index": 2,
+          "Name": "Dolby Digital",
+          "Type": "Audio",
+          "AudioType": "Surround 5.1",
+          "LanguageCode": "eng",
+          "Language": "English"
+        },
+        {
+          "Index": 3,
+          "Name": "Dvd Subtitles",
+          "Type": "Subtitles",
+          "LanguageCode": "eng",
+          "Language": "English"
+        },
+        {
+          "Index": 4,
+          "Name": "Dvd Subtitles",
+          "Type": "Subtitles",
+          "LanguageCode": "eng",
+          "Language": "English"
+        },
+        {
+          "Index": 5,
+          "Name": "Dvd Subtitles",
+          "Type": "Subtitles",
+          "LanguageCode": "eng",
+          "Language": "English"
+        }
+      ]
+    }
+  ]
+}

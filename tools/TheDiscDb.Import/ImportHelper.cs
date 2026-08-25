@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Fantastic.FileSystem;
+﻿using Fantastic.FileSystem;
 using MakeMkv;
 using TheDiscDb.Imdb;
 using TheDiscDb.ImportModels;
@@ -20,7 +15,13 @@ public static class ImportHelper
 {
     public static string CreateSlug(string name, int year)
     {
-        if (year != default(int))
+        string yearAsString = year != default(int) ? year.ToString() : string.Empty;
+        return CreateSlug(name, yearAsString);
+    }
+
+    public static string CreateSlug(string name, string year)
+    {
+        if (!string.IsNullOrEmpty(year))
         {
             return string.Format("{0}-{1}", name.Slugify(), year);
         }
@@ -238,6 +239,12 @@ public static class DiscFileFinalizer
         TryMapItems(discFile.DeletedScenes, disc, "DeletedScene");
         TryMapItems(discFile.Trailers, disc, "Trailer");
         TryMapItems(discFile.MainMovies, disc, "MainMovie");
+        TryMapItems(discFile.Featurettes, disc, "Featurette");
+        TryMapItems(discFile.Interviews, disc, "Interview");
+        TryMapItems(discFile.Scenes, disc, "Scene");
+        TryMapItems(discFile.Musics, disc, "Music");
+        TryMapItems(discFile.Shorts, disc, "Short");
+        TryMapItems(discFile.Others, disc, "Other");
     }
 
     private static void TryMapItems(ICollection<TheDiscDb.ImportModels.DiscFileItem> items, TheDiscDb.InputModels.Disc disc, string type)

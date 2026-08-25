@@ -15,6 +15,13 @@ if (releaseFolders.length !== 0) {
 
 const files = new Bun.Glob("../data/**/disc*.json");
 for await (const file of files.scan()) {
+  // Placeholder discs (discNN.placeholder.json) represent a known-missing disc that has not
+  // been contributed yet. They have no logs, summary, or titles, so the finalize checks
+  // below do not apply.
+  if (file.endsWith(".placeholder.json")) {
+    continue;
+  }
+
   if (
     releaseFolders.length !== 0 &&
     !fileInReleaseFolder(file, releaseFolders)
