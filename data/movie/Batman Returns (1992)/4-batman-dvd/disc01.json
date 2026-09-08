@@ -1,13 +1,123 @@
 {
   "Index": 1,
-  "Format": "DVD",
   "Slug": "dvd-1-side-2",
   "Name": "dvd-1-side-2",
-  "ContentHash": "",
-  "Episodes": [],
-  "Extras": [],
-  "DeletedScenes": [],
-  "Trailers": [],
-  "MainMovies": [],
-  "Unknown": []
+  "Format": "DVD",
+  "Titles": [
+    {
+      "Index": 0,
+      "Comment": "A1_t00.mkv",
+      "SourceFile": "01",
+      "SegmentMap": "1-39",
+      "Duration": "2:06:07",
+      "Size": 4456458240,
+      "DisplaySize": "4.1 GB",
+      "Item": {
+        "Title": "Batman Returns",
+        "Type": "MainMovie",
+        "Chapters": []
+      },
+      "Tracks": [
+        {
+          "Index": 0,
+          "Name": "Mpeg2",
+          "Type": "Video",
+          "Resolution": "720x480",
+          "AspectRatio": "16:9"
+        },
+        {
+          "Index": 1,
+          "Name": "Dolby Digital",
+          "Type": "Audio",
+          "AudioType": "Surround 5.1",
+          "LanguageCode": "eng",
+          "Language": "English"
+        },
+        {
+          "Index": 2,
+          "Name": "Dolby Digital",
+          "Type": "Audio",
+          "AudioType": "Stereo",
+          "LanguageCode": "fre",
+          "Language": "French"
+        },
+        {
+          "Index": 3,
+          "Name": "Dvd Subtitles",
+          "Type": "Subtitles",
+          "LanguageCode": "eng",
+          "Language": "English"
+        },
+        {
+          "Index": 4,
+          "Name": "Dvd Subtitles",
+          "Type": "Subtitles",
+          "LanguageCode": "fre",
+          "Language": "French"
+        },
+        {
+          "Index": 5,
+          "Name": "Dvd Subtitles",
+          "Type": "Subtitles",
+          "LanguageCode": "spa",
+          "Language": "Spanish"
+        },
+        {
+          "Index": 6,
+          "Name": "Closed Captions",
+          "Type": "Subtitles",
+          "LanguageCode": "eng",
+          "Language": "English"
+        }
+      ]
+    },
+    {
+      "Index": 1,
+      "Comment": "A1_t01.mkv",
+      "SourceFile": "02",
+      "SegmentMap": "1",
+      "Duration": "0:00:12",
+      "Size": 8728576,
+      "DisplaySize": "8.3 MB",
+      "Tracks": [
+        {
+          "Index": 0,
+          "Name": "Mpeg2",
+          "Type": "Video",
+          "Resolution": "720x480",
+          "AspectRatio": "16:9"
+        },
+        {
+          "Index": 1,
+          "Name": "Dolby Digital",
+          "Type": "Audio",
+          "AudioType": "Surround 5.1",
+          "LanguageCode": "eng",
+          "Language": "English"
+        },
+        {
+          "Index": 2,
+          "Name": "Dolby Digital",
+          "Type": "Audio",
+          "AudioType": "Stereo",
+          "LanguageCode": "fre",
+          "Language": "French"
+        },
+        {
+          "Index": 3,
+          "Name": "Dvd Subtitles",
+          "Type": "Subtitles",
+          "LanguageCode": "eng",
+          "Language": "English"
+        },
+        {
+          "Index": 4,
+          "Name": "Closed Captions",
+          "Type": "Subtitles",
+          "LanguageCode": "eng",
+          "Language": "English"
+        }
+      ]
+    }
+  ]
 }
