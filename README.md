@@ -13,9 +13,11 @@ The complete disc-scanning flow currently requires Chrome or Edge.
 
 ## ImportBuddy retirement
 
-ImportBuddy is deprecated and unsupported. Its downloads and source will be
-removed on September 13, 2026.
+ImportBuddy has been retired. Its downloads, version tags, source code, and
+publishing workflow have been removed.
 
 See the [retirement announcement](https://github.com/orgs/TheDiscDb/discussions/629)
-for details. This retirement does not change the repository's pull-request
-permissions; any later contribution-policy change will be announced separately.
+and [retirement guidance](docs/importbuddy-retired.md) for details. The archived
+source remains available from the `archive/importbuddy-final` tag. This
+retirement does not change the repository's pull-request permissions; any later
+contribution-policy change will be announced separately.

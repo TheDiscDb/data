@@ -1,8 +1,13 @@
 # ImportBuddy retirement
 
-ImportBuddy is deprecated and unsupported. Its GitHub releases, associated
-version tags, source code, and publishing workflow will be removed on
-September 13, 2026.
+ImportBuddy has been retired and is unsupported. Its GitHub releases,
+associated version tags, source code, and publishing workflow have been
+removed.
+
+For historical reference, the final source is preserved in the
+[`archive/importbuddy-final`](https://github.com/TheDiscDb/data/tree/archive/importbuddy-final/tools/ImportBuddy)
+tag. Do not rely on the archived application for current contributions because
+it does not implement the website's current validation and data model.
 
 Use the supported website workflows instead:
 
