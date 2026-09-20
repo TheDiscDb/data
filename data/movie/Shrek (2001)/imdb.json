@@ -1,24 +1,83 @@
 {
+  "Id": "tt0126029",
   "Title": "Shrek",
+  "FullTitle": "Shrek (2001)",
+  "Type": "Movie",
   "Year": "2001",
-  "ReleaseDate": "2001-5-18",
+  "Image": "https://m.media-amazon.com/images/M/MV5BN2FkMTRkNTUtYTI0NC00ZjI4LWI5MzUtMDFmOGY0NmU2OGY1XkEyXkFqcGc@._V1_.jpg",
+  "ReleaseDate": "2001-05-18",
   "RuntimeMins": "90",
-  "RuntimeStr": "1h 30mins",
-  "Plot": "It ain\u0027t easy bein\u0027 green -- especially if you\u0027re a likable (albeit smelly) ogre named Shrek. On a mission to retrieve a gorgeous princess from the clutches of a fire-breathing dragon, Shrek teams up with an unlikely compatriot -- a wisecracking donkey.",
+  "RuntimeStr": "1h 30min",
+  "Plot": "A mean lord exiles fairytale creatures to the swamp of a grumpy ogre, who must go on a quest and rescue a princess for the lord in order to get his land back.",
   "PlotLocalIsRtl": false,
-  "Directors": "Vicky Jenson, Andrew Adamson",
-  "DirectorList": [],
-  "Writers": "Terry Rossio, Roger S.H. Schulman",
-  "WriterList": [],
+  "Directors": "Andrew Adamson, Vicky Jenson",
+  "DirectorList": [
+    {
+      "Id": "nm0011470",
+      "Name": "Andrew Adamson"
+    },
+    {
+      "Id": "nm0421776",
+      "Name": "Vicky Jenson"
+    }
+  ],
+  "Writers": "William Steig, Ted Elliott, Terry Rossio",
+  "WriterList": [
+    {
+      "Id": "nm0825308",
+      "Name": "William Steig"
+    },
+    {
+      "Id": "nm0254645",
+      "Name": "Ted Elliott"
+    },
+    {
+      "Id": "nm0744429",
+      "Name": "Terry Rossio"
+    }
+  ],
   "Stars": "Mike Myers, Eddie Murphy, Cameron Diaz",
   "StarList": [
     {
+      "Id": "nm0000196",
+      "Name": "Mike Myers"
+    },
+    {
       "Id": "nm0000552",
       "Name": "Eddie Murphy"
+    },
+    {
+      "Id": "nm0000139",
+      "Name": "Cameron Diaz"
     }
   ],
-  "ActorList": [],
+  "ActorList": [
+    {
+      "Id": "nm0000196",
+      "Image": "",
+      "Name": "Mike Myers",
+      "AsCharacter": ""
+    },
+    {
+      "Id": "nm0000552",
+      "Image": "",
+      "Name": "Eddie Murphy",
+      "AsCharacter": ""
+    },
+    {
+      "Id": "nm0000139",
+      "Image": "",
+      "Name": "Cameron Diaz",
+      "AsCharacter": ""
+    }
+  ],
   "FullCast": {
+    "IMDbId": "tt0126029",
+    "Title": "Shrek",
+    "FullTitle": "Shrek (2001)",
+    "Type": "Movie",
+    "Year": "2001",
+    "ErrorMessage": "",
     "Directors": {
       "Job": "Director",
       "Items": []
@@ -28,45 +87,60 @@
       "Items": []
     },
     "Actors": [],
-    "Others": [],
-    "ErrorMessage": ""
+    "Others": []
   },
-  "Genres": "Adventure, Animation",
+  "Genres": "Animation, Adventure, Comedy",
   "GenreList": [
+    {
+      "Key": "Animation",
+      "Value": "Animation"
+    },
     {
       "Key": "Adventure",
       "Value": "Adventure"
     },
     {
-      "Key": "Animation",
-      "Value": "Animation"
+      "Key": "Comedy",
+      "Value": "Comedy"
     }
   ],
-  "Companies": "DreamWorks Pictures",
+  "Companies": "Production companies, DreamWorks Pictures, DreamWorks Animation, Pacific Data Images (PDI)",
   "CompanyList": [
+    {
+      "Name": "Production companies"
+    },
     {
       "Id": "co0819670",
       "Name": "DreamWorks Pictures"
+    },
+    {
+      "Id": "co0129164",
+      "Name": "DreamWorks Animation"
+    },
+    {
+      "Id": "co0069464",
+      "Name": "Pacific Data Images (PDI)"
     }
   ],
-  "Countries": "",
+  "Countries": "United States",
   "CountryList": [
     {
-      "Key": "",
-      "Value": ""
+      "Key": "United States",
+      "Value": "United States"
     }
   ],
-  "Languages": "",
-  "LanguageList": [],
+  "Languages": "English",
+  "LanguageList": [
+    {
+      "Key": "English",
+      "Value": "English"
+    }
+  ],
   "ContentRating": "PG",
-  "Ratings": {
-    "IMDb": "",
-    "Metacritic": "",
-    "TheMovieDb": "",
-    "RottenTomatoes": "",
-    "FilmAffinity": "",
-    "ErrorMessage": ""
-  },
+  "IMDbRating": "7.9",
+  "IMDbRatingVotes": "808685",
+  "MetacriticRating": "84",
+  "Ratings": {},
   "Wikipedia": {
     "PlotShort": {
       "PlainText": "",
@@ -75,28 +149,29 @@
     "PlotFull": {
       "PlainText": "",
       "Html": ""
-    },
-    "ErrorMessage": ""
+    }
   },
   "Posters": {
     "Posters": [],
-    "Backdrops": [],
-    "ErrorMessage": ""
+    "Backdrops": []
   },
   "Images": {
-    "Items": [],
-    "ErrorMessage": ""
+    "Items": []
   },
+  "Trailer": {},
   "BoxOffice": {
     "Budget": "",
     "OpeningWeekendUSA": "",
     "GrossUSA": "",
     "CumulativeWorldwideGross": ""
   },
-  "Tagline": "The greatest fairy tale never told.",
-  "Keywords": "FromPlex",
+  "Keywords": "onion,swamp,donkey,fairy tale,princess",
   "KeywordList": [
-    "FromPlex"
+    "onion",
+    "swamp",
+    "donkey",
+    "fairy tale",
+    "princess"
   ],
   "Similars": [],
   "TvSeriesInfo": {
@@ -105,6 +180,5 @@
     "CreatorList": [],
     "Seasons": []
   },
-  "TvEpisodeInfo": {},
-  "ErrorMessage": ""
+  "TvEpisodeInfo": {}
 }

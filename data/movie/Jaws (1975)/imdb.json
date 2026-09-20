@@ -1,10 +1,14 @@
 {
+  "Id": "tt0073195",
   "Title": "Jaws",
+  "FullTitle": "Jaws (1975)",
+  "Type": "Movie",
   "Year": "1975",
-  "ReleaseDate": "1975-6-20",
+  "Image": "https://m.media-amazon.com/images/M/MV5BYjViNDQzNmUtYzkxZi00NTk5LTljMmItYjJlZmZkODIxNjU1XkEyXkFqcGc@._V1_.jpg",
+  "ReleaseDate": "1975-06-20",
   "RuntimeMins": "124",
-  "RuntimeStr": "2h 4mins",
-  "Plot": "When the seaside community of Amity finds itself under attack by a dangerous great white shark, the town\u0027s chief of police, a young marine biologist, and a grizzled hunter embark on a desperate quest to destroy the beast before it strikes again.",
+  "RuntimeStr": "2h 4min",
+  "Plot": "When a massive killer shark unleashes chaos on a beach community off Long Island, it\u0026apos;s up to the local police chief, a marine biologist, and an old seafarer to hunt the beast down.",
   "PlotLocalIsRtl": false,
   "Directors": "Steven Spielberg",
   "DirectorList": [
@@ -14,11 +18,58 @@
     }
   ],
   "Writers": "Peter Benchley, Carl Gottlieb",
-  "WriterList": [],
+  "WriterList": [
+    {
+      "Id": "nm0001940",
+      "Name": "Peter Benchley"
+    },
+    {
+      "Id": "nm0331956",
+      "Name": "Carl Gottlieb"
+    }
+  ],
   "Stars": "Roy Scheider, Robert Shaw, Richard Dreyfuss",
-  "StarList": [],
-  "ActorList": [],
+  "StarList": [
+    {
+      "Id": "nm0001702",
+      "Name": "Roy Scheider"
+    },
+    {
+      "Id": "nm0001727",
+      "Name": "Robert Shaw"
+    },
+    {
+      "Id": "nm0000377",
+      "Name": "Richard Dreyfuss"
+    }
+  ],
+  "ActorList": [
+    {
+      "Id": "nm0001702",
+      "Image": "",
+      "Name": "Roy Scheider",
+      "AsCharacter": ""
+    },
+    {
+      "Id": "nm0001727",
+      "Image": "",
+      "Name": "Robert Shaw",
+      "AsCharacter": ""
+    },
+    {
+      "Id": "nm0000377",
+      "Image": "",
+      "Name": "Richard Dreyfuss",
+      "AsCharacter": ""
+    }
+  ],
   "FullCast": {
+    "IMDbId": "tt0073195",
+    "Title": "Jaws",
+    "FullTitle": "Jaws (1975)",
+    "Type": "Movie",
+    "Year": "1975",
+    "ErrorMessage": "",
     "Directors": {
       "Job": "Director",
       "Items": []
@@ -28,40 +79,56 @@
       "Items": []
     },
     "Actors": [],
-    "Others": [],
-    "ErrorMessage": ""
+    "Others": []
   },
-  "Genres": "Thriller, Horror",
+  "Genres": "Adventure, Drama, Horror",
   "GenreList": [
     {
-      "Key": "Thriller",
-      "Value": "Thriller"
+      "Key": "Adventure",
+      "Value": "Adventure"
+    },
+    {
+      "Key": "Drama",
+      "Value": "Drama"
     },
     {
       "Key": "Horror",
       "Value": "Horror"
     }
   ],
-  "Companies": "Zanuck/Brown Productions",
-  "CompanyList": [],
-  "Countries": "",
-  "CountryList": [
+  "Companies": "Production companies, Zanuck/Brown Productions, Universal Pictures",
+  "CompanyList": [
     {
-      "Key": "",
-      "Value": ""
+      "Name": "Production companies"
+    },
+    {
+      "Id": "co0019166",
+      "Name": "Zanuck/Brown Productions"
+    },
+    {
+      "Id": "co0005073",
+      "Name": "Universal Pictures"
     }
   ],
-  "Languages": "",
-  "LanguageList": [],
+  "Countries": "United States",
+  "CountryList": [
+    {
+      "Key": "United States",
+      "Value": "United States"
+    }
+  ],
+  "Languages": "English",
+  "LanguageList": [
+    {
+      "Key": "English",
+      "Value": "English"
+    }
+  ],
   "ContentRating": "PG",
-  "Ratings": {
-    "IMDb": "",
-    "Metacritic": "",
-    "TheMovieDb": "",
-    "RottenTomatoes": "",
-    "FilmAffinity": "",
-    "ErrorMessage": ""
-  },
+  "IMDbRating": "8.1",
+  "IMDbRatingVotes": "735487",
+  "MetacriticRating": "87",
+  "Ratings": {},
   "Wikipedia": {
     "PlotShort": {
       "PlainText": "",
@@ -70,28 +137,29 @@
     "PlotFull": {
       "PlainText": "",
       "Html": ""
-    },
-    "ErrorMessage": ""
+    }
   },
   "Posters": {
     "Posters": [],
-    "Backdrops": [],
-    "ErrorMessage": ""
+    "Backdrops": []
   },
   "Images": {
-    "Items": [],
-    "ErrorMessage": ""
+    "Items": []
   },
+  "Trailer": {},
   "BoxOffice": {
     "Budget": "",
     "OpeningWeekendUSA": "",
     "GrossUSA": "",
     "CumulativeWorldwideGross": ""
   },
-  "Tagline": "The terrifying motion picture from the terrifying No.1 best seller.",
-  "Keywords": "FromPlex",
+  "Keywords": "shark,great white shark,shark attack,beach,fourth of july",
   "KeywordList": [
-    "FromPlex"
+    "shark",
+    "great white shark",
+    "shark attack",
+    "beach",
+    "fourth of july"
   ],
   "Similars": [],
   "TvSeriesInfo": {
@@ -100,6 +168,5 @@
     "CreatorList": [],
     "Seasons": []
   },
-  "TvEpisodeInfo": {},
-  "ErrorMessage": ""
+  "TvEpisodeInfo": {}
 }
