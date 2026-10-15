@@ -1,0 +1,635 @@
+{
+  "$schema": "https://schemas.thediscdb.com/optical-disc-manifest/v1/optical-disc-manifest.schema.json",
+  "schemaVersion": 1,
+  "producer": {
+    "name": "thediscdb",
+    "version": "1.0.0\u002B6162748be0d53dd868b7807a909a16deb651bb06",
+    "uri": "https://thediscdb.com/"
+  },
+  "disc": {
+    "format": "dvd",
+    "identifiers": [
+      {
+        "kind": "dvd-disc-id",
+        "value": "C3FBE42B359C2EF885D8B42115ADD91B"
+      },
+      {
+        "kind": "thediscdb-content-hash",
+        "value": "132B9B641585C3765154CA365EB2EE48"
+      }
+    ],
+    "files": [
+      {
+        "path": "VIDEO_TS/VIDEO_TS.BUP",
+        "sizeBytes": 18432
+      },
+      {
+        "path": "VIDEO_TS/VIDEO_TS.IFO",
+        "sizeBytes": 18432
+      },
+      {
+        "path": "VIDEO_TS/VIDEO_TS.VOB",
+        "sizeBytes": 116736
+      },
+      {
+        "path": "VIDEO_TS/VTS_01_0.BUP",
+        "sizeBytes": 49152
+      },
+      {
+        "path": "VIDEO_TS/VTS_01_0.IFO",
+        "sizeBytes": 49152
+      },
+      {
+        "path": "VIDEO_TS/VTS_01_0.VOB",
+        "sizeBytes": 4495360
+      },
+      {
+        "path": "VIDEO_TS/VTS_01_1.VOB",
+        "sizeBytes": 1073565696
+      },
+      {
+        "path": "VIDEO_TS/VTS_01_2.VOB",
+        "sizeBytes": 246607872
+      },
+      {
+        "path": "VIDEO_TS/VTS_02_0.BUP",
+        "sizeBytes": 45056
+      },
+      {
+        "path": "VIDEO_TS/VTS_02_0.IFO",
+        "sizeBytes": 45056
+      },
+      {
+        "path": "VIDEO_TS/VTS_02_0.VOB",
+        "sizeBytes": 249856
+      },
+      {
+        "path": "VIDEO_TS/VTS_02_1.VOB",
+        "sizeBytes": 1073565696
+      },
+      {
+        "path": "VIDEO_TS/VTS_02_2.VOB",
+        "sizeBytes": 244320256
+      },
+      {
+        "path": "VIDEO_TS/VTS_03_0.BUP",
+        "sizeBytes": 43008
+      },
+      {
+        "path": "VIDEO_TS/VTS_03_0.IFO",
+        "sizeBytes": 43008
+      },
+      {
+        "path": "VIDEO_TS/VTS_03_0.VOB",
+        "sizeBytes": 116736
+      },
+      {
+        "path": "VIDEO_TS/VTS_03_1.VOB",
+        "sizeBytes": 1073565696
+      },
+      {
+        "path": "VIDEO_TS/VTS_03_2.VOB",
+        "sizeBytes": 242612224
+      },
+      {
+        "path": "VIDEO_TS/VTS_04_0.BUP",
+        "sizeBytes": 43008
+      },
+      {
+        "path": "VIDEO_TS/VTS_04_0.IFO",
+        "sizeBytes": 43008
+      },
+      {
+        "path": "VIDEO_TS/VTS_04_0.VOB",
+        "sizeBytes": 116736
+      },
+      {
+        "path": "VIDEO_TS/VTS_04_1.VOB",
+        "sizeBytes": 1073565696
+      },
+      {
+        "path": "VIDEO_TS/VTS_04_2.VOB",
+        "sizeBytes": 245919744
+      },
+      {
+        "path": "VIDEO_TS/VTS_05_0.BUP",
+        "sizeBytes": 43008
+      },
+      {
+        "path": "VIDEO_TS/VTS_05_0.IFO",
+        "sizeBytes": 43008
+      },
+      {
+        "path": "VIDEO_TS/VTS_05_0.VOB",
+        "sizeBytes": 116736
+      },
+      {
+        "path": "VIDEO_TS/VTS_05_1.VOB",
+        "sizeBytes": 1073565696
+      },
+      {
+        "path": "VIDEO_TS/VTS_05_2.VOB",
+        "sizeBytes": 243834880
+      },
+      {
+        "path": "VIDEO_TS/VTS_06_0.BUP",
+        "sizeBytes": 43008
+      },
+      {
+        "path": "VIDEO_TS/VTS_06_0.IFO",
+        "sizeBytes": 43008
+      },
+      {
+        "path": "VIDEO_TS/VTS_06_0.VOB",
+        "sizeBytes": 116736
+      },
+      {
+        "path": "VIDEO_TS/VTS_06_1.VOB",
+        "sizeBytes": 1073565696
+      },
+      {
+        "path": "VIDEO_TS/VTS_06_2.VOB",
+        "sizeBytes": 245796864
+      }
+    ],
+    "titles": [
+      {
+        "source": {
+          "titleSet": 1,
+          "title": 1,
+          "titleSetTitle": 1
+        },
+        "durationSeconds": 2682.369036,
+        "sizeBytes": 1320173568,
+        "chapters": [
+          {
+            "startSeconds": 0,
+            "durationSeconds": 219.767434
+          },
+          {
+            "startSeconds": 219.767434,
+            "durationSeconds": 865.033367
+          },
+          {
+            "startSeconds": 1084.800801,
+            "durationSeconds": 1563.3003
+          },
+          {
+            "startSeconds": 2648.101101,
+            "durationSeconds": 33.767434
+          },
+          {
+            "startSeconds": 2681.868535,
+            "durationSeconds": 0.500501
+          }
+        ],
+        "segments": [
+          {
+            "clip": "1.1",
+            "startSeconds": 0,
+            "durationSeconds": 219.767434,
+            "cell": 1
+          },
+          {
+            "clip": "1.2",
+            "startSeconds": 219.767434,
+            "durationSeconds": 865.033367,
+            "cell": 2
+          },
+          {
+            "clip": "1.3",
+            "startSeconds": 1084.800801,
+            "durationSeconds": 1563.3003,
+            "cell": 3
+          },
+          {
+            "clip": "1.4",
+            "startSeconds": 2648.101101,
+            "durationSeconds": 33.767434,
+            "cell": 4
+          },
+          {
+            "clip": "1.5",
+            "startSeconds": 2681.868535,
+            "durationSeconds": 0.500501,
+            "cell": 5
+          }
+        ],
+        "streams": [
+          {
+            "type": "video",
+            "codec": "MPEG-2",
+            "category": "video",
+            "resolution": "720x480",
+            "aspectRatio": "4:3",
+            "frameRate": 29.97
+          },
+          {
+            "type": "audio",
+            "codec": "AC-3",
+            "category": "audio",
+            "audioLayout": "stereo"
+          }
+        ]
+      },
+      {
+        "source": {
+          "titleSet": 2,
+          "title": 2,
+          "titleSetTitle": 1
+        },
+        "durationSeconds": 2681.368035,
+        "sizeBytes": 1317885952,
+        "chapters": [
+          {
+            "startSeconds": 0,
+            "durationSeconds": 255.2002
+          },
+          {
+            "startSeconds": 255.2002,
+            "durationSeconds": 949.133467
+          },
+          {
+            "startSeconds": 1204.333667,
+            "durationSeconds": 1443.133467
+          },
+          {
+            "startSeconds": 2647.467134,
+            "durationSeconds": 33.4004
+          },
+          {
+            "startSeconds": 2680.867534,
+            "durationSeconds": 0.500501
+          }
+        ],
+        "segments": [
+          {
+            "clip": "1.1",
+            "startSeconds": 0,
+            "durationSeconds": 255.2002,
+            "cell": 1
+          },
+          {
+            "clip": "1.2",
+            "startSeconds": 255.2002,
+            "durationSeconds": 949.133467,
+            "cell": 2
+          },
+          {
+            "clip": "1.3",
+            "startSeconds": 1204.333667,
+            "durationSeconds": 1443.133467,
+            "cell": 3
+          },
+          {
+            "clip": "1.4",
+            "startSeconds": 2647.467134,
+            "durationSeconds": 33.4004,
+            "cell": 4
+          },
+          {
+            "clip": "1.5",
+            "startSeconds": 2680.867534,
+            "durationSeconds": 0.500501,
+            "cell": 5
+          }
+        ],
+        "streams": [
+          {
+            "type": "video",
+            "codec": "MPEG-2",
+            "category": "video",
+            "resolution": "720x480",
+            "aspectRatio": "4:3",
+            "frameRate": 29.97
+          },
+          {
+            "type": "audio",
+            "codec": "AC-3",
+            "category": "audio",
+            "audioLayout": "stereo"
+          }
+        ]
+      },
+      {
+        "source": {
+          "titleSet": 3,
+          "title": 3,
+          "titleSetTitle": 1
+        },
+        "durationSeconds": 2681.369036,
+        "sizeBytes": 1316177920,
+        "chapters": [
+          {
+            "startSeconds": 0,
+            "durationSeconds": 216.4004
+          },
+          {
+            "startSeconds": 216.4004,
+            "durationSeconds": 1259.700701
+          },
+          {
+            "startSeconds": 1476.101101,
+            "durationSeconds": 1170.3003
+          },
+          {
+            "startSeconds": 2646.401401,
+            "durationSeconds": 34.467134
+          },
+          {
+            "startSeconds": 2680.868535,
+            "durationSeconds": 0.500501
+          }
+        ],
+        "segments": [
+          {
+            "clip": "1.1",
+            "startSeconds": 0,
+            "durationSeconds": 216.4004,
+            "cell": 1
+          },
+          {
+            "clip": "1.2",
+            "startSeconds": 216.4004,
+            "durationSeconds": 1259.700701,
+            "cell": 2
+          },
+          {
+            "clip": "1.3",
+            "startSeconds": 1476.101101,
+            "durationSeconds": 1170.3003,
+            "cell": 3
+          },
+          {
+            "clip": "1.4",
+            "startSeconds": 2646.401401,
+            "durationSeconds": 34.467134,
+            "cell": 4
+          },
+          {
+            "clip": "1.5",
+            "startSeconds": 2680.868535,
+            "durationSeconds": 0.500501,
+            "cell": 5
+          }
+        ],
+        "streams": [
+          {
+            "type": "video",
+            "codec": "MPEG-2",
+            "category": "video",
+            "resolution": "720x480",
+            "aspectRatio": "4:3",
+            "frameRate": 29.97
+          },
+          {
+            "type": "audio",
+            "codec": "AC-3",
+            "category": "audio",
+            "audioLayout": "stereo"
+          }
+        ]
+      },
+      {
+        "source": {
+          "titleSet": 4,
+          "title": 4,
+          "titleSetTitle": 1
+        },
+        "durationSeconds": 2680.368035,
+        "sizeBytes": 1319485440,
+        "chapters": [
+          {
+            "startSeconds": 0,
+            "durationSeconds": 333.433767
+          },
+          {
+            "startSeconds": 333.433767,
+            "durationSeconds": 1236.033367
+          },
+          {
+            "startSeconds": 1569.467134,
+            "durationSeconds": 1076
+          },
+          {
+            "startSeconds": 2645.467134,
+            "durationSeconds": 34.4004
+          },
+          {
+            "startSeconds": 2679.867534,
+            "durationSeconds": 0.500501
+          }
+        ],
+        "segments": [
+          {
+            "clip": "1.1",
+            "startSeconds": 0,
+            "durationSeconds": 333.433767,
+            "cell": 1
+          },
+          {
+            "clip": "1.2",
+            "startSeconds": 333.433767,
+            "durationSeconds": 1236.033367,
+            "cell": 2
+          },
+          {
+            "clip": "1.3",
+            "startSeconds": 1569.467134,
+            "durationSeconds": 1076,
+            "cell": 3
+          },
+          {
+            "clip": "1.4",
+            "startSeconds": 2645.467134,
+            "durationSeconds": 34.4004,
+            "cell": 4
+          },
+          {
+            "clip": "1.5",
+            "startSeconds": 2679.867534,
+            "durationSeconds": 0.500501,
+            "cell": 5
+          }
+        ],
+        "streams": [
+          {
+            "type": "video",
+            "codec": "MPEG-2",
+            "category": "video",
+            "resolution": "720x480",
+            "aspectRatio": "4:3",
+            "frameRate": 29.97
+          },
+          {
+            "type": "audio",
+            "codec": "AC-3",
+            "category": "audio",
+            "audioLayout": "stereo"
+          }
+        ]
+      },
+      {
+        "source": {
+          "titleSet": 5,
+          "title": 5,
+          "titleSetTitle": 1
+        },
+        "durationSeconds": 2680.369036,
+        "sizeBytes": 1317400576,
+        "chapters": [
+          {
+            "startSeconds": 0,
+            "durationSeconds": 388.4004
+          },
+          {
+            "startSeconds": 388.4004,
+            "durationSeconds": 1626.600601
+          },
+          {
+            "startSeconds": 2015.001001,
+            "durationSeconds": 631.3003
+          },
+          {
+            "startSeconds": 2646.301301,
+            "durationSeconds": 33.567234
+          },
+          {
+            "startSeconds": 2679.868535,
+            "durationSeconds": 0.500501
+          }
+        ],
+        "segments": [
+          {
+            "clip": "1.1",
+            "startSeconds": 0,
+            "durationSeconds": 388.4004,
+            "cell": 1
+          },
+          {
+            "clip": "1.2",
+            "startSeconds": 388.4004,
+            "durationSeconds": 1626.600601,
+            "cell": 2
+          },
+          {
+            "clip": "1.3",
+            "startSeconds": 2015.001001,
+            "durationSeconds": 631.3003,
+            "cell": 3
+          },
+          {
+            "clip": "1.4",
+            "startSeconds": 2646.301301,
+            "durationSeconds": 33.567234,
+            "cell": 4
+          },
+          {
+            "clip": "1.5",
+            "startSeconds": 2679.868535,
+            "durationSeconds": 0.500501,
+            "cell": 5
+          }
+        ],
+        "streams": [
+          {
+            "type": "video",
+            "codec": "MPEG-2",
+            "category": "video",
+            "resolution": "720x480",
+            "aspectRatio": "4:3",
+            "frameRate": 29.97
+          },
+          {
+            "type": "audio",
+            "codec": "AC-3",
+            "category": "audio",
+            "audioLayout": "stereo"
+          }
+        ]
+      },
+      {
+        "source": {
+          "titleSet": 6,
+          "title": 6,
+          "titleSetTitle": 1
+        },
+        "durationSeconds": 2681.369036,
+        "sizeBytes": 1319362560,
+        "chapters": [
+          {
+            "startSeconds": 0,
+            "durationSeconds": 252.600601
+          },
+          {
+            "startSeconds": 252.600601,
+            "durationSeconds": 1107.333667
+          },
+          {
+            "startSeconds": 1359.934268,
+            "durationSeconds": 1286.767434
+          },
+          {
+            "startSeconds": 2646.701702,
+            "durationSeconds": 34.166834
+          },
+          {
+            "startSeconds": 2680.868535,
+            "durationSeconds": 0.500501
+          }
+        ],
+        "segments": [
+          {
+            "clip": "1.1",
+            "startSeconds": 0,
+            "durationSeconds": 252.600601,
+            "cell": 1
+          },
+          {
+            "clip": "1.2",
+            "startSeconds": 252.600601,
+            "durationSeconds": 1107.333667,
+            "cell": 2
+          },
+          {
+            "clip": "1.3",
+            "startSeconds": 1359.934268,
+            "durationSeconds": 1286.767434,
+            "cell": 3
+          },
+          {
+            "clip": "1.4",
+            "startSeconds": 2646.701702,
+            "durationSeconds": 34.166834,
+            "cell": 4
+          },
+          {
+            "clip": "1.5",
+            "startSeconds": 2680.868535,
+            "durationSeconds": 0.500501,
+            "cell": 5
+          }
+        ],
+        "streams": [
+          {
+            "type": "video",
+            "codec": "MPEG-2",
+            "category": "video",
+            "resolution": "720x480",
+            "aspectRatio": "4:3",
+            "frameRate": 29.97
+          },
+          {
+            "type": "audio",
+            "codec": "AC-3",
+            "category": "audio",
+            "audioLayout": "stereo"
+          }
+        ]
+      }
+    ]
+  },
+  "extensions": {
+    "thediscdb.optical-disc-manifest/scan-diagnostics": []
+  }
+}
