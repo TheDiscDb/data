@@ -1,0 +1,602 @@
+{
+  "$schema": "https://schemas.thediscdb.com/optical-disc-manifest/v1/optical-disc-manifest.schema.json",
+  "schemaVersion": 1,
+  "producer": {
+    "name": "thediscdb",
+    "version": "1.0.0\u002B276c4545cca4237572cde0c7d73f818c81d9d4bf",
+    "uri": "https://thediscdb.com/"
+  },
+  "disc": {
+    "format": "dvd",
+    "identifiers": [
+      {
+        "kind": "dvd-disc-id",
+        "value": "F34A1F6BF15EB01BD4DB415DB8803013"
+      },
+      {
+        "kind": "thediscdb-content-hash",
+        "value": "E247C5869078CA2A83B6FC38C3EEF218"
+      }
+    ],
+    "files": [
+      {
+        "path": "VIDEO_TS/VIDEO_TS.BUP",
+        "sizeBytes": 18432
+      },
+      {
+        "path": "VIDEO_TS/VIDEO_TS.IFO",
+        "sizeBytes": 18432
+      },
+      {
+        "path": "VIDEO_TS/VIDEO_TS.VOB",
+        "sizeBytes": 10240
+      },
+      {
+        "path": "VIDEO_TS/VTS_01_0.BUP",
+        "sizeBytes": 18432
+      },
+      {
+        "path": "VIDEO_TS/VTS_01_0.IFO",
+        "sizeBytes": 18432
+      },
+      {
+        "path": "VIDEO_TS/VTS_01_0.VOB",
+        "sizeBytes": 20350976
+      },
+      {
+        "path": "VIDEO_TS/VTS_01_1.VOB",
+        "sizeBytes": 27064320
+      },
+      {
+        "path": "VIDEO_TS/VTS_02_0.BUP",
+        "sizeBytes": 18432
+      },
+      {
+        "path": "VIDEO_TS/VTS_02_0.IFO",
+        "sizeBytes": 18432
+      },
+      {
+        "path": "VIDEO_TS/VTS_02_0.VOB",
+        "sizeBytes": 98140160
+      },
+      {
+        "path": "VIDEO_TS/VTS_02_1.VOB",
+        "sizeBytes": 18044928
+      },
+      {
+        "path": "VIDEO_TS/VTS_03_0.BUP",
+        "sizeBytes": 45056
+      },
+      {
+        "path": "VIDEO_TS/VTS_03_0.IFO",
+        "sizeBytes": 45056
+      },
+      {
+        "path": "VIDEO_TS/VTS_03_0.VOB",
+        "sizeBytes": 10240
+      },
+      {
+        "path": "VIDEO_TS/VTS_03_1.VOB",
+        "sizeBytes": 1073709056
+      },
+      {
+        "path": "VIDEO_TS/VTS_03_2.VOB",
+        "sizeBytes": 1073709056
+      },
+      {
+        "path": "VIDEO_TS/VTS_03_3.VOB",
+        "sizeBytes": 1073709056
+      },
+      {
+        "path": "VIDEO_TS/VTS_03_4.VOB",
+        "sizeBytes": 6543360
+      },
+      {
+        "path": "VIDEO_TS/VTS_04_0.BUP",
+        "sizeBytes": 40960
+      },
+      {
+        "path": "VIDEO_TS/VTS_04_0.IFO",
+        "sizeBytes": 40960
+      },
+      {
+        "path": "VIDEO_TS/VTS_04_0.VOB",
+        "sizeBytes": 10240
+      },
+      {
+        "path": "VIDEO_TS/VTS_04_1.VOB",
+        "sizeBytes": 1073709056
+      },
+      {
+        "path": "VIDEO_TS/VTS_04_2.VOB",
+        "sizeBytes": 1073709056
+      },
+      {
+        "path": "VIDEO_TS/VTS_04_3.VOB",
+        "sizeBytes": 1001615360
+      }
+    ],
+    "titles": [
+      {
+        "source": {
+          "titleSet": 1,
+          "title": 1,
+          "titleSetTitle": 1
+        },
+        "durationSeconds": 26,
+        "sizeBytes": 27054080,
+        "chapters": [
+          {
+            "startSeconds": 0,
+            "durationSeconds": 26
+          }
+        ],
+        "segments": [
+          {
+            "clip": "1.1",
+            "startSeconds": 0,
+            "durationSeconds": 26,
+            "cell": 1
+          }
+        ],
+        "streams": [
+          {
+            "type": "video",
+            "codec": "MPEG-2",
+            "category": "video",
+            "resolution": "720x576",
+            "aspectRatio": "4:3",
+            "frameRate": 25
+          },
+          {
+            "type": "audio",
+            "codec": "AC-3",
+            "category": "audio",
+            "audioLayout": "stereo"
+          }
+        ]
+      },
+      {
+        "source": {
+          "titleSet": 2,
+          "title": 2,
+          "titleSetTitle": 1
+        },
+        "durationSeconds": 16.12,
+        "sizeBytes": 18034688,
+        "chapters": [
+          {
+            "startSeconds": 0,
+            "durationSeconds": 16.12
+          }
+        ],
+        "segments": [
+          {
+            "clip": "1.1",
+            "startSeconds": 0,
+            "durationSeconds": 16.12,
+            "cell": 1
+          }
+        ],
+        "streams": [
+          {
+            "type": "video",
+            "codec": "MPEG-2",
+            "category": "video",
+            "resolution": "720x576",
+            "aspectRatio": "4:3",
+            "frameRate": 25
+          },
+          {
+            "type": "audio",
+            "codec": "MPEG-2",
+            "category": "audio",
+            "language": "de",
+            "audioLayout": "stereo"
+          }
+        ]
+      },
+      {
+        "source": {
+          "titleSet": 3,
+          "title": 3,
+          "titleSetTitle": 1
+        },
+        "durationSeconds": 3100.52,
+        "sizeBytes": 3227658240,
+        "chapters": [
+          {
+            "startSeconds": 0,
+            "durationSeconds": 3100.52
+          }
+        ],
+        "segments": [
+          {
+            "clip": "1.1",
+            "startSeconds": 0,
+            "durationSeconds": 261.76,
+            "cell": 1
+          },
+          {
+            "clip": "1.2",
+            "startSeconds": 261.76,
+            "durationSeconds": 13.2,
+            "cell": 2
+          },
+          {
+            "clip": "1.3",
+            "startSeconds": 274.96,
+            "durationSeconds": 13.8,
+            "cell": 3
+          },
+          {
+            "clip": "1.4",
+            "startSeconds": 288.76,
+            "durationSeconds": 13.8,
+            "cell": 4
+          },
+          {
+            "clip": "1.5",
+            "startSeconds": 302.56,
+            "durationSeconds": 13.8,
+            "cell": 5
+          },
+          {
+            "clip": "1.6",
+            "startSeconds": 316.36,
+            "durationSeconds": 13.2,
+            "cell": 6
+          },
+          {
+            "clip": "1.7",
+            "startSeconds": 329.56,
+            "durationSeconds": 13.8,
+            "cell": 7
+          },
+          {
+            "clip": "1.8",
+            "startSeconds": 343.36,
+            "durationSeconds": 13.56,
+            "cell": 8
+          },
+          {
+            "clip": "1.9",
+            "startSeconds": 356.92,
+            "durationSeconds": 13.8,
+            "cell": 9
+          },
+          {
+            "clip": "1.10",
+            "startSeconds": 370.72,
+            "durationSeconds": 13.8,
+            "cell": 10
+          },
+          {
+            "clip": "1.11",
+            "startSeconds": 384.52,
+            "durationSeconds": 13.2,
+            "cell": 11
+          },
+          {
+            "clip": "1.12",
+            "startSeconds": 397.72,
+            "durationSeconds": 13.8,
+            "cell": 12
+          },
+          {
+            "clip": "1.13",
+            "startSeconds": 411.52,
+            "durationSeconds": 13.8,
+            "cell": 13
+          },
+          {
+            "clip": "1.14",
+            "startSeconds": 425.32,
+            "durationSeconds": 13.8,
+            "cell": 14
+          },
+          {
+            "clip": "1.15",
+            "startSeconds": 439.12,
+            "durationSeconds": 13.2,
+            "cell": 15
+          },
+          {
+            "clip": "1.16",
+            "startSeconds": 452.32,
+            "durationSeconds": 13.8,
+            "cell": 16
+          },
+          {
+            "clip": "1.17",
+            "startSeconds": 466.12,
+            "durationSeconds": 13.8,
+            "cell": 17
+          },
+          {
+            "clip": "1.18",
+            "startSeconds": 479.92,
+            "durationSeconds": 13.4,
+            "cell": 18
+          },
+          {
+            "clip": "1.19",
+            "startSeconds": 493.32,
+            "durationSeconds": 13.8,
+            "cell": 19
+          },
+          {
+            "clip": "1.20",
+            "startSeconds": 507.12,
+            "durationSeconds": 13.52,
+            "cell": 20
+          },
+          {
+            "clip": "1.21",
+            "startSeconds": 520.64,
+            "durationSeconds": 13.64,
+            "cell": 21
+          },
+          {
+            "clip": "1.22",
+            "startSeconds": 534.28,
+            "durationSeconds": 13.76,
+            "cell": 22
+          },
+          {
+            "clip": "1.23",
+            "startSeconds": 548.04,
+            "durationSeconds": 13.8,
+            "cell": 23
+          },
+          {
+            "clip": "1.24",
+            "startSeconds": 561.84,
+            "durationSeconds": 13.2,
+            "cell": 24
+          },
+          {
+            "clip": "1.25",
+            "startSeconds": 575.04,
+            "durationSeconds": 13.8,
+            "cell": 25
+          },
+          {
+            "clip": "1.26",
+            "startSeconds": 588.84,
+            "durationSeconds": 13.8,
+            "cell": 26
+          },
+          {
+            "clip": "1.27",
+            "startSeconds": 602.64,
+            "durationSeconds": 13.8,
+            "cell": 27
+          },
+          {
+            "clip": "1.28",
+            "startSeconds": 616.44,
+            "durationSeconds": 13.2,
+            "cell": 28
+          },
+          {
+            "clip": "1.29",
+            "startSeconds": 629.64,
+            "durationSeconds": 14.12,
+            "cell": 29
+          },
+          {
+            "clip": "1.30",
+            "startSeconds": 643.76,
+            "durationSeconds": 13.2,
+            "cell": 30
+          },
+          {
+            "clip": "1.31",
+            "startSeconds": 656.96,
+            "durationSeconds": 13.8,
+            "cell": 31
+          },
+          {
+            "clip": "1.32",
+            "startSeconds": 670.76,
+            "durationSeconds": 13.8,
+            "cell": 32
+          },
+          {
+            "clip": "1.33",
+            "startSeconds": 684.56,
+            "durationSeconds": 13.44,
+            "cell": 33
+          },
+          {
+            "clip": "1.34",
+            "startSeconds": 698,
+            "durationSeconds": 13.8,
+            "cell": 34
+          },
+          {
+            "clip": "1.35",
+            "startSeconds": 711.8,
+            "durationSeconds": 13.76,
+            "cell": 35
+          },
+          {
+            "clip": "1.36",
+            "startSeconds": 725.56,
+            "durationSeconds": 13.2,
+            "cell": 36
+          },
+          {
+            "clip": "1.37",
+            "startSeconds": 738.76,
+            "durationSeconds": 13.8,
+            "cell": 37
+          },
+          {
+            "clip": "1.38",
+            "startSeconds": 752.56,
+            "durationSeconds": 13.8,
+            "cell": 38
+          },
+          {
+            "clip": "1.39",
+            "startSeconds": 766.36,
+            "durationSeconds": 13.2,
+            "cell": 39
+          },
+          {
+            "clip": "1.40",
+            "startSeconds": 779.56,
+            "durationSeconds": 13.8,
+            "cell": 40
+          },
+          {
+            "clip": "1.41",
+            "startSeconds": 793.36,
+            "durationSeconds": 13.8,
+            "cell": 41
+          },
+          {
+            "clip": "1.42",
+            "startSeconds": 807.16,
+            "durationSeconds": 13.52,
+            "cell": 42
+          },
+          {
+            "clip": "1.43",
+            "startSeconds": 820.68,
+            "durationSeconds": 13.8,
+            "cell": 43
+          },
+          {
+            "clip": "1.44",
+            "startSeconds": 834.48,
+            "durationSeconds": 13.8,
+            "cell": 44
+          },
+          {
+            "clip": "1.45",
+            "startSeconds": 848.28,
+            "durationSeconds": 13.2,
+            "cell": 45
+          },
+          {
+            "clip": "1.46",
+            "startSeconds": 861.48,
+            "durationSeconds": 13.8,
+            "cell": 46
+          },
+          {
+            "clip": "1.47",
+            "startSeconds": 875.28,
+            "durationSeconds": 13.8,
+            "cell": 47
+          },
+          {
+            "clip": "1.48",
+            "startSeconds": 889.08,
+            "durationSeconds": 13.8,
+            "cell": 48
+          },
+          {
+            "clip": "1.49",
+            "startSeconds": 902.88,
+            "durationSeconds": 13.2,
+            "cell": 49
+          },
+          {
+            "clip": "1.50",
+            "startSeconds": 916.08,
+            "durationSeconds": 13.8,
+            "cell": 50
+          },
+          {
+            "clip": "1.51",
+            "startSeconds": 929.88,
+            "durationSeconds": 13.8,
+            "cell": 51
+          },
+          {
+            "clip": "1.52",
+            "startSeconds": 943.68,
+            "durationSeconds": 13.2,
+            "cell": 52
+          },
+          {
+            "clip": "1.53",
+            "startSeconds": 956.88,
+            "durationSeconds": 13.8,
+            "cell": 53
+          },
+          {
+            "clip": "1.54",
+            "startSeconds": 970.68,
+            "durationSeconds": 2129.84,
+            "cell": 54
+          }
+        ],
+        "streams": [
+          {
+            "type": "video",
+            "codec": "MPEG-2",
+            "category": "video",
+            "resolution": "720x576",
+            "aspectRatio": "4:3",
+            "frameRate": 25
+          },
+          {
+            "type": "audio",
+            "codec": "AC-3",
+            "category": "audio",
+            "language": "de",
+            "audioLayout": "stereo"
+          }
+        ]
+      },
+      {
+        "source": {
+          "titleSet": 4,
+          "title": 4,
+          "titleSetTitle": 1
+        },
+        "durationSeconds": 3024.96,
+        "sizeBytes": 3149019136,
+        "chapters": [
+          {
+            "startSeconds": 0,
+            "durationSeconds": 3024.96
+          }
+        ],
+        "segments": [
+          {
+            "clip": "1.1",
+            "startSeconds": 0,
+            "durationSeconds": 3024.96,
+            "cell": 1
+          }
+        ],
+        "streams": [
+          {
+            "type": "video",
+            "codec": "MPEG-2",
+            "category": "video",
+            "resolution": "720x576",
+            "aspectRatio": "4:3",
+            "frameRate": 25
+          },
+          {
+            "type": "audio",
+            "codec": "AC-3",
+            "category": "audio",
+            "language": "de",
+            "audioLayout": "stereo"
+          }
+        ]
+      }
+    ]
+  },
+  "extensions": {
+    "thediscdb.optical-disc-manifest/scan-diagnostics": []
+  }
+}
