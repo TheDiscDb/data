@@ -1,0 +1,1080 @@
+{
+  "$schema": "https://schemas.thediscdb.com/optical-disc-manifest/v1/optical-disc-manifest.schema.json",
+  "schemaVersion": 1,
+  "producer": {
+    "name": "thediscdb",
+    "version": "1.0.0\u002B4289ca9f6c32b3249aa6583d7af2ee2ee5316baf",
+    "uri": "https://thediscdb.com/"
+  },
+  "disc": {
+    "format": "uhd-blu-ray",
+    "identifiers": [
+      {
+        "kind": "aacs-disc-id",
+        "value": "94B8E6B9D873C40D8C0857E00354828239DB8F34"
+      },
+      {
+        "kind": "thediscdb-content-hash",
+        "value": "EC2CC9E702E78EAF8BBF974FA76D0766"
+      }
+    ],
+    "files": [
+      {
+        "path": "AACS/CPSUnit00001.cci",
+        "sizeBytes": 2048
+      },
+      {
+        "path": "AACS/Content000.cer",
+        "sizeBytes": 248
+      },
+      {
+        "path": "AACS/Content001.cer",
+        "sizeBytes": 232
+      },
+      {
+        "path": "AACS/Content002.cer",
+        "sizeBytes": 256
+      },
+      {
+        "path": "AACS/ContentHash000.tbl",
+        "sizeBytes": 1213300
+      },
+      {
+        "path": "AACS/ContentHash001.tbl",
+        "sizeBytes": 1224148
+      },
+      {
+        "path": "AACS/ContentHash002.tbl",
+        "sizeBytes": 1220704
+      },
+      {
+        "path": "AACS/ContentRevocation.lst",
+        "sizeBytes": 1048576
+      },
+      {
+        "path": "AACS/DH_Pairing_Server.cer",
+        "sizeBytes": 144
+      },
+      {
+        "path": "AACS/DUPLICATE/CPSUnit00001.cci",
+        "sizeBytes": 2048
+      },
+      {
+        "path": "AACS/DUPLICATE/Content000.cer",
+        "sizeBytes": 248
+      },
+      {
+        "path": "AACS/DUPLICATE/Content001.cer",
+        "sizeBytes": 232
+      },
+      {
+        "path": "AACS/DUPLICATE/Content002.cer",
+        "sizeBytes": 256
+      },
+      {
+        "path": "AACS/DUPLICATE/ContentHash000.tbl",
+        "sizeBytes": 1213300
+      },
+      {
+        "path": "AACS/DUPLICATE/ContentHash001.tbl",
+        "sizeBytes": 1224148
+      },
+      {
+        "path": "AACS/DUPLICATE/ContentHash002.tbl",
+        "sizeBytes": 1220704
+      },
+      {
+        "path": "AACS/DUPLICATE/ContentRevocation.lst",
+        "sizeBytes": 1048576
+      },
+      {
+        "path": "AACS/DUPLICATE/DH_Pairing_Server.cer",
+        "sizeBytes": 144
+      },
+      {
+        "path": "AACS/DUPLICATE/MKB_RO.inf",
+        "sizeBytes": 134217728
+      },
+      {
+        "path": "AACS/DUPLICATE/Unit_Key_RO.inf",
+        "sizeBytes": 65536
+      },
+      {
+        "path": "AACS/MKB_RO.inf",
+        "sizeBytes": 134217728
+      },
+      {
+        "path": "AACS/Unit_Key_RO.inf",
+        "sizeBytes": 65536
+      },
+      {
+        "path": "BDMV/BACKUP/CLIPINF/00000.clpi",
+        "sizeBytes": 136056
+      },
+      {
+        "path": "BDMV/BACKUP/CLIPINF/00003.clpi",
+        "sizeBytes": 712
+      },
+      {
+        "path": "BDMV/BACKUP/CLIPINF/00004.clpi",
+        "sizeBytes": 688
+      },
+      {
+        "path": "BDMV/BACKUP/CLIPINF/00005.clpi",
+        "sizeBytes": 292
+      },
+      {
+        "path": "BDMV/BACKUP/CLIPINF/00010.clpi",
+        "sizeBytes": 292
+      },
+      {
+        "path": "BDMV/BACKUP/CLIPINF/00015.clpi",
+        "sizeBytes": 1624
+      },
+      {
+        "path": "BDMV/BACKUP/CLIPINF/00061.clpi",
+        "sizeBytes": 292
+      },
+      {
+        "path": "BDMV/BACKUP/MovieObject.bdmv",
+        "sizeBytes": 798
+      },
+      {
+        "path": "BDMV/BACKUP/PLAYLIST/00000.mpls",
+        "sizeBytes": 286
+      },
+      {
+        "path": "BDMV/BACKUP/PLAYLIST/00001.mpls",
+        "sizeBytes": 19782
+      },
+      {
+        "path": "BDMV/BACKUP/PLAYLIST/00002.mpls",
+        "sizeBytes": 558
+      },
+      {
+        "path": "BDMV/BACKUP/PLAYLIST/00003.mpls",
+        "sizeBytes": 272
+      },
+      {
+        "path": "BDMV/BACKUP/index.bdmv",
+        "sizeBytes": 168
+      },
+      {
+        "path": "BDMV/CLIPINF/00000.clpi",
+        "sizeBytes": 136056
+      },
+      {
+        "path": "BDMV/CLIPINF/00003.clpi",
+        "sizeBytes": 712
+      },
+      {
+        "path": "BDMV/CLIPINF/00004.clpi",
+        "sizeBytes": 688
+      },
+      {
+        "path": "BDMV/CLIPINF/00005.clpi",
+        "sizeBytes": 292
+      },
+      {
+        "path": "BDMV/CLIPINF/00010.clpi",
+        "sizeBytes": 292
+      },
+      {
+        "path": "BDMV/CLIPINF/00015.clpi",
+        "sizeBytes": 1624
+      },
+      {
+        "path": "BDMV/CLIPINF/00061.clpi",
+        "sizeBytes": 292
+      },
+      {
+        "path": "BDMV/META/DL/Rush_UHD_LG_640x360.jpg",
+        "sizeBytes": 106221
+      },
+      {
+        "path": "BDMV/META/DL/Rush_UHD_SM_416x240.jpg",
+        "sizeBytes": 53327
+      },
+      {
+        "path": "BDMV/META/DL/bdmt_eng.xml",
+        "sizeBytes": 601
+      },
+      {
+        "path": "BDMV/MovieObject.bdmv",
+        "sizeBytes": 798
+      },
+      {
+        "path": "BDMV/PLAYLIST/00000.mpls",
+        "sizeBytes": 286
+      },
+      {
+        "path": "BDMV/PLAYLIST/00001.mpls",
+        "sizeBytes": 19782
+      },
+      {
+        "path": "BDMV/PLAYLIST/00002.mpls",
+        "sizeBytes": 558
+      },
+      {
+        "path": "BDMV/PLAYLIST/00003.mpls",
+        "sizeBytes": 272
+      },
+      {
+        "path": "BDMV/STREAM/00000.m2ts",
+        "sizeBytes": 89089124352
+      },
+      {
+        "path": "BDMV/STREAM/00003.m2ts",
+        "sizeBytes": 98611200
+      },
+      {
+        "path": "BDMV/STREAM/00004.m2ts",
+        "sizeBytes": 106690560
+      },
+      {
+        "path": "BDMV/STREAM/00005.m2ts",
+        "sizeBytes": 1173504
+      },
+      {
+        "path": "BDMV/STREAM/00010.m2ts",
+        "sizeBytes": 6144
+      },
+      {
+        "path": "BDMV/STREAM/00015.m2ts",
+        "sizeBytes": 604360704
+      },
+      {
+        "path": "BDMV/STREAM/00061.m2ts",
+        "sizeBytes": 1290240
+      },
+      {
+        "path": "BDMV/index.bdmv",
+        "sizeBytes": 168
+      },
+      {
+        "path": "CERTIFICATE/BACKUP/id.bdmv",
+        "sizeBytes": 104
+      },
+      {
+        "path": "CERTIFICATE/id.bdmv",
+        "sizeBytes": 104
+      }
+    ],
+    "titles": [
+      {
+        "source": {
+          "path": "BDMV/PLAYLIST/00002.mpls"
+        },
+        "durationSeconds": 7375.701667,
+        "sizeBytes": 89089124352,
+        "chapters": [
+          {
+            "startSeconds": 0,
+            "durationSeconds": 665.289622
+          },
+          {
+            "startSeconds": 665.289622,
+            "durationSeconds": 573.489578
+          },
+          {
+            "startSeconds": 1238.7792,
+            "durationSeconds": 625.291333
+          },
+          {
+            "startSeconds": 1864.070533,
+            "durationSeconds": 573.239333
+          },
+          {
+            "startSeconds": 2437.309867,
+            "durationSeconds": 575.992089
+          },
+          {
+            "startSeconds": 3013.301956,
+            "durationSeconds": 589.297044
+          },
+          {
+            "startSeconds": 3602.599,
+            "durationSeconds": 775.024244
+          },
+          {
+            "startSeconds": 4377.623244,
+            "durationSeconds": 492.783956
+          },
+          {
+            "startSeconds": 4870.4072,
+            "durationSeconds": 505.9638
+          },
+          {
+            "startSeconds": 5376.371,
+            "durationSeconds": 573.406156
+          },
+          {
+            "startSeconds": 5949.777156,
+            "durationSeconds": 772.813711
+          },
+          {
+            "startSeconds": 6722.590867,
+            "durationSeconds": 653.1108
+          }
+        ],
+        "segments": [
+          {
+            "clip": "00000",
+            "startSeconds": 0,
+            "durationSeconds": 7375.701667
+          }
+        ],
+        "streams": [
+          {
+            "type": "audio",
+            "codec": "TrueHD",
+            "category": "audio",
+            "pid": 4352,
+            "codingTypeCode": 131,
+            "formatCode": 6,
+            "rateCode": 1,
+            "language": "eng",
+            "resolution": "1920x1080",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "audio",
+            "codec": "DTS-HD Master Audio",
+            "category": "audio",
+            "pid": 4353,
+            "codingTypeCode": 134,
+            "formatCode": 6,
+            "rateCode": 1,
+            "language": "eng",
+            "resolution": "1920x1080",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "audio",
+            "codec": "DTS-HD Master Audio",
+            "category": "audio",
+            "pid": 4354,
+            "codingTypeCode": 134,
+            "formatCode": 3,
+            "rateCode": 1,
+            "language": "eng",
+            "resolution": "720x480",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "menu",
+            "codec": "Interactive Graphics",
+            "category": "interactiveGraphics",
+            "pid": 5120,
+            "codingTypeCode": 145,
+            "language": "eng"
+          },
+          {
+            "type": "subtitle",
+            "codec": "Presentation Graphics",
+            "category": "presentationGraphics",
+            "pid": 4768,
+            "codingTypeCode": 144,
+            "language": "eng"
+          },
+          {
+            "type": "video",
+            "codec": "HEVC Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 36,
+            "formatCode": 8,
+            "rateCode": 1,
+            "dynamicRangeTypeCode": 1,
+            "colorSpaceCode": 2,
+            "hdrPlusFlag": false,
+            "resolution": "3840x2160",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ],
+        "extensions": {
+          "thediscdb.optical-disc-manifest/unsupported-mpls-extensions": [
+            {
+              "typeIdentifier": 3,
+              "versionIdentifier": 5,
+              "name": "Static metadata extension",
+              "relativeStartAddress": 24,
+              "length": 36,
+              "overlapsAnotherEntry": false,
+              "rawDataHex": "00000020010000001000000033C286C41D4C0BB884D03E803D13404203E8000102AC016E",
+              "isRawDataTruncated": false
+            }
+          ]
+        }
+      },
+      {
+        "source": {
+          "path": "BDMV/STREAM/00003.m2ts"
+        },
+        "durationSeconds": 24.482778,
+        "sizeBytes": 98611200,
+        "segments": [
+          {
+            "clip": "00003",
+            "startSeconds": 0,
+            "durationSeconds": 24.482778
+          }
+        ],
+        "streams": [
+          {
+            "type": "audio",
+            "codec": "DTS-HD Master Audio",
+            "category": "audio",
+            "pid": 4352,
+            "codingTypeCode": 134,
+            "formatCode": 3,
+            "rateCode": 1,
+            "language": "eng",
+            "resolution": "720x480",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "video",
+            "codec": "HEVC Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 36,
+            "formatCode": 8,
+            "rateCode": 1,
+            "dynamicRangeTypeCode": 1,
+            "colorSpaceCode": 2,
+            "hdrPlusFlag": false,
+            "resolution": "3840x2160",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ],
+        "extensions": {
+          "thediscdb.optical-disc-manifest/unsupported-mpls-extensions": [
+            {
+              "typeIdentifier": 3,
+              "versionIdentifier": 5,
+              "name": "Static metadata extension",
+              "relativeStartAddress": 24,
+              "length": 36,
+              "overlapsAnotherEntry": false,
+              "rawDataHex": "00000020010000001000000021349BAA199608FC8A4839083D13404203E8000103E8012C",
+              "isRawDataTruncated": false
+            }
+          ]
+        }
+      },
+      {
+        "source": {
+          "path": "BDMV/STREAM/00004.m2ts"
+        },
+        "durationSeconds": 53.511778,
+        "sizeBytes": 106690560,
+        "segments": [
+          {
+            "clip": "00004",
+            "startSeconds": 0,
+            "durationSeconds": 53.511778
+          }
+        ],
+        "streams": [
+          {
+            "type": "audio",
+            "codec": "AC-3",
+            "category": "audio",
+            "pid": 4352,
+            "codingTypeCode": 129,
+            "formatCode": 3,
+            "rateCode": 1,
+            "language": "eng",
+            "resolution": "720x480",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "menu",
+            "codec": "Interactive Graphics",
+            "category": "interactiveGraphics",
+            "pid": 5120,
+            "codingTypeCode": 145,
+            "language": "eng"
+          },
+          {
+            "type": "video",
+            "codec": "AVC Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 27,
+            "formatCode": 6,
+            "rateCode": 1,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ],
+        "extensions": {
+          "thediscdb.optical-disc-manifest/unsupported-mpls-extensions": [
+            {
+              "typeIdentifier": 3,
+              "versionIdentifier": 5,
+              "name": "Static metadata extension",
+              "relativeStartAddress": 24,
+              "length": 8,
+              "overlapsAnotherEntry": false,
+              "rawDataHex": "0000000400000000",
+              "isRawDataTruncated": false
+            }
+          ]
+        }
+      },
+      {
+        "source": {
+          "path": "BDMV/STREAM/00015.m2ts"
+        },
+        "durationSeconds": 76.493067,
+        "sizeBytes": 604360704,
+        "segments": [
+          {
+            "clip": "00015",
+            "startSeconds": 0,
+            "durationSeconds": 76.493067
+          }
+        ],
+        "streams": [
+          {
+            "type": "audio",
+            "codec": "DTS-HD Master Audio",
+            "category": "audio",
+            "pid": 4352,
+            "codingTypeCode": 134,
+            "formatCode": 3,
+            "rateCode": 1,
+            "language": "eng",
+            "resolution": "720x480",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "audio",
+            "codec": "DTS-HD Master Audio",
+            "category": "audio",
+            "pid": 4353,
+            "codingTypeCode": 134,
+            "formatCode": 3,
+            "rateCode": 1,
+            "language": "eng",
+            "resolution": "720x480",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "audio",
+            "codec": "DTS-HD Master Audio",
+            "category": "audio",
+            "pid": 4354,
+            "codingTypeCode": 134,
+            "formatCode": 3,
+            "rateCode": 1,
+            "language": "eng",
+            "resolution": "720x480",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "menu",
+            "codec": "Interactive Graphics",
+            "category": "interactiveGraphics",
+            "pid": 5120,
+            "codingTypeCode": 145,
+            "language": "eng"
+          },
+          {
+            "type": "subtitle",
+            "codec": "Presentation Graphics",
+            "category": "presentationGraphics",
+            "pid": 4768,
+            "codingTypeCode": 144,
+            "language": "eng"
+          },
+          {
+            "type": "video",
+            "codec": "HEVC Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 36,
+            "formatCode": 8,
+            "rateCode": 1,
+            "dynamicRangeTypeCode": 1,
+            "colorSpaceCode": 2,
+            "hdrPlusFlag": false,
+            "resolution": "3840x2160",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ],
+        "extensions": {
+          "thediscdb.optical-disc-manifest/unsupported-mpls-extensions": [
+            {
+              "typeIdentifier": 3,
+              "versionIdentifier": 5,
+              "name": "Static metadata extension",
+              "relativeStartAddress": 24,
+              "length": 36,
+              "overlapsAnotherEntry": false,
+              "rawDataHex": "00000020010000001000000021349BAA199608FC8A4839083D13404203E8000103E8012C",
+              "isRawDataTruncated": false
+            }
+          ]
+        }
+      },
+      {
+        "source": {
+          "path": "BDMV/STREAM/00000.m2ts"
+        },
+        "durationSeconds": 7375.701667,
+        "sizeBytes": 89089124352,
+        "segments": [
+          {
+            "clip": "00000",
+            "startSeconds": 0,
+            "durationSeconds": 7375.701667
+          }
+        ],
+        "streams": [
+          {
+            "type": "audio",
+            "codec": "TrueHD",
+            "category": "audio",
+            "pid": 4352,
+            "codingTypeCode": 131,
+            "formatCode": 6,
+            "rateCode": 1,
+            "language": "eng",
+            "resolution": "1920x1080",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "audio",
+            "codec": "DTS-HD Master Audio",
+            "category": "audio",
+            "pid": 4353,
+            "codingTypeCode": 134,
+            "formatCode": 6,
+            "rateCode": 1,
+            "language": "eng",
+            "resolution": "1920x1080",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "audio",
+            "codec": "DTS-HD Master Audio",
+            "category": "audio",
+            "pid": 4354,
+            "codingTypeCode": 134,
+            "formatCode": 3,
+            "rateCode": 1,
+            "language": "eng",
+            "resolution": "720x480",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "subtitle",
+            "codec": "Presentation Graphics",
+            "category": "presentationGraphics",
+            "pid": 4768,
+            "codingTypeCode": 144,
+            "language": "eng"
+          },
+          {
+            "type": "video",
+            "codec": "HEVC Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 36,
+            "formatCode": 8,
+            "rateCode": 1,
+            "dynamicRangeTypeCode": 1,
+            "colorSpaceCode": 2,
+            "hdrPlusFlag": false,
+            "resolution": "3840x2160",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          },
+          {
+            "type": "video",
+            "codec": "HEVC Video",
+            "category": "video",
+            "pid": 4117,
+            "codingTypeCode": 36,
+            "formatCode": 6,
+            "rateCode": 1,
+            "dynamicRangeTypeCode": 2,
+            "colorSpaceCode": 2,
+            "hdrPlusFlag": false,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      }
+    ],
+    "clips": [
+      {
+        "clipId": "00000",
+        "streamPath": "BDMV/STREAM/00000.m2ts",
+        "clipInfoPath": "BDMV/CLIPINF/00000.clpi",
+        "durationSeconds": 7375.701667,
+        "numberOfSourcePackets": 464005856,
+        "transportStreamRecordingRate": 13625000,
+        "streams": [
+          {
+            "type": "audio",
+            "codec": "TrueHD",
+            "category": "audio",
+            "pid": 4352,
+            "codingTypeCode": 131,
+            "formatCode": 6,
+            "rateCode": 1,
+            "language": "eng",
+            "resolution": "1920x1080",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "audio",
+            "codec": "DTS-HD Master Audio",
+            "category": "audio",
+            "pid": 4353,
+            "codingTypeCode": 134,
+            "formatCode": 6,
+            "rateCode": 1,
+            "language": "eng",
+            "resolution": "1920x1080",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "audio",
+            "codec": "DTS-HD Master Audio",
+            "category": "audio",
+            "pid": 4354,
+            "codingTypeCode": 134,
+            "formatCode": 3,
+            "rateCode": 1,
+            "language": "eng",
+            "resolution": "720x480",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "subtitle",
+            "codec": "Presentation Graphics",
+            "category": "presentationGraphics",
+            "pid": 4768,
+            "codingTypeCode": 144,
+            "language": "eng"
+          },
+          {
+            "type": "video",
+            "codec": "HEVC Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 36,
+            "formatCode": 8,
+            "rateCode": 1,
+            "dynamicRangeTypeCode": 1,
+            "colorSpaceCode": 2,
+            "hdrPlusFlag": false,
+            "resolution": "3840x2160",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          },
+          {
+            "type": "video",
+            "codec": "HEVC Video",
+            "category": "video",
+            "pid": 4117,
+            "codingTypeCode": 36,
+            "formatCode": 6,
+            "rateCode": 1,
+            "dynamicRangeTypeCode": 2,
+            "colorSpaceCode": 2,
+            "hdrPlusFlag": false,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      },
+      {
+        "clipId": "00003",
+        "streamPath": "BDMV/STREAM/00003.m2ts",
+        "clipInfoPath": "BDMV/CLIPINF/00003.clpi",
+        "durationSeconds": 24.482778,
+        "numberOfSourcePackets": 513600,
+        "transportStreamRecordingRate": 13625000,
+        "streams": [
+          {
+            "type": "audio",
+            "codec": "DTS-HD Master Audio",
+            "category": "audio",
+            "pid": 4352,
+            "codingTypeCode": 134,
+            "formatCode": 3,
+            "rateCode": 1,
+            "language": "eng",
+            "resolution": "720x480",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "video",
+            "codec": "HEVC Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 36,
+            "formatCode": 8,
+            "rateCode": 1,
+            "dynamicRangeTypeCode": 1,
+            "colorSpaceCode": 2,
+            "hdrPlusFlag": false,
+            "resolution": "3840x2160",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          },
+          {
+            "type": "video",
+            "codec": "HEVC Video",
+            "category": "video",
+            "pid": 4117,
+            "codingTypeCode": 36,
+            "formatCode": 6,
+            "rateCode": 1,
+            "dynamicRangeTypeCode": 2,
+            "colorSpaceCode": 2,
+            "hdrPlusFlag": false,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      },
+      {
+        "clipId": "00004",
+        "streamPath": "BDMV/STREAM/00004.m2ts",
+        "clipInfoPath": "BDMV/CLIPINF/00004.clpi",
+        "durationSeconds": 53.511778,
+        "numberOfSourcePackets": 555680,
+        "transportStreamRecordingRate": 13625000,
+        "streams": [
+          {
+            "type": "audio",
+            "codec": "AC-3",
+            "category": "audio",
+            "pid": 4352,
+            "codingTypeCode": 129,
+            "formatCode": 3,
+            "rateCode": 1,
+            "language": "eng",
+            "resolution": "720x480",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "video",
+            "codec": "AVC Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 27,
+            "formatCode": 6,
+            "rateCode": 1,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      },
+      {
+        "clipId": "00005",
+        "streamPath": "BDMV/STREAM/00005.m2ts",
+        "clipInfoPath": "BDMV/CLIPINF/00005.clpi",
+        "durationSeconds": 0.041689,
+        "numberOfSourcePackets": 6112,
+        "transportStreamRecordingRate": 6000000,
+        "streams": [
+          {
+            "type": "menu",
+            "codec": "Interactive Graphics",
+            "category": "interactiveGraphics",
+            "pid": 5120,
+            "codingTypeCode": 145,
+            "language": "eng"
+          }
+        ]
+      },
+      {
+        "clipId": "00010",
+        "streamPath": "BDMV/STREAM/00010.m2ts",
+        "clipInfoPath": "BDMV/CLIPINF/00010.clpi",
+        "durationSeconds": 0.041689,
+        "numberOfSourcePackets": 32,
+        "transportStreamRecordingRate": 6000000,
+        "streams": [
+          {
+            "type": "menu",
+            "codec": "Interactive Graphics",
+            "category": "interactiveGraphics",
+            "pid": 5120,
+            "codingTypeCode": 145,
+            "language": "eng"
+          }
+        ]
+      },
+      {
+        "clipId": "00015",
+        "streamPath": "BDMV/STREAM/00015.m2ts",
+        "clipInfoPath": "BDMV/CLIPINF/00015.clpi",
+        "durationSeconds": 76.493067,
+        "numberOfSourcePackets": 3147712,
+        "transportStreamRecordingRate": 13625000,
+        "streams": [
+          {
+            "type": "audio",
+            "codec": "DTS-HD Master Audio",
+            "category": "audio",
+            "pid": 4352,
+            "codingTypeCode": 134,
+            "formatCode": 3,
+            "rateCode": 1,
+            "language": "eng",
+            "resolution": "720x480",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "audio",
+            "codec": "DTS-HD Master Audio",
+            "category": "audio",
+            "pid": 4353,
+            "codingTypeCode": 134,
+            "formatCode": 3,
+            "rateCode": 1,
+            "language": "eng",
+            "resolution": "720x480",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "audio",
+            "codec": "DTS-HD Master Audio",
+            "category": "audio",
+            "pid": 4354,
+            "codingTypeCode": 134,
+            "formatCode": 3,
+            "rateCode": 1,
+            "language": "eng",
+            "resolution": "720x480",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "subtitle",
+            "codec": "Presentation Graphics",
+            "category": "presentationGraphics",
+            "pid": 4768,
+            "codingTypeCode": 144,
+            "language": "eng"
+          },
+          {
+            "type": "video",
+            "codec": "HEVC Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 36,
+            "formatCode": 8,
+            "rateCode": 1,
+            "dynamicRangeTypeCode": 1,
+            "colorSpaceCode": 2,
+            "hdrPlusFlag": false,
+            "resolution": "3840x2160",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          },
+          {
+            "type": "video",
+            "codec": "HEVC Video",
+            "category": "video",
+            "pid": 4117,
+            "codingTypeCode": 36,
+            "formatCode": 6,
+            "rateCode": 1,
+            "dynamicRangeTypeCode": 2,
+            "colorSpaceCode": 2,
+            "hdrPlusFlag": false,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      },
+      {
+        "clipId": "00061",
+        "streamPath": "BDMV/STREAM/00061.m2ts",
+        "clipInfoPath": "BDMV/CLIPINF/00061.clpi",
+        "durationSeconds": 0.041689,
+        "numberOfSourcePackets": 6720,
+        "transportStreamRecordingRate": 6000000,
+        "streams": [
+          {
+            "type": "menu",
+            "codec": "Interactive Graphics",
+            "category": "interactiveGraphics",
+            "pid": 5120,
+            "codingTypeCode": 145,
+            "language": "eng"
+          }
+        ]
+      }
+    ]
+  }
+}

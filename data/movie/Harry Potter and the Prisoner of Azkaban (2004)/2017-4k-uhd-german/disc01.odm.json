@@ -1,0 +1,4176 @@
+{
+  "$schema": "https://schemas.thediscdb.com/optical-disc-manifest/v1/optical-disc-manifest.schema.json",
+  "schemaVersion": 1,
+  "producer": {
+    "name": "thediscdb",
+    "version": "1.0.0\u002B095ecabcde638b6fa9cc4090d355e7bc3e320c77",
+    "uri": "https://thediscdb.com/"
+  },
+  "disc": {
+    "format": "blu-ray",
+    "identifiers": [
+      {
+        "kind": "aacs-disc-id",
+        "value": "630798D3ECA94B3FACD3872A8554D77F591BCB53"
+      },
+      {
+        "kind": "thediscdb-content-hash",
+        "value": "6C7E9FDC1BCE3421829DEA947CDA9A17"
+      }
+    ],
+    "files": [
+      {
+        "path": "AACS/CPSUnit00001.cci",
+        "sizeBytes": 2048
+      },
+      {
+        "path": "AACS/CPSUnit00002.cci",
+        "sizeBytes": 2048
+      },
+      {
+        "path": "AACS/Content000.cer",
+        "sizeBytes": 276
+      },
+      {
+        "path": "AACS/Content001.cer",
+        "sizeBytes": 180
+      },
+      {
+        "path": "AACS/ContentHash000.tbl",
+        "sizeBytes": 679448
+      },
+      {
+        "path": "AACS/ContentHash001.tbl",
+        "sizeBytes": 613432
+      },
+      {
+        "path": "AACS/ContentRevocation.lst",
+        "sizeBytes": 1048576
+      },
+      {
+        "path": "AACS/DUPLICATE/CPSUnit00001.cci",
+        "sizeBytes": 2048
+      },
+      {
+        "path": "AACS/DUPLICATE/CPSUnit00002.cci",
+        "sizeBytes": 2048
+      },
+      {
+        "path": "AACS/DUPLICATE/Content000.cer",
+        "sizeBytes": 276
+      },
+      {
+        "path": "AACS/DUPLICATE/Content001.cer",
+        "sizeBytes": 180
+      },
+      {
+        "path": "AACS/DUPLICATE/ContentHash000.tbl",
+        "sizeBytes": 679448
+      },
+      {
+        "path": "AACS/DUPLICATE/ContentHash001.tbl",
+        "sizeBytes": 613432
+      },
+      {
+        "path": "AACS/DUPLICATE/ContentRevocation.lst",
+        "sizeBytes": 1048576
+      },
+      {
+        "path": "AACS/DUPLICATE/MKB_RO.inf",
+        "sizeBytes": 1048576
+      },
+      {
+        "path": "AACS/DUPLICATE/MKB_RW.inf",
+        "sizeBytes": 1048576
+      },
+      {
+        "path": "AACS/DUPLICATE/Unit_Key_RO.inf",
+        "sizeBytes": 65536
+      },
+      {
+        "path": "AACS/DUPLICATE/mcmf.xml",
+        "sizeBytes": 432
+      },
+      {
+        "path": "AACS/MKB_RO.inf",
+        "sizeBytes": 1048576
+      },
+      {
+        "path": "AACS/MKB_RW.inf",
+        "sizeBytes": 1048576
+      },
+      {
+        "path": "AACS/Unit_Key_RO.inf",
+        "sizeBytes": 65536
+      },
+      {
+        "path": "AACS/mcmf.xml",
+        "sizeBytes": 432
+      },
+      {
+        "path": "BDMV/AUXDATA/00000.otf",
+        "sizeBytes": 69368
+      },
+      {
+        "path": "BDMV/AUXDATA/00001.otf",
+        "sizeBytes": 2621472
+      },
+      {
+        "path": "BDMV/AUXDATA/dvb.fontindex",
+        "sizeBytes": 448
+      },
+      {
+        "path": "BDMV/AUXDATA/sound.bdmv",
+        "sizeBytes": 1889014
+      },
+      {
+        "path": "BDMV/BACKUP/BDJO/00000.bdjo",
+        "sizeBytes": 170
+      },
+      {
+        "path": "BDMV/BACKUP/BDJO/00001.bdjo",
+        "sizeBytes": 208
+      },
+      {
+        "path": "BDMV/BACKUP/CLIPINF/00000.clpi",
+        "sizeBytes": 376
+      },
+      {
+        "path": "BDMV/BACKUP/CLIPINF/00001.clpi",
+        "sizeBytes": 760
+      },
+      {
+        "path": "BDMV/BACKUP/CLIPINF/00002.clpi",
+        "sizeBytes": 292
+      },
+      {
+        "path": "BDMV/BACKUP/CLIPINF/00003.clpi",
+        "sizeBytes": 1412
+      },
+      {
+        "path": "BDMV/BACKUP/CLIPINF/00014.clpi",
+        "sizeBytes": 364
+      },
+      {
+        "path": "BDMV/BACKUP/CLIPINF/00015.clpi",
+        "sizeBytes": 292
+      },
+      {
+        "path": "BDMV/BACKUP/CLIPINF/00016.clpi",
+        "sizeBytes": 348
+      },
+      {
+        "path": "BDMV/BACKUP/CLIPINF/00017.clpi",
+        "sizeBytes": 376
+      },
+      {
+        "path": "BDMV/BACKUP/CLIPINF/00112.clpi",
+        "sizeBytes": 408
+      },
+      {
+        "path": "BDMV/BACKUP/CLIPINF/00120.clpi",
+        "sizeBytes": 396
+      },
+      {
+        "path": "BDMV/BACKUP/CLIPINF/00127.clpi",
+        "sizeBytes": 584
+      },
+      {
+        "path": "BDMV/BACKUP/CLIPINF/00137.clpi",
+        "sizeBytes": 376
+      },
+      {
+        "path": "BDMV/BACKUP/CLIPINF/00144.clpi",
+        "sizeBytes": 496
+      },
+      {
+        "path": "BDMV/BACKUP/CLIPINF/00154.clpi",
+        "sizeBytes": 512
+      },
+      {
+        "path": "BDMV/BACKUP/CLIPINF/00155.clpi",
+        "sizeBytes": 2168
+      },
+      {
+        "path": "BDMV/BACKUP/CLIPINF/00163.clpi",
+        "sizeBytes": 79996
+      },
+      {
+        "path": "BDMV/BACKUP/CLIPINF/00164.clpi",
+        "sizeBytes": 292
+      },
+      {
+        "path": "BDMV/BACKUP/CLIPINF/00165.clpi",
+        "sizeBytes": 324
+      },
+      {
+        "path": "BDMV/BACKUP/CLIPINF/00900.clpi",
+        "sizeBytes": 448
+      },
+      {
+        "path": "BDMV/BACKUP/CLIPINF/00901.clpi",
+        "sizeBytes": 448
+      },
+      {
+        "path": "BDMV/BACKUP/CLIPINF/00999.clpi",
+        "sizeBytes": 344
+      },
+      {
+        "path": "BDMV/BACKUP/MovieObject.bdmv",
+        "sizeBytes": 2170
+      },
+      {
+        "path": "BDMV/BACKUP/PLAYLIST/00000.mpls",
+        "sizeBytes": 168
+      },
+      {
+        "path": "BDMV/BACKUP/PLAYLIST/00001.mpls",
+        "sizeBytes": 168
+      },
+      {
+        "path": "BDMV/BACKUP/PLAYLIST/00002.mpls",
+        "sizeBytes": 184
+      },
+      {
+        "path": "BDMV/BACKUP/PLAYLIST/00003.mpls",
+        "sizeBytes": 168
+      },
+      {
+        "path": "BDMV/BACKUP/PLAYLIST/00004.mpls",
+        "sizeBytes": 168
+      },
+      {
+        "path": "BDMV/BACKUP/PLAYLIST/00005.mpls",
+        "sizeBytes": 168
+      },
+      {
+        "path": "BDMV/BACKUP/PLAYLIST/00006.mpls",
+        "sizeBytes": 168
+      },
+      {
+        "path": "BDMV/BACKUP/PLAYLIST/00007.mpls",
+        "sizeBytes": 630
+      },
+      {
+        "path": "BDMV/BACKUP/PLAYLIST/00008.mpls",
+        "sizeBytes": 196
+      },
+      {
+        "path": "BDMV/BACKUP/PLAYLIST/00009.mpls",
+        "sizeBytes": 224
+      },
+      {
+        "path": "BDMV/BACKUP/PLAYLIST/00011.mpls",
+        "sizeBytes": 154
+      },
+      {
+        "path": "BDMV/BACKUP/PLAYLIST/00012.mpls",
+        "sizeBytes": 168
+      },
+      {
+        "path": "BDMV/BACKUP/PLAYLIST/00022.mpls",
+        "sizeBytes": 210
+      },
+      {
+        "path": "BDMV/BACKUP/PLAYLIST/00023.mpls",
+        "sizeBytes": 210
+      },
+      {
+        "path": "BDMV/BACKUP/PLAYLIST/00024.mpls",
+        "sizeBytes": 210
+      },
+      {
+        "path": "BDMV/BACKUP/PLAYLIST/00100.mpls",
+        "sizeBytes": 996
+      },
+      {
+        "path": "BDMV/BACKUP/PLAYLIST/00101.mpls",
+        "sizeBytes": 724
+      },
+      {
+        "path": "BDMV/BACKUP/PLAYLIST/00120.mpls",
+        "sizeBytes": 170
+      },
+      {
+        "path": "BDMV/BACKUP/PLAYLIST/00137.mpls",
+        "sizeBytes": 154
+      },
+      {
+        "path": "BDMV/BACKUP/PLAYLIST/00900.mpls",
+        "sizeBytes": 154
+      },
+      {
+        "path": "BDMV/BACKUP/PLAYLIST/00901.mpls",
+        "sizeBytes": 154
+      },
+      {
+        "path": "BDMV/BACKUP/PLAYLIST/00959.mpls",
+        "sizeBytes": 154
+      },
+      {
+        "path": "BDMV/BACKUP/index.bdmv",
+        "sizeBytes": 348
+      },
+      {
+        "path": "BDMV/BDJO/00000.bdjo",
+        "sizeBytes": 170
+      },
+      {
+        "path": "BDMV/BDJO/00001.bdjo",
+        "sizeBytes": 208
+      },
+      {
+        "path": "BDMV/CLIPINF/00000.clpi",
+        "sizeBytes": 376
+      },
+      {
+        "path": "BDMV/CLIPINF/00001.clpi",
+        "sizeBytes": 760
+      },
+      {
+        "path": "BDMV/CLIPINF/00002.clpi",
+        "sizeBytes": 292
+      },
+      {
+        "path": "BDMV/CLIPINF/00003.clpi",
+        "sizeBytes": 1412
+      },
+      {
+        "path": "BDMV/CLIPINF/00014.clpi",
+        "sizeBytes": 364
+      },
+      {
+        "path": "BDMV/CLIPINF/00015.clpi",
+        "sizeBytes": 292
+      },
+      {
+        "path": "BDMV/CLIPINF/00016.clpi",
+        "sizeBytes": 348
+      },
+      {
+        "path": "BDMV/CLIPINF/00017.clpi",
+        "sizeBytes": 376
+      },
+      {
+        "path": "BDMV/CLIPINF/00112.clpi",
+        "sizeBytes": 408
+      },
+      {
+        "path": "BDMV/CLIPINF/00120.clpi",
+        "sizeBytes": 396
+      },
+      {
+        "path": "BDMV/CLIPINF/00127.clpi",
+        "sizeBytes": 584
+      },
+      {
+        "path": "BDMV/CLIPINF/00137.clpi",
+        "sizeBytes": 376
+      },
+      {
+        "path": "BDMV/CLIPINF/00144.clpi",
+        "sizeBytes": 496
+      },
+      {
+        "path": "BDMV/CLIPINF/00154.clpi",
+        "sizeBytes": 512
+      },
+      {
+        "path": "BDMV/CLIPINF/00155.clpi",
+        "sizeBytes": 2168
+      },
+      {
+        "path": "BDMV/CLIPINF/00163.clpi",
+        "sizeBytes": 79996
+      },
+      {
+        "path": "BDMV/CLIPINF/00164.clpi",
+        "sizeBytes": 292
+      },
+      {
+        "path": "BDMV/CLIPINF/00165.clpi",
+        "sizeBytes": 324
+      },
+      {
+        "path": "BDMV/CLIPINF/00900.clpi",
+        "sizeBytes": 448
+      },
+      {
+        "path": "BDMV/CLIPINF/00901.clpi",
+        "sizeBytes": 448
+      },
+      {
+        "path": "BDMV/CLIPINF/00999.clpi",
+        "sizeBytes": 344
+      },
+      {
+        "path": "BDMV/JAR/00000.jar",
+        "sizeBytes": 354966
+      },
+      {
+        "path": "BDMV/JAR/00001.jar",
+        "sizeBytes": 1055660
+      },
+      {
+        "path": "BDMV/JAR/03220/composite_HP3_BD01_ger_1.png",
+        "sizeBytes": 2391269
+      },
+      {
+        "path": "BDMV/JAR/03220/composite_HP3_BD01_ger_2.png",
+        "sizeBytes": 3020896
+      },
+      {
+        "path": "BDMV/JAR/03220/composite_HP3_BD01_ger_3.png",
+        "sizeBytes": 1819904
+      },
+      {
+        "path": "BDMV/JAR/03220/composite_LCS_in_movie_1.png",
+        "sizeBytes": 14683
+      },
+      {
+        "path": "BDMV/JAR/03220/composite_Redesign_ger_1.png",
+        "sizeBytes": 591429
+      },
+      {
+        "path": "BDMV/JAR/03220/composite_Redesign_ger_2.png",
+        "sizeBytes": 489184
+      },
+      {
+        "path": "BDMV/JAR/03220/composite_widget_1.png",
+        "sizeBytes": 213045
+      },
+      {
+        "path": "BDMV/JAR/03220/images.txt",
+        "sizeBytes": 11751
+      },
+      {
+        "path": "BDMV/JAR/03220/liveImages.txt",
+        "sizeBytes": 10486
+      },
+      {
+        "path": "BDMV/JAR/03220/menuLive_LCS_base.prop",
+        "sizeBytes": 66865
+      },
+      {
+        "path": "BDMV/JAR/03220/menuLive_base.prop",
+        "sizeBytes": 163751
+      },
+      {
+        "path": "BDMV/JAR/03220/menu_base.prop",
+        "sizeBytes": 58865
+      },
+      {
+        "path": "BDMV/JAR/04518/composite_HP3_BD01_eng_1.png",
+        "sizeBytes": 2369857
+      },
+      {
+        "path": "BDMV/JAR/04518/composite_HP3_BD01_eng_2.png",
+        "sizeBytes": 2690825
+      },
+      {
+        "path": "BDMV/JAR/04518/composite_HP3_BD01_eng_3.png",
+        "sizeBytes": 2181872
+      },
+      {
+        "path": "BDMV/JAR/04518/composite_LCS_in_movie_1.png",
+        "sizeBytes": 14683
+      },
+      {
+        "path": "BDMV/JAR/04518/composite_Redesign_eng_1.png",
+        "sizeBytes": 142249
+      },
+      {
+        "path": "BDMV/JAR/04518/composite_Redesign_eng_2.png",
+        "sizeBytes": 433890
+      },
+      {
+        "path": "BDMV/JAR/04518/composite_redesign_1.png",
+        "sizeBytes": 35700
+      },
+      {
+        "path": "BDMV/JAR/04518/composite_redesign_2.png",
+        "sizeBytes": 515663
+      },
+      {
+        "path": "BDMV/JAR/04518/composite_widget_1.png",
+        "sizeBytes": 213045
+      },
+      {
+        "path": "BDMV/JAR/04518/images.txt",
+        "sizeBytes": 11628
+      },
+      {
+        "path": "BDMV/JAR/04518/liveImages.txt",
+        "sizeBytes": 10158
+      },
+      {
+        "path": "BDMV/JAR/04518/menuLive_LCS_base.prop",
+        "sizeBytes": 68507
+      },
+      {
+        "path": "BDMV/JAR/04518/menuLive_base.prop",
+        "sizeBytes": 162107
+      },
+      {
+        "path": "BDMV/JAR/04518/menu_base.prop",
+        "sizeBytes": 58863
+      },
+      {
+        "path": "BDMV/JAR/05664/composite_HP3_BD01_fre_1.png",
+        "sizeBytes": 2387940
+      },
+      {
+        "path": "BDMV/JAR/05664/composite_HP3_BD01_fre_2.png",
+        "sizeBytes": 3036042
+      },
+      {
+        "path": "BDMV/JAR/05664/composite_HP3_BD01_fre_3.png",
+        "sizeBytes": 1843367
+      },
+      {
+        "path": "BDMV/JAR/05664/composite_LCS_in_movie_1.png",
+        "sizeBytes": 20211
+      },
+      {
+        "path": "BDMV/JAR/05664/composite_Redesign_fre_1.png",
+        "sizeBytes": 104809
+      },
+      {
+        "path": "BDMV/JAR/05664/composite_Redesign_fre_2.png",
+        "sizeBytes": 474363
+      },
+      {
+        "path": "BDMV/JAR/05664/composite_widget_1.png",
+        "sizeBytes": 213045
+      },
+      {
+        "path": "BDMV/JAR/05664/images.txt",
+        "sizeBytes": 11606
+      },
+      {
+        "path": "BDMV/JAR/05664/liveImages.txt",
+        "sizeBytes": 10231
+      },
+      {
+        "path": "BDMV/JAR/05664/menuLive_LCS_base.prop",
+        "sizeBytes": 68311
+      },
+      {
+        "path": "BDMV/JAR/05664/menuLive_base.prop",
+        "sizeBytes": 163487
+      },
+      {
+        "path": "BDMV/JAR/05664/menu_base.prop",
+        "sizeBytes": 58742
+      },
+      {
+        "path": "BDMV/JAR/08800/composite_HP3_BD01_ita_1.png",
+        "sizeBytes": 2632843
+      },
+      {
+        "path": "BDMV/JAR/08800/composite_HP3_BD01_ita_2.png",
+        "sizeBytes": 2673674
+      },
+      {
+        "path": "BDMV/JAR/08800/composite_HP3_BD01_ita_3.png",
+        "sizeBytes": 1977689
+      },
+      {
+        "path": "BDMV/JAR/08800/composite_LCS_in_movie_1.png",
+        "sizeBytes": 14683
+      },
+      {
+        "path": "BDMV/JAR/08800/composite_Redesign_ita_1.png",
+        "sizeBytes": 90238
+      },
+      {
+        "path": "BDMV/JAR/08800/composite_Redesign_ita_2.png",
+        "sizeBytes": 474693
+      },
+      {
+        "path": "BDMV/JAR/08800/composite_widget_1.png",
+        "sizeBytes": 213045
+      },
+      {
+        "path": "BDMV/JAR/08800/images.txt",
+        "sizeBytes": 11642
+      },
+      {
+        "path": "BDMV/JAR/08800/liveImages.txt",
+        "sizeBytes": 10313
+      },
+      {
+        "path": "BDMV/JAR/08800/menuLive_LCS_base.prop",
+        "sizeBytes": 65307
+      },
+      {
+        "path": "BDMV/JAR/08800/menuLive_base.prop",
+        "sizeBytes": 162825
+      },
+      {
+        "path": "BDMV/JAR/08800/menu_base.prop",
+        "sizeBytes": 58748
+      },
+      {
+        "path": "BDMV/JAR/09709/composite_HP3_BD01_jpn_1.png",
+        "sizeBytes": 2048667
+      },
+      {
+        "path": "BDMV/JAR/09709/composite_HP3_BD01_jpn_2.png",
+        "sizeBytes": 1835584
+      },
+      {
+        "path": "BDMV/JAR/09709/composite_HP3_BD01_jpn_3.png",
+        "sizeBytes": 2732269
+      },
+      {
+        "path": "BDMV/JAR/09709/composite_LCS_buttons.png",
+        "sizeBytes": 631
+      },
+      {
+        "path": "BDMV/JAR/09709/composite_LCS_in_movie_1.png",
+        "sizeBytes": 19935
+      },
+      {
+        "path": "BDMV/JAR/09709/composite_Redesign_jpn_1.png",
+        "sizeBytes": 565187
+      },
+      {
+        "path": "BDMV/JAR/09709/composite_Redesign_jpn_2.png",
+        "sizeBytes": 450841
+      },
+      {
+        "path": "BDMV/JAR/09709/composite_widget_1.png",
+        "sizeBytes": 213045
+      },
+      {
+        "path": "BDMV/JAR/09709/images.txt",
+        "sizeBytes": 9043
+      },
+      {
+        "path": "BDMV/JAR/09709/liveImages.txt",
+        "sizeBytes": 10551
+      },
+      {
+        "path": "BDMV/JAR/09709/menuLive_LCS_base.prop",
+        "sizeBytes": 77118
+      },
+      {
+        "path": "BDMV/JAR/09709/menuLive_base.prop",
+        "sizeBytes": 184080
+      },
+      {
+        "path": "BDMV/JAR/09709/menu_base.prop",
+        "sizeBytes": 49536
+      },
+      {
+        "path": "BDMV/JAR/13667/composite_HP3_BD01_dut_1.png",
+        "sizeBytes": 2385658
+      },
+      {
+        "path": "BDMV/JAR/13667/composite_HP3_BD01_dut_2.png",
+        "sizeBytes": 3064511
+      },
+      {
+        "path": "BDMV/JAR/13667/composite_HP3_BD01_dut_3.png",
+        "sizeBytes": 1852878
+      },
+      {
+        "path": "BDMV/JAR/13667/composite_LCS_in_movie_1.png",
+        "sizeBytes": 30623
+      },
+      {
+        "path": "BDMV/JAR/13667/composite_Redesign_nld_1.png",
+        "sizeBytes": 101564
+      },
+      {
+        "path": "BDMV/JAR/13667/composite_Redesign_nld_2.png",
+        "sizeBytes": 467117
+      },
+      {
+        "path": "BDMV/JAR/13667/composite_widget_1.png",
+        "sizeBytes": 213045
+      },
+      {
+        "path": "BDMV/JAR/13667/images.txt",
+        "sizeBytes": 11733
+      },
+      {
+        "path": "BDMV/JAR/13667/liveImages.txt",
+        "sizeBytes": 10766
+      },
+      {
+        "path": "BDMV/JAR/13667/menuLive_LCS_base.prop",
+        "sizeBytes": 69095
+      },
+      {
+        "path": "BDMV/JAR/13667/menuLive_base.prop",
+        "sizeBytes": 162611
+      },
+      {
+        "path": "BDMV/JAR/13667/menu_base.prop",
+        "sizeBytes": 58859
+      },
+      {
+        "path": "BDMV/JAR/15631/BigFont_DM22_1080grey.png",
+        "sizeBytes": 10552
+      },
+      {
+        "path": "BDMV/JAR/15631/BigFont_DM22_1080grey.txt",
+        "sizeBytes": 9046
+      },
+      {
+        "path": "BDMV/JAR/15631/BigFont_DM22_b.png",
+        "sizeBytes": 6569
+      },
+      {
+        "path": "BDMV/JAR/15631/BigFont_DM22_b.txt",
+        "sizeBytes": 7574
+      },
+      {
+        "path": "BDMV/JAR/15631/BigFont_DM22_db.png",
+        "sizeBytes": 6480
+      },
+      {
+        "path": "BDMV/JAR/15631/BigFont_DM22_db.txt",
+        "sizeBytes": 7743
+      },
+      {
+        "path": "BDMV/JAR/15631/BigFont_DM22_grey.png",
+        "sizeBytes": 6587
+      },
+      {
+        "path": "BDMV/JAR/15631/BigFont_DM22_grey.txt",
+        "sizeBytes": 8081
+      },
+      {
+        "path": "BDMV/JAR/15631/BigFont_TG20_30_b.png",
+        "sizeBytes": 8209
+      },
+      {
+        "path": "BDMV/JAR/15631/BigFont_TG20_30_b.txt",
+        "sizeBytes": 8114
+      },
+      {
+        "path": "BDMV/JAR/15631/BigFont_TG20_30_yellow.png",
+        "sizeBytes": 7987
+      },
+      {
+        "path": "BDMV/JAR/15631/BigFont_TG20_30_yellow.txt",
+        "sizeBytes": 8964
+      },
+      {
+        "path": "BDMV/JAR/15631/BigFont_TG20_35_b.png",
+        "sizeBytes": 9933
+      },
+      {
+        "path": "BDMV/JAR/15631/BigFont_TG20_35_b.txt",
+        "sizeBytes": 8137
+      },
+      {
+        "path": "BDMV/JAR/15631/BigFont_TG20_35_grey.png",
+        "sizeBytes": 10016
+      },
+      {
+        "path": "BDMV/JAR/15631/BigFont_TG20_35_grey.txt",
+        "sizeBytes": 8647
+      },
+      {
+        "path": "BDMV/JAR/15631/DinMedium_22pt.png",
+        "sizeBytes": 4157
+      },
+      {
+        "path": "BDMV/JAR/15631/DinMedium_22pt.txt",
+        "sizeBytes": 4212
+      },
+      {
+        "path": "BDMV/JAR/15631/DinMedium_22pt_1080p.png",
+        "sizeBytes": 10552
+      },
+      {
+        "path": "BDMV/JAR/15631/DinMedium_22pt_1080p.txt",
+        "sizeBytes": 8876
+      },
+      {
+        "path": "BDMV/JAR/15631/DinMedium_22pt_blue.png",
+        "sizeBytes": 6569
+      },
+      {
+        "path": "BDMV/JAR/15631/DinMedium_22pt_blue.txt",
+        "sizeBytes": 8424
+      },
+      {
+        "path": "BDMV/JAR/15631/DinMedium_22pt_dark.png",
+        "sizeBytes": 4081
+      },
+      {
+        "path": "BDMV/JAR/15631/DinMedium_22pt_dark.txt",
+        "sizeBytes": 4694
+      },
+      {
+        "path": "BDMV/JAR/15631/DinMedium_22pt_db.png",
+        "sizeBytes": 6480
+      },
+      {
+        "path": "BDMV/JAR/15631/DinMedium_22pt_db.txt",
+        "sizeBytes": 8083
+      },
+      {
+        "path": "BDMV/JAR/15631/DinMedium_22pt_grey.png",
+        "sizeBytes": 6671
+      },
+      {
+        "path": "BDMV/JAR/15631/DinMedium_22pt_grey.txt",
+        "sizeBytes": 8421
+      },
+      {
+        "path": "BDMV/JAR/15631/Mangelo_20pt.png",
+        "sizeBytes": 12540
+      },
+      {
+        "path": "BDMV/JAR/15631/Mangelo_20pt.txt",
+        "sizeBytes": 418
+      },
+      {
+        "path": "BDMV/JAR/15631/TradegothicBoldCondensedNo20_30pt_blue.png",
+        "sizeBytes": 8209
+      },
+      {
+        "path": "BDMV/JAR/15631/TradegothicBoldCondensedNo20_30pt_blue.txt",
+        "sizeBytes": 11684
+      },
+      {
+        "path": "BDMV/JAR/15631/TradegothicBoldCondensedNo20_30pt_yellow.png",
+        "sizeBytes": 7987
+      },
+      {
+        "path": "BDMV/JAR/15631/TradegothicBoldCondensedNo20_30pt_yellow.txt",
+        "sizeBytes": 12024
+      },
+      {
+        "path": "BDMV/JAR/15631/TradegothicBoldCondensedNo20_35pt.png",
+        "sizeBytes": 6428
+      },
+      {
+        "path": "BDMV/JAR/15631/TradegothicBoldCondensedNo20_35pt.txt",
+        "sizeBytes": 6040
+      },
+      {
+        "path": "BDMV/JAR/15631/TradegothicBoldCondensedNo20_35pt_blue.png",
+        "sizeBytes": 9933
+      },
+      {
+        "path": "BDMV/JAR/15631/TradegothicBoldCondensedNo20_35pt_blue.txt",
+        "sizeBytes": 11707
+      },
+      {
+        "path": "BDMV/JAR/15631/TradegothicBoldCondensedNo20_35pt_grey.png",
+        "sizeBytes": 10016
+      },
+      {
+        "path": "BDMV/JAR/15631/TradegothicBoldCondensedNo20_35pt_grey.txt",
+        "sizeBytes": 11707
+      },
+      {
+        "path": "BDMV/JAR/15631/composite_LCS_buttons.png",
+        "sizeBytes": 294
+      },
+      {
+        "path": "BDMV/JAR/15631/config",
+        "sizeBytes": 105
+      },
+      {
+        "path": "BDMV/JAR/15631/font.prop",
+        "sizeBytes": 93
+      },
+      {
+        "path": "BDMV/JAR/15631/language_streams.txt",
+        "sizeBytes": 937
+      },
+      {
+        "path": "BDMV/JAR/15631/liveMisc.prop",
+        "sizeBytes": 601
+      },
+      {
+        "path": "BDMV/JAR/15631/sound.prop",
+        "sizeBytes": 590
+      },
+      {
+        "path": "BDMV/JAR/15631/states.prop",
+        "sizeBytes": 1776
+      },
+      {
+        "path": "BDMV/JAR/18912/composite_HP3_BD01_csp_1.png",
+        "sizeBytes": 2375094
+      },
+      {
+        "path": "BDMV/JAR/18912/composite_HP3_BD01_csp_2.png",
+        "sizeBytes": 2390766
+      },
+      {
+        "path": "BDMV/JAR/18912/composite_HP3_BD01_csp_3.png",
+        "sizeBytes": 2598486
+      },
+      {
+        "path": "BDMV/JAR/18912/composite_LCS_in_movie_1.png",
+        "sizeBytes": 14683
+      },
+      {
+        "path": "BDMV/JAR/18912/composite_Redesign_spa_1.png",
+        "sizeBytes": 100108
+      },
+      {
+        "path": "BDMV/JAR/18912/composite_Redesign_spa_2.png",
+        "sizeBytes": 505712
+      },
+      {
+        "path": "BDMV/JAR/18912/composite_widget_1.png",
+        "sizeBytes": 213045
+      },
+      {
+        "path": "BDMV/JAR/18912/images.txt",
+        "sizeBytes": 11743
+      },
+      {
+        "path": "BDMV/JAR/18912/liveImages.txt",
+        "sizeBytes": 10733
+      },
+      {
+        "path": "BDMV/JAR/18912/menuLive_LCS_base.prop",
+        "sizeBytes": 67787
+      },
+      {
+        "path": "BDMV/JAR/18912/menuLive_base.prop",
+        "sizeBytes": 163625
+      },
+      {
+        "path": "BDMV/JAR/18912/menu_base.prop",
+        "sizeBytes": 58754
+      },
+      {
+        "path": "BDMV/META/DL/bdmt_deu.xml",
+        "sizeBytes": 521
+      },
+      {
+        "path": "BDMV/META/DL/bdmt_eng.xml",
+        "sizeBytes": 554
+      },
+      {
+        "path": "BDMV/META/DL/bdmt_fra.xml",
+        "sizeBytes": 521
+      },
+      {
+        "path": "BDMV/META/DL/bdmt_ita.xml",
+        "sizeBytes": 521
+      },
+      {
+        "path": "BDMV/META/DL/bdmt_jpn.xml",
+        "sizeBytes": 521
+      },
+      {
+        "path": "BDMV/META/DL/bdmt_nld.xml",
+        "sizeBytes": 521
+      },
+      {
+        "path": "BDMV/META/DL/bdmt_spa.xml",
+        "sizeBytes": 521
+      },
+      {
+        "path": "BDMV/META/DL/satc2_metadata416.jpg",
+        "sizeBytes": 141237
+      },
+      {
+        "path": "BDMV/META/DL/satc2_metadata640.jpg",
+        "sizeBytes": 280022
+      },
+      {
+        "path": "BDMV/MovieObject.bdmv",
+        "sizeBytes": 2170
+      },
+      {
+        "path": "BDMV/PLAYLIST/00000.mpls",
+        "sizeBytes": 168
+      },
+      {
+        "path": "BDMV/PLAYLIST/00001.mpls",
+        "sizeBytes": 168
+      },
+      {
+        "path": "BDMV/PLAYLIST/00002.mpls",
+        "sizeBytes": 184
+      },
+      {
+        "path": "BDMV/PLAYLIST/00003.mpls",
+        "sizeBytes": 168
+      },
+      {
+        "path": "BDMV/PLAYLIST/00004.mpls",
+        "sizeBytes": 168
+      },
+      {
+        "path": "BDMV/PLAYLIST/00005.mpls",
+        "sizeBytes": 168
+      },
+      {
+        "path": "BDMV/PLAYLIST/00006.mpls",
+        "sizeBytes": 168
+      },
+      {
+        "path": "BDMV/PLAYLIST/00007.mpls",
+        "sizeBytes": 630
+      },
+      {
+        "path": "BDMV/PLAYLIST/00008.mpls",
+        "sizeBytes": 196
+      },
+      {
+        "path": "BDMV/PLAYLIST/00009.mpls",
+        "sizeBytes": 224
+      },
+      {
+        "path": "BDMV/PLAYLIST/00011.mpls",
+        "sizeBytes": 154
+      },
+      {
+        "path": "BDMV/PLAYLIST/00012.mpls",
+        "sizeBytes": 168
+      },
+      {
+        "path": "BDMV/PLAYLIST/00022.mpls",
+        "sizeBytes": 210
+      },
+      {
+        "path": "BDMV/PLAYLIST/00023.mpls",
+        "sizeBytes": 210
+      },
+      {
+        "path": "BDMV/PLAYLIST/00024.mpls",
+        "sizeBytes": 210
+      },
+      {
+        "path": "BDMV/PLAYLIST/00100.mpls",
+        "sizeBytes": 996
+      },
+      {
+        "path": "BDMV/PLAYLIST/00101.mpls",
+        "sizeBytes": 724
+      },
+      {
+        "path": "BDMV/PLAYLIST/00120.mpls",
+        "sizeBytes": 170
+      },
+      {
+        "path": "BDMV/PLAYLIST/00137.mpls",
+        "sizeBytes": 154
+      },
+      {
+        "path": "BDMV/PLAYLIST/00900.mpls",
+        "sizeBytes": 154
+      },
+      {
+        "path": "BDMV/PLAYLIST/00901.mpls",
+        "sizeBytes": 154
+      },
+      {
+        "path": "BDMV/PLAYLIST/00959.mpls",
+        "sizeBytes": 154
+      },
+      {
+        "path": "BDMV/STREAM/00000.m2ts",
+        "sizeBytes": 2310144
+      },
+      {
+        "path": "BDMV/STREAM/00001.m2ts",
+        "sizeBytes": 28870656
+      },
+      {
+        "path": "BDMV/STREAM/00002.m2ts",
+        "sizeBytes": 3643392
+      },
+      {
+        "path": "BDMV/STREAM/00003.m2ts",
+        "sizeBytes": 164984832
+      },
+      {
+        "path": "BDMV/STREAM/00014.m2ts",
+        "sizeBytes": 4694016
+      },
+      {
+        "path": "BDMV/STREAM/00015.m2ts",
+        "sizeBytes": 393216
+      },
+      {
+        "path": "BDMV/STREAM/00016.m2ts",
+        "sizeBytes": 405504
+      },
+      {
+        "path": "BDMV/STREAM/00017.m2ts",
+        "sizeBytes": 1916928
+      },
+      {
+        "path": "BDMV/STREAM/00112.m2ts",
+        "sizeBytes": 16834560
+      },
+      {
+        "path": "BDMV/STREAM/00120.m2ts",
+        "sizeBytes": 3594240
+      },
+      {
+        "path": "BDMV/STREAM/00127.m2ts",
+        "sizeBytes": 19943424
+      },
+      {
+        "path": "BDMV/STREAM/00137.m2ts",
+        "sizeBytes": 3078144
+      },
+      {
+        "path": "BDMV/STREAM/00144.m2ts",
+        "sizeBytes": 8767488
+      },
+      {
+        "path": "BDMV/STREAM/00154.m2ts",
+        "sizeBytes": 15347712
+      },
+      {
+        "path": "BDMV/STREAM/00155.m2ts",
+        "sizeBytes": 86876160
+      },
+      {
+        "path": "BDMV/STREAM/00163.m2ts",
+        "sizeBytes": 31405971456
+      },
+      {
+        "path": "BDMV/STREAM/00164.m2ts",
+        "sizeBytes": 374784
+      },
+      {
+        "path": "BDMV/STREAM/00165.m2ts",
+        "sizeBytes": 12288
+      },
+      {
+        "path": "BDMV/STREAM/00900.m2ts",
+        "sizeBytes": 835584
+      },
+      {
+        "path": "BDMV/STREAM/00901.m2ts",
+        "sizeBytes": 835584
+      },
+      {
+        "path": "BDMV/STREAM/00999.m2ts",
+        "sizeBytes": 61440
+      },
+      {
+        "path": "BDMV/index.bdmv",
+        "sizeBytes": 348
+      },
+      {
+        "path": "CERTIFICATE/BACKUP/app.discroot.crt",
+        "sizeBytes": 848
+      },
+      {
+        "path": "CERTIFICATE/BACKUP/bu.discroot.crt",
+        "sizeBytes": 848
+      },
+      {
+        "path": "CERTIFICATE/BACKUP/id.bdmv",
+        "sizeBytes": 104
+      },
+      {
+        "path": "CERTIFICATE/BACKUP/online.crl",
+        "sizeBytes": 2048
+      },
+      {
+        "path": "CERTIFICATE/BACKUP/online.crt",
+        "sizeBytes": 848
+      },
+      {
+        "path": "CERTIFICATE/BACKUP/online.sig",
+        "sizeBytes": 296
+      },
+      {
+        "path": "CERTIFICATE/app.discroot.crt",
+        "sizeBytes": 848
+      },
+      {
+        "path": "CERTIFICATE/bu.discroot.crt",
+        "sizeBytes": 848
+      },
+      {
+        "path": "CERTIFICATE/id.bdmv",
+        "sizeBytes": 104
+      },
+      {
+        "path": "CERTIFICATE/online.crl",
+        "sizeBytes": 2048
+      },
+      {
+        "path": "CERTIFICATE/online.crt",
+        "sizeBytes": 848
+      },
+      {
+        "path": "CERTIFICATE/online.sig",
+        "sizeBytes": 296
+      }
+    ],
+    "titles": [
+      {
+        "source": {
+          "path": "BDMV/PLAYLIST/00007.mpls"
+        },
+        "durationSeconds": 340.34,
+        "sizeBytes": 86876160,
+        "chapters": [
+          {
+            "startSeconds": 0,
+            "durationSeconds": 10.01
+          },
+          {
+            "startSeconds": 10.01,
+            "durationSeconds": 10.01
+          },
+          {
+            "startSeconds": 20.02,
+            "durationSeconds": 10.01
+          },
+          {
+            "startSeconds": 30.03,
+            "durationSeconds": 10.01
+          },
+          {
+            "startSeconds": 40.04,
+            "durationSeconds": 10.01
+          },
+          {
+            "startSeconds": 50.05,
+            "durationSeconds": 10.01
+          },
+          {
+            "startSeconds": 60.06,
+            "durationSeconds": 10.01
+          },
+          {
+            "startSeconds": 70.07,
+            "durationSeconds": 10.01
+          },
+          {
+            "startSeconds": 80.08,
+            "durationSeconds": 10.01
+          },
+          {
+            "startSeconds": 90.09,
+            "durationSeconds": 10.01
+          },
+          {
+            "startSeconds": 100.1,
+            "durationSeconds": 10.01
+          },
+          {
+            "startSeconds": 110.11,
+            "durationSeconds": 10.01
+          },
+          {
+            "startSeconds": 120.12,
+            "durationSeconds": 10.01
+          },
+          {
+            "startSeconds": 130.13,
+            "durationSeconds": 10.01
+          },
+          {
+            "startSeconds": 140.14,
+            "durationSeconds": 10.01
+          },
+          {
+            "startSeconds": 150.15,
+            "durationSeconds": 10.01
+          },
+          {
+            "startSeconds": 160.16,
+            "durationSeconds": 10.01
+          },
+          {
+            "startSeconds": 170.17,
+            "durationSeconds": 10.01
+          },
+          {
+            "startSeconds": 180.18,
+            "durationSeconds": 10.01
+          },
+          {
+            "startSeconds": 190.19,
+            "durationSeconds": 10.01
+          },
+          {
+            "startSeconds": 200.2,
+            "durationSeconds": 10.01
+          },
+          {
+            "startSeconds": 210.21,
+            "durationSeconds": 10.01
+          },
+          {
+            "startSeconds": 220.22,
+            "durationSeconds": 10.01
+          },
+          {
+            "startSeconds": 230.23,
+            "durationSeconds": 10.01
+          },
+          {
+            "startSeconds": 240.24,
+            "durationSeconds": 10.01
+          },
+          {
+            "startSeconds": 250.25,
+            "durationSeconds": 10.01
+          },
+          {
+            "startSeconds": 260.26,
+            "durationSeconds": 10.01
+          },
+          {
+            "startSeconds": 270.27,
+            "durationSeconds": 10.01
+          },
+          {
+            "startSeconds": 280.28,
+            "durationSeconds": 10.01
+          },
+          {
+            "startSeconds": 290.29,
+            "durationSeconds": 10.01
+          },
+          {
+            "startSeconds": 300.3,
+            "durationSeconds": 10.01
+          },
+          {
+            "startSeconds": 310.31,
+            "durationSeconds": 10.01
+          },
+          {
+            "startSeconds": 320.32,
+            "durationSeconds": 10.01
+          },
+          {
+            "startSeconds": 330.33,
+            "durationSeconds": 10.01
+          }
+        ],
+        "segments": [
+          {
+            "clip": "00155",
+            "startSeconds": 0,
+            "durationSeconds": 340.34
+          }
+        ],
+        "streams": [
+          {
+            "type": "video",
+            "codec": "VC-1 Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 234,
+            "formatCode": 6,
+            "rateCode": 1,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      },
+      {
+        "source": {
+          "path": "BDMV/PLAYLIST/00008.mpls"
+        },
+        "durationSeconds": 30.03,
+        "sizeBytes": 19943424,
+        "chapters": [
+          {
+            "startSeconds": 0,
+            "durationSeconds": 10.01
+          },
+          {
+            "startSeconds": 10.01,
+            "durationSeconds": 10.01
+          },
+          {
+            "startSeconds": 20.02,
+            "durationSeconds": 10.01
+          }
+        ],
+        "segments": [
+          {
+            "clip": "00127",
+            "startSeconds": 0,
+            "durationSeconds": 30.03
+          }
+        ],
+        "streams": [
+          {
+            "type": "video",
+            "codec": "VC-1 Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 234,
+            "formatCode": 6,
+            "rateCode": 1,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      },
+      {
+        "source": {
+          "path": "BDMV/PLAYLIST/00009.mpls"
+        },
+        "durationSeconds": 50.05,
+        "sizeBytes": 28870656,
+        "chapters": [
+          {
+            "startSeconds": 0,
+            "durationSeconds": 10.01
+          },
+          {
+            "startSeconds": 10.01,
+            "durationSeconds": 10.01
+          },
+          {
+            "startSeconds": 20.02,
+            "durationSeconds": 10.01
+          },
+          {
+            "startSeconds": 30.03,
+            "durationSeconds": 10.01
+          },
+          {
+            "startSeconds": 40.04,
+            "durationSeconds": 10.01
+          }
+        ],
+        "segments": [
+          {
+            "clip": "00001",
+            "startSeconds": 0,
+            "durationSeconds": 50.05
+          }
+        ],
+        "streams": [
+          {
+            "type": "video",
+            "codec": "VC-1 Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 234,
+            "formatCode": 6,
+            "rateCode": 1,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      },
+      {
+        "source": {
+          "path": "BDMV/PLAYLIST/00100.mpls"
+        },
+        "durationSeconds": 8502.160333,
+        "sizeBytes": 31405971456,
+        "chapters": [
+          {
+            "startSeconds": 0,
+            "durationSeconds": 100.1
+          },
+          {
+            "startSeconds": 100.1,
+            "durationSeconds": 296.129156
+          },
+          {
+            "startSeconds": 396.229156,
+            "durationSeconds": 369.702667
+          },
+          {
+            "startSeconds": 765.931822,
+            "durationSeconds": 126.5848
+          },
+          {
+            "startSeconds": 892.516622,
+            "durationSeconds": 79.996578
+          },
+          {
+            "startSeconds": 972.5132,
+            "durationSeconds": 163.7052
+          },
+          {
+            "startSeconds": 1136.2184,
+            "durationSeconds": 294.168889
+          },
+          {
+            "startSeconds": 1430.387289,
+            "durationSeconds": 300.341711
+          },
+          {
+            "startSeconds": 1730.729,
+            "durationSeconds": 151.109289
+          },
+          {
+            "startSeconds": 1881.838289,
+            "durationSeconds": 448.322867
+          },
+          {
+            "startSeconds": 2330.161156,
+            "durationSeconds": 355.563533
+          },
+          {
+            "startSeconds": 2685.724689,
+            "durationSeconds": 172.0886
+          },
+          {
+            "startSeconds": 2857.813289,
+            "durationSeconds": 122.122
+          },
+          {
+            "startSeconds": 2979.935289,
+            "durationSeconds": 243.409822
+          },
+          {
+            "startSeconds": 3223.345111,
+            "durationSeconds": 225.058178
+          },
+          {
+            "startSeconds": 3448.403289,
+            "durationSeconds": 235.3184
+          },
+          {
+            "startSeconds": 3683.721689,
+            "durationSeconds": 120.0366
+          },
+          {
+            "startSeconds": 3803.758289,
+            "durationSeconds": 227.227
+          },
+          {
+            "startSeconds": 4030.985289,
+            "durationSeconds": 282.490533
+          },
+          {
+            "startSeconds": 4313.475822,
+            "durationSeconds": 436.602844
+          },
+          {
+            "startSeconds": 4750.078667,
+            "durationSeconds": 199.866333
+          },
+          {
+            "startSeconds": 4949.945,
+            "durationSeconds": 299.257289
+          },
+          {
+            "startSeconds": 5249.202289,
+            "durationSeconds": 164.164
+          },
+          {
+            "startSeconds": 5413.366289,
+            "durationSeconds": 245.662067
+          },
+          {
+            "startSeconds": 5659.028356,
+            "durationSeconds": 157.866044
+          },
+          {
+            "startSeconds": 5816.8944,
+            "durationSeconds": 327.577267
+          },
+          {
+            "startSeconds": 6144.471667,
+            "durationSeconds": 195.862333
+          },
+          {
+            "startSeconds": 6340.334,
+            "durationSeconds": 263.263
+          },
+          {
+            "startSeconds": 6603.597,
+            "durationSeconds": 329.746067
+          },
+          {
+            "startSeconds": 6933.343067,
+            "durationSeconds": 274.065467
+          },
+          {
+            "startSeconds": 7207.408533,
+            "durationSeconds": 188.6468
+          },
+          {
+            "startSeconds": 7396.055333,
+            "durationSeconds": 166.457956
+          },
+          {
+            "startSeconds": 7562.513289,
+            "durationSeconds": 160.410244
+          },
+          {
+            "startSeconds": 7722.923533,
+            "durationSeconds": 64.481089
+          },
+          {
+            "startSeconds": 7787.404622,
+            "durationSeconds": 714.755711
+          }
+        ],
+        "segments": [
+          {
+            "clip": "00163",
+            "startSeconds": 0,
+            "durationSeconds": 8502.160333
+          }
+        ],
+        "streams": [
+          {
+            "type": "audio",
+            "codec": "DTS-HD Master Audio",
+            "category": "audio",
+            "pid": 4352,
+            "codingTypeCode": 134,
+            "formatCode": 6,
+            "rateCode": 1,
+            "language": "eng",
+            "resolution": "1920x1080",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "audio",
+            "codec": "AC-3",
+            "category": "audio",
+            "pid": 4353,
+            "codingTypeCode": 129,
+            "formatCode": 6,
+            "rateCode": 1,
+            "language": "fra",
+            "resolution": "1920x1080",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "audio",
+            "codec": "AC-3",
+            "category": "audio",
+            "pid": 4354,
+            "codingTypeCode": 129,
+            "formatCode": 6,
+            "rateCode": 1,
+            "language": "fra",
+            "resolution": "1920x1080",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "audio",
+            "codec": "AC-3",
+            "category": "audio",
+            "pid": 4355,
+            "codingTypeCode": 129,
+            "formatCode": 6,
+            "rateCode": 1,
+            "language": "deu",
+            "resolution": "1920x1080",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "audio",
+            "codec": "AC-3",
+            "category": "audio",
+            "pid": 4356,
+            "codingTypeCode": 129,
+            "formatCode": 6,
+            "rateCode": 1,
+            "language": "ita",
+            "resolution": "1920x1080",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "audio",
+            "codec": "AC-3",
+            "category": "audio",
+            "pid": 4357,
+            "codingTypeCode": 129,
+            "formatCode": 6,
+            "rateCode": 1,
+            "language": "spa",
+            "resolution": "1920x1080",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "audio",
+            "codec": "AC-3",
+            "category": "audio",
+            "pid": 4358,
+            "codingTypeCode": 129,
+            "formatCode": 6,
+            "rateCode": 1,
+            "language": "nld",
+            "resolution": "1920x1080",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "audio",
+            "codec": "AC-3",
+            "category": "audio",
+            "pid": 4359,
+            "codingTypeCode": 129,
+            "formatCode": 6,
+            "rateCode": 1,
+            "language": "spa",
+            "resolution": "1920x1080",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "audio",
+            "codec": "AC-3",
+            "category": "audio",
+            "pid": 4360,
+            "codingTypeCode": 129,
+            "formatCode": 6,
+            "rateCode": 1,
+            "language": "por",
+            "resolution": "1920x1080",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "audio",
+            "codec": "AC-3",
+            "category": "audio",
+            "pid": 4361,
+            "codingTypeCode": 129,
+            "formatCode": 6,
+            "rateCode": 1,
+            "language": "cat",
+            "resolution": "1920x1080",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "audio",
+            "codec": "AC-3",
+            "category": "audio",
+            "pid": 4362,
+            "codingTypeCode": 129,
+            "formatCode": 6,
+            "rateCode": 1,
+            "language": "nld",
+            "resolution": "1920x1080",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "subtitle",
+            "codec": "Presentation Graphics",
+            "category": "presentationGraphics",
+            "pid": 4609,
+            "codingTypeCode": 144,
+            "language": "eng"
+          },
+          {
+            "type": "subtitle",
+            "codec": "Presentation Graphics",
+            "category": "presentationGraphics",
+            "pid": 4610,
+            "codingTypeCode": 144,
+            "language": "fra"
+          },
+          {
+            "type": "subtitle",
+            "codec": "Presentation Graphics",
+            "category": "presentationGraphics",
+            "pid": 4611,
+            "codingTypeCode": 144,
+            "language": "deu"
+          },
+          {
+            "type": "subtitle",
+            "codec": "Presentation Graphics",
+            "category": "presentationGraphics",
+            "pid": 4612,
+            "codingTypeCode": 144,
+            "language": "ita"
+          },
+          {
+            "type": "subtitle",
+            "codec": "Presentation Graphics",
+            "category": "presentationGraphics",
+            "pid": 4613,
+            "codingTypeCode": 144,
+            "language": "spa"
+          },
+          {
+            "type": "subtitle",
+            "codec": "Presentation Graphics",
+            "category": "presentationGraphics",
+            "pid": 4614,
+            "codingTypeCode": 144,
+            "language": "nld"
+          },
+          {
+            "type": "subtitle",
+            "codec": "Presentation Graphics",
+            "category": "presentationGraphics",
+            "pid": 4615,
+            "codingTypeCode": 144,
+            "language": "spa"
+          },
+          {
+            "type": "subtitle",
+            "codec": "Presentation Graphics",
+            "category": "presentationGraphics",
+            "pid": 4616,
+            "codingTypeCode": 144,
+            "language": "por"
+          },
+          {
+            "type": "subtitle",
+            "codec": "Presentation Graphics",
+            "category": "presentationGraphics",
+            "pid": 4618,
+            "codingTypeCode": 144,
+            "language": "fra"
+          },
+          {
+            "type": "subtitle",
+            "codec": "Presentation Graphics",
+            "category": "presentationGraphics",
+            "pid": 4619,
+            "codingTypeCode": 144,
+            "language": "spa"
+          },
+          {
+            "type": "subtitle",
+            "codec": "Presentation Graphics",
+            "category": "presentationGraphics",
+            "pid": 4620,
+            "codingTypeCode": 144,
+            "language": "nld"
+          },
+          {
+            "type": "video",
+            "codec": "VC-1 Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 234,
+            "formatCode": 6,
+            "rateCode": 1,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      },
+      {
+        "source": {
+          "path": "BDMV/PLAYLIST/00101.mpls"
+        },
+        "durationSeconds": 8502.160333,
+        "sizeBytes": 31405971456,
+        "chapters": [
+          {
+            "startSeconds": 0,
+            "durationSeconds": 100.1
+          },
+          {
+            "startSeconds": 100.1,
+            "durationSeconds": 296.129156
+          },
+          {
+            "startSeconds": 396.229156,
+            "durationSeconds": 369.702667
+          },
+          {
+            "startSeconds": 765.931822,
+            "durationSeconds": 126.5848
+          },
+          {
+            "startSeconds": 892.516622,
+            "durationSeconds": 79.996578
+          },
+          {
+            "startSeconds": 972.5132,
+            "durationSeconds": 163.7052
+          },
+          {
+            "startSeconds": 1136.2184,
+            "durationSeconds": 294.168889
+          },
+          {
+            "startSeconds": 1430.387289,
+            "durationSeconds": 300.341711
+          },
+          {
+            "startSeconds": 1730.729,
+            "durationSeconds": 151.109289
+          },
+          {
+            "startSeconds": 1881.838289,
+            "durationSeconds": 448.322867
+          },
+          {
+            "startSeconds": 2330.161156,
+            "durationSeconds": 355.563533
+          },
+          {
+            "startSeconds": 2685.724689,
+            "durationSeconds": 172.0886
+          },
+          {
+            "startSeconds": 2857.813289,
+            "durationSeconds": 122.122
+          },
+          {
+            "startSeconds": 2979.935289,
+            "durationSeconds": 243.409822
+          },
+          {
+            "startSeconds": 3223.345111,
+            "durationSeconds": 225.058178
+          },
+          {
+            "startSeconds": 3448.403289,
+            "durationSeconds": 235.3184
+          },
+          {
+            "startSeconds": 3683.721689,
+            "durationSeconds": 120.0366
+          },
+          {
+            "startSeconds": 3803.758289,
+            "durationSeconds": 227.227
+          },
+          {
+            "startSeconds": 4030.985289,
+            "durationSeconds": 282.490533
+          },
+          {
+            "startSeconds": 4313.475822,
+            "durationSeconds": 436.602844
+          },
+          {
+            "startSeconds": 4750.078667,
+            "durationSeconds": 199.866333
+          },
+          {
+            "startSeconds": 4949.945,
+            "durationSeconds": 299.257289
+          },
+          {
+            "startSeconds": 5249.202289,
+            "durationSeconds": 164.164
+          },
+          {
+            "startSeconds": 5413.366289,
+            "durationSeconds": 245.662067
+          },
+          {
+            "startSeconds": 5659.028356,
+            "durationSeconds": 157.866044
+          },
+          {
+            "startSeconds": 5816.8944,
+            "durationSeconds": 327.577267
+          },
+          {
+            "startSeconds": 6144.471667,
+            "durationSeconds": 195.862333
+          },
+          {
+            "startSeconds": 6340.334,
+            "durationSeconds": 263.263
+          },
+          {
+            "startSeconds": 6603.597,
+            "durationSeconds": 329.746067
+          },
+          {
+            "startSeconds": 6933.343067,
+            "durationSeconds": 274.065467
+          },
+          {
+            "startSeconds": 7207.408533,
+            "durationSeconds": 188.6468
+          },
+          {
+            "startSeconds": 7396.055333,
+            "durationSeconds": 166.457956
+          },
+          {
+            "startSeconds": 7562.513289,
+            "durationSeconds": 160.410244
+          },
+          {
+            "startSeconds": 7722.923533,
+            "durationSeconds": 64.481089
+          },
+          {
+            "startSeconds": 7787.404622,
+            "durationSeconds": 714.755711
+          }
+        ],
+        "segments": [
+          {
+            "clip": "00163",
+            "startSeconds": 0,
+            "durationSeconds": 8502.160333
+          }
+        ],
+        "streams": [
+          {
+            "type": "audio",
+            "codec": "DTS-HD Master Audio",
+            "category": "audio",
+            "pid": 4352,
+            "codingTypeCode": 134,
+            "formatCode": 6,
+            "rateCode": 1,
+            "language": "eng",
+            "resolution": "1920x1080",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "audio",
+            "codec": "AC-3",
+            "category": "audio",
+            "pid": 4363,
+            "codingTypeCode": 129,
+            "formatCode": 6,
+            "rateCode": 1,
+            "language": "jpn",
+            "resolution": "1920x1080",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "subtitle",
+            "codec": "Presentation Graphics",
+            "category": "presentationGraphics",
+            "pid": 4608,
+            "codingTypeCode": 144,
+            "language": "jpn"
+          },
+          {
+            "type": "subtitle",
+            "codec": "Presentation Graphics",
+            "category": "presentationGraphics",
+            "pid": 4609,
+            "codingTypeCode": 144,
+            "language": "eng"
+          },
+          {
+            "type": "subtitle",
+            "codec": "Presentation Graphics",
+            "category": "presentationGraphics",
+            "pid": 4617,
+            "codingTypeCode": 144,
+            "language": "jpn"
+          },
+          {
+            "type": "video",
+            "codec": "VC-1 Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 234,
+            "formatCode": 6,
+            "rateCode": 1,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      },
+      {
+        "source": {
+          "path": "BDMV/STREAM/00000.m2ts"
+        },
+        "durationSeconds": 10.01,
+        "sizeBytes": 2310144,
+        "segments": [
+          {
+            "clip": "00000",
+            "startSeconds": 0,
+            "durationSeconds": 10.01
+          }
+        ],
+        "streams": [
+          {
+            "type": "video",
+            "codec": "VC-1 Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 234,
+            "formatCode": 6,
+            "rateCode": 1,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      },
+      {
+        "source": {
+          "path": "BDMV/STREAM/00003.m2ts"
+        },
+        "durationSeconds": 189.189,
+        "sizeBytes": 164984832,
+        "segments": [
+          {
+            "clip": "00003",
+            "startSeconds": 0,
+            "durationSeconds": 189.189
+          }
+        ],
+        "streams": [
+          {
+            "type": "audio",
+            "codec": "AC-3",
+            "category": "audio",
+            "pid": 4352,
+            "codingTypeCode": 129,
+            "formatCode": 3,
+            "rateCode": 1,
+            "language": "eng",
+            "resolution": "720x480",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "video",
+            "codec": "VC-1 Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 234,
+            "formatCode": 6,
+            "rateCode": 1,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      },
+      {
+        "source": {
+          "path": "BDMV/STREAM/00014.m2ts"
+        },
+        "durationSeconds": 6.047689,
+        "sizeBytes": 4694016,
+        "segments": [
+          {
+            "clip": "00014",
+            "startSeconds": 0,
+            "durationSeconds": 6.047689
+          }
+        ],
+        "streams": [
+          {
+            "type": "video",
+            "codec": "VC-1 Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 234,
+            "formatCode": 6,
+            "rateCode": 1,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      },
+      {
+        "source": {
+          "path": "BDMV/STREAM/00016.m2ts"
+        },
+        "durationSeconds": 5.005,
+        "sizeBytes": 405504,
+        "segments": [
+          {
+            "clip": "00016",
+            "startSeconds": 0,
+            "durationSeconds": 5.005
+          }
+        ],
+        "streams": [
+          {
+            "type": "video",
+            "codec": "VC-1 Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 234,
+            "formatCode": 6,
+            "rateCode": 1,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      },
+      {
+        "source": {
+          "path": "BDMV/STREAM/00017.m2ts"
+        },
+        "durationSeconds": 10.01,
+        "sizeBytes": 1916928,
+        "segments": [
+          {
+            "clip": "00017",
+            "startSeconds": 0,
+            "durationSeconds": 10.01
+          }
+        ],
+        "streams": [
+          {
+            "type": "video",
+            "codec": "VC-1 Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 234,
+            "formatCode": 6,
+            "rateCode": 1,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      },
+      {
+        "source": {
+          "path": "BDMV/STREAM/00112.m2ts"
+        },
+        "durationSeconds": 11.928578,
+        "sizeBytes": 16834560,
+        "segments": [
+          {
+            "clip": "00112",
+            "startSeconds": 0,
+            "durationSeconds": 11.928578
+          }
+        ],
+        "streams": [
+          {
+            "type": "audio",
+            "codec": "AC-3",
+            "category": "audio",
+            "pid": 4352,
+            "codingTypeCode": 129,
+            "formatCode": 6,
+            "rateCode": 1,
+            "language": "eng",
+            "resolution": "1920x1080",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "video",
+            "codec": "VC-1 Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 234,
+            "formatCode": 6,
+            "rateCode": 1,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      },
+      {
+        "source": {
+          "path": "BDMV/STREAM/00120.m2ts"
+        },
+        "durationSeconds": 12.012,
+        "sizeBytes": 3594240,
+        "segments": [
+          {
+            "clip": "00120",
+            "startSeconds": 0,
+            "durationSeconds": 12.012
+          }
+        ],
+        "streams": [
+          {
+            "type": "video",
+            "codec": "VC-1 Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 234,
+            "formatCode": 6,
+            "rateCode": 1,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      },
+      {
+        "source": {
+          "path": "BDMV/STREAM/00137.m2ts"
+        },
+        "durationSeconds": 10.01,
+        "sizeBytes": 3078144,
+        "segments": [
+          {
+            "clip": "00137",
+            "startSeconds": 0,
+            "durationSeconds": 10.01
+          }
+        ],
+        "streams": [
+          {
+            "type": "video",
+            "codec": "VC-1 Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 234,
+            "formatCode": 6,
+            "rateCode": 1,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      },
+      {
+        "source": {
+          "path": "BDMV/STREAM/00144.m2ts"
+        },
+        "durationSeconds": 17.058689,
+        "sizeBytes": 8767488,
+        "segments": [
+          {
+            "clip": "00144",
+            "startSeconds": 0,
+            "durationSeconds": 17.058689
+          }
+        ],
+        "streams": [
+          {
+            "type": "video",
+            "codec": "VC-1 Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 234,
+            "formatCode": 6,
+            "rateCode": 1,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      },
+      {
+        "source": {
+          "path": "BDMV/STREAM/00154.m2ts"
+        },
+        "durationSeconds": 23.273244,
+        "sizeBytes": 15347712,
+        "segments": [
+          {
+            "clip": "00154",
+            "startSeconds": 0,
+            "durationSeconds": 23.273244
+          }
+        ],
+        "streams": [
+          {
+            "type": "video",
+            "codec": "VC-1 Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 234,
+            "formatCode": 6,
+            "rateCode": 1,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      },
+      {
+        "source": {
+          "path": "BDMV/STREAM/00165.m2ts"
+        },
+        "durationSeconds": 0.0834,
+        "sizeBytes": 12288,
+        "segments": [
+          {
+            "clip": "00165",
+            "startSeconds": 0,
+            "durationSeconds": 0.0834
+          }
+        ],
+        "streams": [
+          {
+            "type": "menu",
+            "codec": "Interactive Graphics",
+            "category": "interactiveGraphics",
+            "pid": 5120,
+            "codingTypeCode": 145,
+            "language": "eng"
+          },
+          {
+            "type": "video",
+            "codec": "VC-1 Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 234,
+            "formatCode": 6,
+            "rateCode": 1,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      },
+      {
+        "source": {
+          "path": "BDMV/STREAM/00900.m2ts"
+        },
+        "durationSeconds": 15.015,
+        "sizeBytes": 835584,
+        "segments": [
+          {
+            "clip": "00900",
+            "startSeconds": 0,
+            "durationSeconds": 15.015
+          }
+        ],
+        "streams": [
+          {
+            "type": "video",
+            "codec": "VC-1 Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 234,
+            "formatCode": 6,
+            "rateCode": 1,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      },
+      {
+        "source": {
+          "path": "BDMV/STREAM/00901.m2ts"
+        },
+        "durationSeconds": 15.015,
+        "sizeBytes": 835584,
+        "segments": [
+          {
+            "clip": "00901",
+            "startSeconds": 0,
+            "durationSeconds": 15.015
+          }
+        ],
+        "streams": [
+          {
+            "type": "video",
+            "codec": "VC-1 Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 234,
+            "formatCode": 6,
+            "rateCode": 1,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      },
+      {
+        "source": {
+          "path": "BDMV/STREAM/00999.m2ts"
+        },
+        "durationSeconds": 4.004,
+        "sizeBytes": 61440,
+        "segments": [
+          {
+            "clip": "00999",
+            "startSeconds": 0,
+            "durationSeconds": 4.004
+          }
+        ],
+        "streams": [
+          {
+            "type": "video",
+            "codec": "VC-1 Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 234,
+            "formatCode": 5,
+            "rateCode": 1,
+            "resolution": "1280x720",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      }
+    ],
+    "clips": [
+      {
+        "clipId": "00000",
+        "streamPath": "BDMV/STREAM/00000.m2ts",
+        "clipInfoPath": "BDMV/CLIPINF/00000.clpi",
+        "durationSeconds": 10.01,
+        "numberOfSourcePackets": 12032,
+        "transportStreamRecordingRate": 6000000,
+        "streams": [
+          {
+            "type": "video",
+            "codec": "VC-1 Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 234,
+            "formatCode": 6,
+            "rateCode": 1,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      },
+      {
+        "clipId": "00001",
+        "streamPath": "BDMV/STREAM/00001.m2ts",
+        "clipInfoPath": "BDMV/CLIPINF/00001.clpi",
+        "durationSeconds": 50.05,
+        "numberOfSourcePackets": 150368,
+        "transportStreamRecordingRate": 6000000,
+        "streams": [
+          {
+            "type": "video",
+            "codec": "VC-1 Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 234,
+            "formatCode": 6,
+            "rateCode": 1,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      },
+      {
+        "clipId": "00002",
+        "streamPath": "BDMV/STREAM/00002.m2ts",
+        "clipInfoPath": "BDMV/CLIPINF/00002.clpi",
+        "durationSeconds": 0.041689,
+        "numberOfSourcePackets": 18976,
+        "transportStreamRecordingRate": 6000000,
+        "streams": [
+          {
+            "type": "menu",
+            "codec": "Interactive Graphics",
+            "category": "interactiveGraphics",
+            "pid": 5120,
+            "codingTypeCode": 145,
+            "language": "eng"
+          }
+        ]
+      },
+      {
+        "clipId": "00003",
+        "streamPath": "BDMV/STREAM/00003.m2ts",
+        "clipInfoPath": "BDMV/CLIPINF/00003.clpi",
+        "durationSeconds": 189.189,
+        "numberOfSourcePackets": 859296,
+        "transportStreamRecordingRate": 6000000,
+        "streams": [
+          {
+            "type": "audio",
+            "codec": "AC-3",
+            "category": "audio",
+            "pid": 4352,
+            "codingTypeCode": 129,
+            "formatCode": 3,
+            "rateCode": 1,
+            "language": "eng",
+            "resolution": "720x480",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "video",
+            "codec": "VC-1 Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 234,
+            "formatCode": 6,
+            "rateCode": 1,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      },
+      {
+        "clipId": "00014",
+        "streamPath": "BDMV/STREAM/00014.m2ts",
+        "clipInfoPath": "BDMV/CLIPINF/00014.clpi",
+        "durationSeconds": 6.047689,
+        "numberOfSourcePackets": 24448,
+        "transportStreamRecordingRate": 6000000,
+        "streams": [
+          {
+            "type": "video",
+            "codec": "VC-1 Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 234,
+            "formatCode": 6,
+            "rateCode": 1,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      },
+      {
+        "clipId": "00015",
+        "streamPath": "BDMV/STREAM/00015.m2ts",
+        "clipInfoPath": "BDMV/CLIPINF/00015.clpi",
+        "durationSeconds": 0.041689,
+        "numberOfSourcePackets": 2048,
+        "transportStreamRecordingRate": 6000000,
+        "streams": [
+          {
+            "type": "menu",
+            "codec": "Interactive Graphics",
+            "category": "interactiveGraphics",
+            "pid": 5120,
+            "codingTypeCode": 145,
+            "language": "eng"
+          }
+        ]
+      },
+      {
+        "clipId": "00016",
+        "streamPath": "BDMV/STREAM/00016.m2ts",
+        "clipInfoPath": "BDMV/CLIPINF/00016.clpi",
+        "durationSeconds": 5.005,
+        "numberOfSourcePackets": 2112,
+        "transportStreamRecordingRate": 6000000,
+        "streams": [
+          {
+            "type": "video",
+            "codec": "VC-1 Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 234,
+            "formatCode": 6,
+            "rateCode": 1,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      },
+      {
+        "clipId": "00017",
+        "streamPath": "BDMV/STREAM/00017.m2ts",
+        "clipInfoPath": "BDMV/CLIPINF/00017.clpi",
+        "durationSeconds": 10.01,
+        "numberOfSourcePackets": 9984,
+        "transportStreamRecordingRate": 6000000,
+        "streams": [
+          {
+            "type": "video",
+            "codec": "VC-1 Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 234,
+            "formatCode": 6,
+            "rateCode": 1,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      },
+      {
+        "clipId": "00112",
+        "streamPath": "BDMV/STREAM/00112.m2ts",
+        "clipInfoPath": "BDMV/CLIPINF/00112.clpi",
+        "durationSeconds": 11.928578,
+        "numberOfSourcePackets": 87680,
+        "transportStreamRecordingRate": 6000000,
+        "streams": [
+          {
+            "type": "audio",
+            "codec": "AC-3",
+            "category": "audio",
+            "pid": 4352,
+            "codingTypeCode": 129,
+            "formatCode": 6,
+            "rateCode": 1,
+            "language": "eng",
+            "resolution": "1920x1080",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "video",
+            "codec": "VC-1 Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 234,
+            "formatCode": 6,
+            "rateCode": 1,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      },
+      {
+        "clipId": "00120",
+        "streamPath": "BDMV/STREAM/00120.m2ts",
+        "clipInfoPath": "BDMV/CLIPINF/00120.clpi",
+        "durationSeconds": 12.012,
+        "numberOfSourcePackets": 18720,
+        "transportStreamRecordingRate": 6000000,
+        "streams": [
+          {
+            "type": "video",
+            "codec": "VC-1 Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 234,
+            "formatCode": 6,
+            "rateCode": 1,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      },
+      {
+        "clipId": "00127",
+        "streamPath": "BDMV/STREAM/00127.m2ts",
+        "clipInfoPath": "BDMV/CLIPINF/00127.clpi",
+        "durationSeconds": 30.03,
+        "numberOfSourcePackets": 103872,
+        "transportStreamRecordingRate": 6000000,
+        "streams": [
+          {
+            "type": "video",
+            "codec": "VC-1 Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 234,
+            "formatCode": 6,
+            "rateCode": 1,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      },
+      {
+        "clipId": "00137",
+        "streamPath": "BDMV/STREAM/00137.m2ts",
+        "clipInfoPath": "BDMV/CLIPINF/00137.clpi",
+        "durationSeconds": 10.01,
+        "numberOfSourcePackets": 16032,
+        "transportStreamRecordingRate": 6000000,
+        "streams": [
+          {
+            "type": "video",
+            "codec": "VC-1 Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 234,
+            "formatCode": 6,
+            "rateCode": 1,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      },
+      {
+        "clipId": "00144",
+        "streamPath": "BDMV/STREAM/00144.m2ts",
+        "clipInfoPath": "BDMV/CLIPINF/00144.clpi",
+        "durationSeconds": 17.058689,
+        "numberOfSourcePackets": 45664,
+        "transportStreamRecordingRate": 6000000,
+        "streams": [
+          {
+            "type": "video",
+            "codec": "VC-1 Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 234,
+            "formatCode": 6,
+            "rateCode": 1,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      },
+      {
+        "clipId": "00154",
+        "streamPath": "BDMV/STREAM/00154.m2ts",
+        "clipInfoPath": "BDMV/CLIPINF/00154.clpi",
+        "durationSeconds": 23.273244,
+        "numberOfSourcePackets": 79936,
+        "transportStreamRecordingRate": 6000000,
+        "streams": [
+          {
+            "type": "video",
+            "codec": "VC-1 Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 234,
+            "formatCode": 6,
+            "rateCode": 1,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      },
+      {
+        "clipId": "00155",
+        "streamPath": "BDMV/STREAM/00155.m2ts",
+        "clipInfoPath": "BDMV/CLIPINF/00155.clpi",
+        "durationSeconds": 340.34,
+        "numberOfSourcePackets": 452480,
+        "transportStreamRecordingRate": 6000000,
+        "streams": [
+          {
+            "type": "video",
+            "codec": "VC-1 Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 234,
+            "formatCode": 6,
+            "rateCode": 1,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      },
+      {
+        "clipId": "00163",
+        "streamPath": "BDMV/STREAM/00163.m2ts",
+        "clipInfoPath": "BDMV/CLIPINF/00163.clpi",
+        "durationSeconds": 8502.160333,
+        "numberOfSourcePackets": 163572768,
+        "transportStreamRecordingRate": 6000000,
+        "streams": [
+          {
+            "type": "audio",
+            "codec": "DTS-HD Master Audio",
+            "category": "audio",
+            "pid": 4352,
+            "codingTypeCode": 134,
+            "formatCode": 6,
+            "rateCode": 1,
+            "language": "eng",
+            "resolution": "1920x1080",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "audio",
+            "codec": "AC-3",
+            "category": "audio",
+            "pid": 4353,
+            "codingTypeCode": 129,
+            "formatCode": 6,
+            "rateCode": 1,
+            "language": "fra",
+            "resolution": "1920x1080",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "audio",
+            "codec": "AC-3",
+            "category": "audio",
+            "pid": 4354,
+            "codingTypeCode": 129,
+            "formatCode": 6,
+            "rateCode": 1,
+            "language": "fra",
+            "resolution": "1920x1080",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "audio",
+            "codec": "AC-3",
+            "category": "audio",
+            "pid": 4355,
+            "codingTypeCode": 129,
+            "formatCode": 6,
+            "rateCode": 1,
+            "language": "deu",
+            "resolution": "1920x1080",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "audio",
+            "codec": "AC-3",
+            "category": "audio",
+            "pid": 4356,
+            "codingTypeCode": 129,
+            "formatCode": 6,
+            "rateCode": 1,
+            "language": "ita",
+            "resolution": "1920x1080",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "audio",
+            "codec": "AC-3",
+            "category": "audio",
+            "pid": 4357,
+            "codingTypeCode": 129,
+            "formatCode": 6,
+            "rateCode": 1,
+            "language": "spa",
+            "resolution": "1920x1080",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "audio",
+            "codec": "AC-3",
+            "category": "audio",
+            "pid": 4358,
+            "codingTypeCode": 129,
+            "formatCode": 6,
+            "rateCode": 1,
+            "language": "nld",
+            "resolution": "1920x1080",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "audio",
+            "codec": "AC-3",
+            "category": "audio",
+            "pid": 4359,
+            "codingTypeCode": 129,
+            "formatCode": 6,
+            "rateCode": 1,
+            "language": "spa",
+            "resolution": "1920x1080",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "audio",
+            "codec": "AC-3",
+            "category": "audio",
+            "pid": 4360,
+            "codingTypeCode": 129,
+            "formatCode": 6,
+            "rateCode": 1,
+            "language": "por",
+            "resolution": "1920x1080",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "audio",
+            "codec": "AC-3",
+            "category": "audio",
+            "pid": 4361,
+            "codingTypeCode": 129,
+            "formatCode": 6,
+            "rateCode": 1,
+            "language": "cat",
+            "resolution": "1920x1080",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "audio",
+            "codec": "AC-3",
+            "category": "audio",
+            "pid": 4362,
+            "codingTypeCode": 129,
+            "formatCode": 6,
+            "rateCode": 1,
+            "language": "nld",
+            "resolution": "1920x1080",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "audio",
+            "codec": "AC-3",
+            "category": "audio",
+            "pid": 4363,
+            "codingTypeCode": 129,
+            "formatCode": 6,
+            "rateCode": 1,
+            "language": "jpn",
+            "resolution": "1920x1080",
+            "frameRate": 23.976,
+            "isInterlaced": false,
+            "sampleRate": "48 kHz"
+          },
+          {
+            "type": "subtitle",
+            "codec": "Presentation Graphics",
+            "category": "presentationGraphics",
+            "pid": 4608,
+            "codingTypeCode": 144,
+            "language": "jpn"
+          },
+          {
+            "type": "subtitle",
+            "codec": "Presentation Graphics",
+            "category": "presentationGraphics",
+            "pid": 4609,
+            "codingTypeCode": 144,
+            "language": "eng"
+          },
+          {
+            "type": "subtitle",
+            "codec": "Presentation Graphics",
+            "category": "presentationGraphics",
+            "pid": 4610,
+            "codingTypeCode": 144,
+            "language": "fra"
+          },
+          {
+            "type": "subtitle",
+            "codec": "Presentation Graphics",
+            "category": "presentationGraphics",
+            "pid": 4611,
+            "codingTypeCode": 144,
+            "language": "deu"
+          },
+          {
+            "type": "subtitle",
+            "codec": "Presentation Graphics",
+            "category": "presentationGraphics",
+            "pid": 4612,
+            "codingTypeCode": 144,
+            "language": "ita"
+          },
+          {
+            "type": "subtitle",
+            "codec": "Presentation Graphics",
+            "category": "presentationGraphics",
+            "pid": 4613,
+            "codingTypeCode": 144,
+            "language": "spa"
+          },
+          {
+            "type": "subtitle",
+            "codec": "Presentation Graphics",
+            "category": "presentationGraphics",
+            "pid": 4614,
+            "codingTypeCode": 144,
+            "language": "nld"
+          },
+          {
+            "type": "subtitle",
+            "codec": "Presentation Graphics",
+            "category": "presentationGraphics",
+            "pid": 4615,
+            "codingTypeCode": 144,
+            "language": "spa"
+          },
+          {
+            "type": "subtitle",
+            "codec": "Presentation Graphics",
+            "category": "presentationGraphics",
+            "pid": 4616,
+            "codingTypeCode": 144,
+            "language": "por"
+          },
+          {
+            "type": "subtitle",
+            "codec": "Presentation Graphics",
+            "category": "presentationGraphics",
+            "pid": 4617,
+            "codingTypeCode": 144,
+            "language": "jpn"
+          },
+          {
+            "type": "subtitle",
+            "codec": "Presentation Graphics",
+            "category": "presentationGraphics",
+            "pid": 4618,
+            "codingTypeCode": 144,
+            "language": "fra"
+          },
+          {
+            "type": "subtitle",
+            "codec": "Presentation Graphics",
+            "category": "presentationGraphics",
+            "pid": 4619,
+            "codingTypeCode": 144,
+            "language": "spa"
+          },
+          {
+            "type": "subtitle",
+            "codec": "Presentation Graphics",
+            "category": "presentationGraphics",
+            "pid": 4620,
+            "codingTypeCode": 144,
+            "language": "nld"
+          },
+          {
+            "type": "video",
+            "codec": "VC-1 Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 234,
+            "formatCode": 6,
+            "rateCode": 1,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      },
+      {
+        "clipId": "00164",
+        "streamPath": "BDMV/STREAM/00164.m2ts",
+        "clipInfoPath": "BDMV/CLIPINF/00164.clpi",
+        "durationSeconds": 0.041689,
+        "numberOfSourcePackets": 1952,
+        "transportStreamRecordingRate": 6000000,
+        "streams": [
+          {
+            "type": "menu",
+            "codec": "Interactive Graphics",
+            "category": "interactiveGraphics",
+            "pid": 5120,
+            "codingTypeCode": 145,
+            "language": "eng"
+          }
+        ]
+      },
+      {
+        "clipId": "00165",
+        "streamPath": "BDMV/STREAM/00165.m2ts",
+        "clipInfoPath": "BDMV/CLIPINF/00165.clpi",
+        "durationSeconds": 0.0834,
+        "numberOfSourcePackets": 64,
+        "transportStreamRecordingRate": 6000000,
+        "streams": [
+          {
+            "type": "video",
+            "codec": "VC-1 Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 234,
+            "formatCode": 6,
+            "rateCode": 1,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      },
+      {
+        "clipId": "00900",
+        "streamPath": "BDMV/STREAM/00900.m2ts",
+        "clipInfoPath": "BDMV/CLIPINF/00900.clpi",
+        "durationSeconds": 15.015,
+        "numberOfSourcePackets": 4352,
+        "transportStreamRecordingRate": 6000000,
+        "streams": [
+          {
+            "type": "video",
+            "codec": "VC-1 Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 234,
+            "formatCode": 6,
+            "rateCode": 1,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      },
+      {
+        "clipId": "00901",
+        "streamPath": "BDMV/STREAM/00901.m2ts",
+        "clipInfoPath": "BDMV/CLIPINF/00901.clpi",
+        "durationSeconds": 15.015,
+        "numberOfSourcePackets": 4352,
+        "transportStreamRecordingRate": 6000000,
+        "streams": [
+          {
+            "type": "video",
+            "codec": "VC-1 Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 234,
+            "formatCode": 6,
+            "rateCode": 1,
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      },
+      {
+        "clipId": "00999",
+        "streamPath": "BDMV/STREAM/00999.m2ts",
+        "clipInfoPath": "BDMV/CLIPINF/00999.clpi",
+        "durationSeconds": 4.004,
+        "numberOfSourcePackets": 320,
+        "transportStreamRecordingRate": 6000000,
+        "streams": [
+          {
+            "type": "video",
+            "codec": "VC-1 Video",
+            "category": "video",
+            "pid": 4113,
+            "codingTypeCode": 234,
+            "formatCode": 5,
+            "rateCode": 1,
+            "resolution": "1280x720",
+            "aspectRatio": "16:9",
+            "frameRate": 23.976,
+            "isInterlaced": false
+          }
+        ]
+      }
+    ]
+  },
+  "extensions": {
+    "thediscdb.optical-disc-manifest/scan-diagnostics": [
+      {
+        "severity": "info",
+        "code": "ODM_BD_TITLES_PARTIAL",
+        "message": "Blu-ray playlist files are emitted as playback candidates; HDMV/BD-J logical-title resolution is not complete."
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_AUTHORED_MARKS",
+        "message": "Authored marks (index:type:playItem:time:duration, 45 kHz): 0:1:0:27000000:0, 1:1:0:27527401:0",
+        "path": "BDMV/PLAYLIST/00000.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_FINAL_MARK",
+        "message": "Resolved 2 entry marks from 2 authored marks. Final entry mark 1 references play item 0, timestamp 27527401, duration 0; playlist start 527401, playlist end 540540, distance from end 13139 ticks (45 kHz).",
+        "path": "BDMV/PLAYLIST/00000.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_TERMINAL_SENTINEL_EXCLUDED",
+        "message": "Excluded a final entry mark 13139 ticks (45 kHz) before playlist end as a MakeMKV-style terminal chapter-end sentinel, not a legitimate chapter.",
+        "path": "BDMV/PLAYLIST/00000.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_AUTHORED_EVIDENCE",
+        "message": "Original playlist evidence before loop/tail/split rules; times are 45 kHz ticks, stream values are numeric codec/format/rate codes. PlaybackType=1,stereoRelationships=0,subPaths=0,extensionSubPaths=0. item=0,clips=[00120@0],in=27000000,out=27540540,connection=1,still=0,multiAngle=False,STN=[Video/1/4113:234/6/1],CLPI=[00120: start=27000000,end=27540540,duration=540540,stcCount=1,STC=[atc=0,offsetStcId=0,stcIndex=0,start=27000000,end=27540540],programStreams=[program=0,packetStart=0,streams=[4113:234/6/1]]]",
+        "path": "BDMV/PLAYLIST/00000.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_PRESENTATION_TIMING",
+        "message": "Mapped playlist part=none: playItemTicks=540540,trailingClipTicks=0,presentationTicks=540540 (45 kHz). Segment values are rounded seconds, alternate angles share a timeline: clip=00120,angle=,start=0,duration=12.012",
+        "path": "BDMV/PLAYLIST/00000.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_SPLIT_DECISION",
+        "message": "Split not evaluated: fewer than two play items.",
+        "path": "BDMV/PLAYLIST/00000.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_AUTHORED_MARKS",
+        "message": "Authored marks (index:type:playItem:time:duration, 45 kHz): 0:1:0:27000000:0, 1:1:0:27754503:0",
+        "path": "BDMV/PLAYLIST/00001.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_FINAL_MARK",
+        "message": "Resolved 2 entry marks from 2 authored marks. Final entry mark 1 references play item 0, timestamp 27754503, duration 0; playlist start 754503, playlist end 767641, distance from end 13138 ticks (45 kHz).",
+        "path": "BDMV/PLAYLIST/00001.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_TERMINAL_SENTINEL_EXCLUDED",
+        "message": "Excluded a final entry mark 13138 ticks (45 kHz) before playlist end as a MakeMKV-style terminal chapter-end sentinel, not a legitimate chapter.",
+        "path": "BDMV/PLAYLIST/00001.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_AUTHORED_EVIDENCE",
+        "message": "Original playlist evidence before loop/tail/split rules; times are 45 kHz ticks, stream values are numeric codec/format/rate codes. PlaybackType=1,stereoRelationships=0,subPaths=0,extensionSubPaths=0. item=0,clips=[00144@0],in=27000000,out=27767641,connection=1,still=0,multiAngle=False,STN=[Video/1/4113:234/6/1],CLPI=[00144: start=27000000,end=27767641,duration=767641,stcCount=1,STC=[atc=0,offsetStcId=0,stcIndex=0,start=27000000,end=27767641],programStreams=[program=0,packetStart=0,streams=[4113:234/6/1]]]",
+        "path": "BDMV/PLAYLIST/00001.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_PRESENTATION_TIMING",
+        "message": "Mapped playlist part=none: playItemTicks=767641,trailingClipTicks=0,presentationTicks=767641 (45 kHz). Segment values are rounded seconds, alternate angles share a timeline: clip=00144,angle=,start=0,duration=17.058689",
+        "path": "BDMV/PLAYLIST/00001.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_SPLIT_DECISION",
+        "message": "Split not evaluated: fewer than two play items.",
+        "path": "BDMV/PLAYLIST/00001.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_AUTHORED_MARKS",
+        "message": "Authored marks (index:type:playItem:time:duration, 45 kHz): 0:1:0:27000000:0, 1:1:0:27523648:0",
+        "path": "BDMV/PLAYLIST/00002.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_FINAL_MARK",
+        "message": "Resolved 2 entry marks from 2 authored marks. Final entry mark 1 references play item 0, timestamp 27523648, duration 0; playlist start 523648, playlist end 536786, distance from end 13138 ticks (45 kHz).",
+        "path": "BDMV/PLAYLIST/00002.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_TERMINAL_SENTINEL_EXCLUDED",
+        "message": "Excluded a final entry mark 13138 ticks (45 kHz) before playlist end as a MakeMKV-style terminal chapter-end sentinel, not a legitimate chapter.",
+        "path": "BDMV/PLAYLIST/00002.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_AUTHORED_EVIDENCE",
+        "message": "Original playlist evidence before loop/tail/split rules; times are 45 kHz ticks, stream values are numeric codec/format/rate codes. PlaybackType=1,stereoRelationships=0,subPaths=0,extensionSubPaths=0. item=0,clips=[00112@0],in=27000000,out=27536786,connection=1,still=0,multiAngle=False,STN=[Video/1/4113:234/6/1,Audio/1/4352:129/6/1],CLPI=[00112: start=27000000,end=27536786,duration=536786,stcCount=1,STC=[atc=0,offsetStcId=0,stcIndex=0,start=27000000,end=27536786],programStreams=[program=0,packetStart=0,streams=[4113:234/6/1,4352:129/6/1]]]",
+        "path": "BDMV/PLAYLIST/00002.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_PRESENTATION_TIMING",
+        "message": "Mapped playlist part=none: playItemTicks=536786,trailingClipTicks=0,presentationTicks=536786 (45 kHz). Segment values are rounded seconds, alternate angles share a timeline: clip=00112,angle=,start=0,duration=11.928578",
+        "path": "BDMV/PLAYLIST/00002.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_SPLIT_DECISION",
+        "message": "Split not evaluated: fewer than two play items.",
+        "path": "BDMV/PLAYLIST/00002.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_AUTHORED_MARKS",
+        "message": "Authored marks (index:type:playItem:time:duration, 45 kHz): 0:1:0:27000000:0, 1:1:0:27259008:0",
+        "path": "BDMV/PLAYLIST/00003.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_FINAL_MARK",
+        "message": "Resolved 2 entry marks from 2 authored marks. Final entry mark 1 references play item 0, timestamp 27259008, duration 0; playlist start 259008, playlist end 272146, distance from end 13138 ticks (45 kHz).",
+        "path": "BDMV/PLAYLIST/00003.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_TERMINAL_SENTINEL_EXCLUDED",
+        "message": "Excluded a final entry mark 13138 ticks (45 kHz) before playlist end as a MakeMKV-style terminal chapter-end sentinel, not a legitimate chapter.",
+        "path": "BDMV/PLAYLIST/00003.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_AUTHORED_EVIDENCE",
+        "message": "Original playlist evidence before loop/tail/split rules; times are 45 kHz ticks, stream values are numeric codec/format/rate codes. PlaybackType=1,stereoRelationships=0,subPaths=0,extensionSubPaths=0. item=0,clips=[00014@0],in=27000000,out=27272146,connection=1,still=0,multiAngle=False,STN=[Video/1/4113:234/6/1],CLPI=[00014: start=27000000,end=27272146,duration=272146,stcCount=1,STC=[atc=0,offsetStcId=0,stcIndex=0,start=27000000,end=27272146],programStreams=[program=0,packetStart=0,streams=[4113:234/6/1]]]",
+        "path": "BDMV/PLAYLIST/00003.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_PRESENTATION_TIMING",
+        "message": "Mapped playlist part=none: playItemTicks=272146,trailingClipTicks=0,presentationTicks=272146 (45 kHz). Segment values are rounded seconds, alternate angles share a timeline: clip=00014,angle=,start=0,duration=6.047689",
+        "path": "BDMV/PLAYLIST/00003.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_SPLIT_DECISION",
+        "message": "Split not evaluated: fewer than two play items.",
+        "path": "BDMV/PLAYLIST/00003.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_AUTHORED_MARKS",
+        "message": "Authored marks (index:type:playItem:time:duration, 45 kHz): 0:1:0:27000000:0, 1:1:0:27212086:0",
+        "path": "BDMV/PLAYLIST/00004.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_FINAL_MARK",
+        "message": "Resolved 2 entry marks from 2 authored marks. Final entry mark 1 references play item 0, timestamp 27212086, duration 0; playlist start 212086, playlist end 225225, distance from end 13139 ticks (45 kHz).",
+        "path": "BDMV/PLAYLIST/00004.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_TERMINAL_SENTINEL_EXCLUDED",
+        "message": "Excluded a final entry mark 13139 ticks (45 kHz) before playlist end as a MakeMKV-style terminal chapter-end sentinel, not a legitimate chapter.",
+        "path": "BDMV/PLAYLIST/00004.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_AUTHORED_EVIDENCE",
+        "message": "Original playlist evidence before loop/tail/split rules; times are 45 kHz ticks, stream values are numeric codec/format/rate codes. PlaybackType=1,stereoRelationships=0,subPaths=0,extensionSubPaths=0. item=0,clips=[00016@0],in=27000000,out=27225225,connection=1,still=0,multiAngle=False,STN=[Video/1/4113:234/6/1],CLPI=[00016: start=27000000,end=27225225,duration=225225,stcCount=1,STC=[atc=0,offsetStcId=0,stcIndex=0,start=27000000,end=27225225],programStreams=[program=0,packetStart=0,streams=[4113:234/6/1]]]",
+        "path": "BDMV/PLAYLIST/00004.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_PRESENTATION_TIMING",
+        "message": "Mapped playlist part=none: playItemTicks=225225,trailingClipTicks=0,presentationTicks=225225 (45 kHz). Segment values are rounded seconds, alternate angles share a timeline: clip=00016,angle=,start=0,duration=5.005",
+        "path": "BDMV/PLAYLIST/00004.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_SPLIT_DECISION",
+        "message": "Split not evaluated: fewer than two play items.",
+        "path": "BDMV/PLAYLIST/00004.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_AUTHORED_MARKS",
+        "message": "Authored marks (index:type:playItem:time:duration, 45 kHz): 0:1:0:27000000:0, 1:1:0:28036035:0",
+        "path": "BDMV/PLAYLIST/00005.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_FINAL_MARK",
+        "message": "Resolved 2 entry marks from 2 authored marks. Final entry mark 1 references play item 0, timestamp 28036035, duration 0; playlist start 1036035, playlist end 1047296, distance from end 11261 ticks (45 kHz).",
+        "path": "BDMV/PLAYLIST/00005.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_TERMINAL_SENTINEL_EXCLUDED",
+        "message": "Excluded a final entry mark 11261 ticks (45 kHz) before playlist end as a MakeMKV-style terminal chapter-end sentinel, not a legitimate chapter.",
+        "path": "BDMV/PLAYLIST/00005.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_AUTHORED_EVIDENCE",
+        "message": "Original playlist evidence before loop/tail/split rules; times are 45 kHz ticks, stream values are numeric codec/format/rate codes. PlaybackType=1,stereoRelationships=0,subPaths=0,extensionSubPaths=0. item=0,clips=[00154@0],in=27000000,out=28047296,connection=1,still=0,multiAngle=False,STN=[Video/1/4113:234/6/1],CLPI=[00154: start=27000000,end=28047296,duration=1047296,stcCount=1,STC=[atc=0,offsetStcId=0,stcIndex=0,start=27000000,end=28047296],programStreams=[program=0,packetStart=0,streams=[4113:234/6/1]]]",
+        "path": "BDMV/PLAYLIST/00005.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_PRESENTATION_TIMING",
+        "message": "Mapped playlist part=none: playItemTicks=1047296,trailingClipTicks=0,presentationTicks=1047296 (45 kHz). Segment values are rounded seconds, alternate angles share a timeline: clip=00154,angle=,start=0,duration=23.273244",
+        "path": "BDMV/PLAYLIST/00005.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_SPLIT_DECISION",
+        "message": "Split not evaluated: fewer than two play items.",
+        "path": "BDMV/PLAYLIST/00005.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_AUTHORED_MARKS",
+        "message": "Authored marks (index:type:playItem:time:duration, 45 kHz): 0:1:0:27000000:0, 1:1:0:27437311:0",
+        "path": "BDMV/PLAYLIST/00006.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_FINAL_MARK",
+        "message": "Resolved 2 entry marks from 2 authored marks. Final entry mark 1 references play item 0, timestamp 27437311, duration 0; playlist start 437311, playlist end 450450, distance from end 13139 ticks (45 kHz).",
+        "path": "BDMV/PLAYLIST/00006.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_TERMINAL_SENTINEL_EXCLUDED",
+        "message": "Excluded a final entry mark 13139 ticks (45 kHz) before playlist end as a MakeMKV-style terminal chapter-end sentinel, not a legitimate chapter.",
+        "path": "BDMV/PLAYLIST/00006.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_AUTHORED_EVIDENCE",
+        "message": "Original playlist evidence before loop/tail/split rules; times are 45 kHz ticks, stream values are numeric codec/format/rate codes. PlaybackType=1,stereoRelationships=0,subPaths=0,extensionSubPaths=0. item=0,clips=[00017@0],in=27000000,out=27450450,connection=1,still=0,multiAngle=False,STN=[Video/1/4113:234/6/1],CLPI=[00017: start=27000000,end=27450450,duration=450450,stcCount=1,STC=[atc=0,offsetStcId=0,stcIndex=0,start=27000000,end=27450450],programStreams=[program=0,packetStart=0,streams=[4113:234/6/1]]]",
+        "path": "BDMV/PLAYLIST/00006.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_PRESENTATION_TIMING",
+        "message": "Mapped playlist part=none: playItemTicks=450450,trailingClipTicks=0,presentationTicks=450450 (45 kHz). Segment values are rounded seconds, alternate angles share a timeline: clip=00017,angle=,start=0,duration=10.01",
+        "path": "BDMV/PLAYLIST/00006.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_SPLIT_DECISION",
+        "message": "Split not evaluated: fewer than two play items.",
+        "path": "BDMV/PLAYLIST/00006.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_AUTHORED_MARKS",
+        "message": "Authored marks (index:type:playItem:time:duration, 45 kHz): 0:1:0:27000000:0, 1:1:0:27450450:0, 2:1:0:27900900:0, 3:1:0:28351350:0, 4:1:0:28801800:0, 5:1:0:29252250:0, 6:1:0:29702700:0, 7:1:0:30153150:0, 8:1:0:30603600:0, 9:1:0:31054050:0, 10:1:0:31504500:0, 11:1:0:31954950:0, 12:1:0:32405400:0, 13:1:0:32855850:0, 14:1:0:33306300:0, 15:1:0:33756750:0, 16:1:0:34207200:0, 17:1:0:34657650:0, 18:1:0:35108100:0, 19:1:0:35558550:0, 20:1:0:36009000:0, 21:1:0:36459450:0, 22:1:0:36909900:0, 23:1:0:37360350:0, 24:1:0:37810800:0, 25:1:0:38261250:0, 26:1:0:38711700:0, 27:1:0:39162150:0, 28:1:0:39612600:0, 29:1:0:40063050:0, 30:1:0:40513500:0, 31:1:0:40963950:0, 32:1:0:41414400:0, 33:1:0:41864850:0, 34:1:0:42304038:0",
+        "path": "BDMV/PLAYLIST/00007.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_FINAL_MARK",
+        "message": "Resolved 35 entry marks from 35 authored marks. Final entry mark 34 references play item 0, timestamp 42304038, duration 0; playlist start 15304038, playlist end 15315300, distance from end 11262 ticks (45 kHz).",
+        "path": "BDMV/PLAYLIST/00007.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_TERMINAL_SENTINEL_EXCLUDED",
+        "message": "Excluded a final entry mark 11262 ticks (45 kHz) before playlist end as a MakeMKV-style terminal chapter-end sentinel, not a legitimate chapter.",
+        "path": "BDMV/PLAYLIST/00007.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_AUTHORED_EVIDENCE",
+        "message": "Original playlist evidence before loop/tail/split rules; times are 45 kHz ticks, stream values are numeric codec/format/rate codes. PlaybackType=1,stereoRelationships=0,subPaths=0,extensionSubPaths=0. item=0,clips=[00155@0],in=27000000,out=42315300,connection=1,still=0,multiAngle=False,STN=[Video/1/4113:234/6/1],CLPI=[00155: start=27000000,end=42315300,duration=15315300,stcCount=1,STC=[atc=0,offsetStcId=0,stcIndex=0,start=27000000,end=42315300],programStreams=[program=0,packetStart=0,streams=[4113:234/6/1]]]",
+        "path": "BDMV/PLAYLIST/00007.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_PRESENTATION_TIMING",
+        "message": "Mapped playlist part=none: playItemTicks=15315300,trailingClipTicks=0,presentationTicks=15315300 (45 kHz). Segment values are rounded seconds, alternate angles share a timeline: clip=00155,angle=,start=0,duration=340.34",
+        "path": "BDMV/PLAYLIST/00007.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_SPLIT_DECISION",
+        "message": "Split not evaluated: fewer than two play items.",
+        "path": "BDMV/PLAYLIST/00007.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_AUTHORED_MARKS",
+        "message": "Authored marks (index:type:playItem:time:duration, 45 kHz): 0:1:0:27000000:0, 1:1:0:27450450:0, 2:1:0:27900900:0, 3:1:0:28340088:0",
+        "path": "BDMV/PLAYLIST/00008.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_FINAL_MARK",
+        "message": "Resolved 4 entry marks from 4 authored marks. Final entry mark 3 references play item 0, timestamp 28340088, duration 0; playlist start 1340088, playlist end 1351350, distance from end 11262 ticks (45 kHz).",
+        "path": "BDMV/PLAYLIST/00008.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_TERMINAL_SENTINEL_EXCLUDED",
+        "message": "Excluded a final entry mark 11262 ticks (45 kHz) before playlist end as a MakeMKV-style terminal chapter-end sentinel, not a legitimate chapter.",
+        "path": "BDMV/PLAYLIST/00008.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_AUTHORED_EVIDENCE",
+        "message": "Original playlist evidence before loop/tail/split rules; times are 45 kHz ticks, stream values are numeric codec/format/rate codes. PlaybackType=1,stereoRelationships=0,subPaths=0,extensionSubPaths=0. item=0,clips=[00127@0],in=27000000,out=28351350,connection=1,still=0,multiAngle=False,STN=[Video/1/4113:234/6/1],CLPI=[00127: start=27000000,end=28351350,duration=1351350,stcCount=1,STC=[atc=0,offsetStcId=0,stcIndex=0,start=27000000,end=28351350],programStreams=[program=0,packetStart=0,streams=[4113:234/6/1]]]",
+        "path": "BDMV/PLAYLIST/00008.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_PRESENTATION_TIMING",
+        "message": "Mapped playlist part=none: playItemTicks=1351350,trailingClipTicks=0,presentationTicks=1351350 (45 kHz). Segment values are rounded seconds, alternate angles share a timeline: clip=00127,angle=,start=0,duration=30.03",
+        "path": "BDMV/PLAYLIST/00008.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_SPLIT_DECISION",
+        "message": "Split not evaluated: fewer than two play items.",
+        "path": "BDMV/PLAYLIST/00008.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_AUTHORED_MARKS",
+        "message": "Authored marks (index:type:playItem:time:duration, 45 kHz): 0:1:0:27000000:0, 1:1:0:27450450:0, 2:1:0:27900900:0, 3:1:0:28351350:0, 4:1:0:28801800:0, 5:1:0:29240988:0",
+        "path": "BDMV/PLAYLIST/00009.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_FINAL_MARK",
+        "message": "Resolved 6 entry marks from 6 authored marks. Final entry mark 5 references play item 0, timestamp 29240988, duration 0; playlist start 2240988, playlist end 2252250, distance from end 11262 ticks (45 kHz).",
+        "path": "BDMV/PLAYLIST/00009.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_TERMINAL_SENTINEL_EXCLUDED",
+        "message": "Excluded a final entry mark 11262 ticks (45 kHz) before playlist end as a MakeMKV-style terminal chapter-end sentinel, not a legitimate chapter.",
+        "path": "BDMV/PLAYLIST/00009.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_AUTHORED_EVIDENCE",
+        "message": "Original playlist evidence before loop/tail/split rules; times are 45 kHz ticks, stream values are numeric codec/format/rate codes. PlaybackType=1,stereoRelationships=0,subPaths=0,extensionSubPaths=0. item=0,clips=[00001@0],in=27000000,out=29252250,connection=1,still=0,multiAngle=False,STN=[Video/1/4113:234/6/1],CLPI=[00001: start=27000000,end=29252250,duration=2252250,stcCount=1,STC=[atc=0,offsetStcId=0,stcIndex=0,start=27000000,end=29252250],programStreams=[program=0,packetStart=0,streams=[4113:234/6/1]]]",
+        "path": "BDMV/PLAYLIST/00009.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_PRESENTATION_TIMING",
+        "message": "Mapped playlist part=none: playItemTicks=2252250,trailingClipTicks=0,presentationTicks=2252250 (45 kHz). Segment values are rounded seconds, alternate angles share a timeline: clip=00001,angle=,start=0,duration=50.05",
+        "path": "BDMV/PLAYLIST/00009.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_SPLIT_DECISION",
+        "message": "Split not evaluated: fewer than two play items.",
+        "path": "BDMV/PLAYLIST/00009.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_AUTHORED_MARKS",
+        "message": "Authored marks (index:type:playItem:time:duration, 45 kHz): 0:1:0:27000000:0",
+        "path": "BDMV/PLAYLIST/00011.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_FINAL_MARK",
+        "message": "Resolved 1 entry marks from 1 authored marks. Final entry mark 0 references play item 0, timestamp 27000000, duration 0; playlist start 0, playlist end 450450, distance from end 450450 ticks (45 kHz).",
+        "path": "BDMV/PLAYLIST/00011.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_AUTHORED_EVIDENCE",
+        "message": "Original playlist evidence before loop/tail/split rules; times are 45 kHz ticks, stream values are numeric codec/format/rate codes. PlaybackType=1,stereoRelationships=0,subPaths=0,extensionSubPaths=0. item=0,clips=[00137@0],in=27000000,out=27450450,connection=1,still=0,multiAngle=False,STN=[Video/1/4113:234/6/1],CLPI=[00137: start=27000000,end=27450450,duration=450450,stcCount=1,STC=[atc=0,offsetStcId=0,stcIndex=0,start=27000000,end=27450450],programStreams=[program=0,packetStart=0,streams=[4113:234/6/1]]]",
+        "path": "BDMV/PLAYLIST/00011.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_PRESENTATION_TIMING",
+        "message": "Mapped playlist part=none: playItemTicks=450450,trailingClipTicks=0,presentationTicks=450450 (45 kHz). Segment values are rounded seconds, alternate angles share a timeline: clip=00137,angle=,start=0,duration=10.01",
+        "path": "BDMV/PLAYLIST/00011.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_SPLIT_DECISION",
+        "message": "Split not evaluated: fewer than two play items.",
+        "path": "BDMV/PLAYLIST/00011.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_AUTHORED_MARKS",
+        "message": "Authored marks (index:type:playItem:time:duration, 45 kHz): 0:1:0:27000000:0, 1:1:0:27437311:0",
+        "path": "BDMV/PLAYLIST/00012.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_FINAL_MARK",
+        "message": "Resolved 2 entry marks from 2 authored marks. Final entry mark 1 references play item 0, timestamp 27437311, duration 0; playlist start 437311, playlist end 450450, distance from end 13139 ticks (45 kHz).",
+        "path": "BDMV/PLAYLIST/00012.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_TERMINAL_SENTINEL_EXCLUDED",
+        "message": "Excluded a final entry mark 13139 ticks (45 kHz) before playlist end as a MakeMKV-style terminal chapter-end sentinel, not a legitimate chapter.",
+        "path": "BDMV/PLAYLIST/00012.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_AUTHORED_EVIDENCE",
+        "message": "Original playlist evidence before loop/tail/split rules; times are 45 kHz ticks, stream values are numeric codec/format/rate codes. PlaybackType=1,stereoRelationships=0,subPaths=0,extensionSubPaths=0. item=0,clips=[00000@0],in=27000000,out=27450450,connection=1,still=0,multiAngle=False,STN=[Video/1/4113:234/6/1],CLPI=[00000: start=27000000,end=27450450,duration=450450,stcCount=1,STC=[atc=0,offsetStcId=0,stcIndex=0,start=27000000,end=27450450],programStreams=[program=0,packetStart=0,streams=[4113:234/6/1]]]",
+        "path": "BDMV/PLAYLIST/00012.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_PRESENTATION_TIMING",
+        "message": "Mapped playlist part=none: playItemTicks=450450,trailingClipTicks=0,presentationTicks=450450 (45 kHz). Segment values are rounded seconds, alternate angles share a timeline: clip=00000,angle=,start=0,duration=10.01",
+        "path": "BDMV/PLAYLIST/00012.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_SPLIT_DECISION",
+        "message": "Split not evaluated: fewer than two play items.",
+        "path": "BDMV/PLAYLIST/00012.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_AUTHORED_MARKS",
+        "message": "Authored marks (index:type:playItem:time:duration, 45 kHz): 0:1:0:27000000:0",
+        "path": "BDMV/PLAYLIST/00022.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_FINAL_MARK",
+        "message": "Resolved 1 entry marks from 1 authored marks. Final entry mark 0 references play item 0, timestamp 27000000, duration 0; playlist start 0, playlist end 3753, distance from end 3753 ticks (45 kHz).",
+        "path": "BDMV/PLAYLIST/00022.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_AUTHORED_EVIDENCE",
+        "message": "Original playlist evidence before loop/tail/split rules; times are 45 kHz ticks, stream values are numeric codec/format/rate codes. PlaybackType=1,stereoRelationships=0,subPaths=1,extensionSubPaths=0. item=0,clips=[00165@0],in=27000000,out=27003753,connection=1,still=2,multiAngle=False,STN=[Video/1/4113:234/6/1],CLPI=[00165: start=27000000,end=27003753,duration=3753,stcCount=1,STC=[atc=0,offsetStcId=0,stcIndex=0,start=27000000,end=27003753],programStreams=[program=0,packetStart=0,streams=[4113:234/6/1]]]",
+        "path": "BDMV/PLAYLIST/00022.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_PRESENTATION_TIMING",
+        "message": "Mapped playlist part=none: playItemTicks=3753,trailingClipTicks=0,presentationTicks=3753 (45 kHz). Segment values are rounded seconds, alternate angles share a timeline: clip=00165,angle=,start=0,duration=0.0834",
+        "path": "BDMV/PLAYLIST/00022.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_SPLIT_DECISION",
+        "message": "Split not evaluated: fewer than two play items, subpaths, still mode.",
+        "path": "BDMV/PLAYLIST/00022.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_AUTHORED_MARKS",
+        "message": "Authored marks (index:type:playItem:time:duration, 45 kHz): 0:1:0:27000000:0",
+        "path": "BDMV/PLAYLIST/00023.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_FINAL_MARK",
+        "message": "Resolved 1 entry marks from 1 authored marks. Final entry mark 0 references play item 0, timestamp 27000000, duration 0; playlist start 0, playlist end 3753, distance from end 3753 ticks (45 kHz).",
+        "path": "BDMV/PLAYLIST/00023.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_AUTHORED_EVIDENCE",
+        "message": "Original playlist evidence before loop/tail/split rules; times are 45 kHz ticks, stream values are numeric codec/format/rate codes. PlaybackType=1,stereoRelationships=0,subPaths=1,extensionSubPaths=0. item=0,clips=[00165@0],in=27000000,out=27003753,connection=1,still=2,multiAngle=False,STN=[Video/1/4113:234/6/1],CLPI=[00165: start=27000000,end=27003753,duration=3753,stcCount=1,STC=[atc=0,offsetStcId=0,stcIndex=0,start=27000000,end=27003753],programStreams=[program=0,packetStart=0,streams=[4113:234/6/1]]]",
+        "path": "BDMV/PLAYLIST/00023.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_PRESENTATION_TIMING",
+        "message": "Mapped playlist part=none: playItemTicks=3753,trailingClipTicks=0,presentationTicks=3753 (45 kHz). Segment values are rounded seconds, alternate angles share a timeline: clip=00165,angle=,start=0,duration=0.0834",
+        "path": "BDMV/PLAYLIST/00023.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_SPLIT_DECISION",
+        "message": "Split not evaluated: fewer than two play items, subpaths, still mode.",
+        "path": "BDMV/PLAYLIST/00023.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_TITLE_DUPLICATE",
+        "message": "Playlist plays the same as BDMV/PLAYLIST/00022.mpls and selects no stream it lacks, so it is not emitted as a separate title.",
+        "path": "BDMV/PLAYLIST/00023.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_AUTHORED_MARKS",
+        "message": "Authored marks (index:type:playItem:time:duration, 45 kHz): 0:1:0:27000000:0",
+        "path": "BDMV/PLAYLIST/00024.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_FINAL_MARK",
+        "message": "Resolved 1 entry marks from 1 authored marks. Final entry mark 0 references play item 0, timestamp 27000000, duration 0; playlist start 0, playlist end 3753, distance from end 3753 ticks (45 kHz).",
+        "path": "BDMV/PLAYLIST/00024.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_AUTHORED_EVIDENCE",
+        "message": "Original playlist evidence before loop/tail/split rules; times are 45 kHz ticks, stream values are numeric codec/format/rate codes. PlaybackType=1,stereoRelationships=0,subPaths=1,extensionSubPaths=0. item=0,clips=[00165@0],in=27000000,out=27003753,connection=1,still=2,multiAngle=False,STN=[Video/1/4113:234/6/1],CLPI=[00165: start=27000000,end=27003753,duration=3753,stcCount=1,STC=[atc=0,offsetStcId=0,stcIndex=0,start=27000000,end=27003753],programStreams=[program=0,packetStart=0,streams=[4113:234/6/1]]]",
+        "path": "BDMV/PLAYLIST/00024.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_PRESENTATION_TIMING",
+        "message": "Mapped playlist part=none: playItemTicks=3753,trailingClipTicks=0,presentationTicks=3753 (45 kHz). Segment values are rounded seconds, alternate angles share a timeline: clip=00165,angle=,start=0,duration=0.0834",
+        "path": "BDMV/PLAYLIST/00024.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_SPLIT_DECISION",
+        "message": "Split not evaluated: fewer than two play items, subpaths, still mode.",
+        "path": "BDMV/PLAYLIST/00024.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_TITLE_DUPLICATE",
+        "message": "Playlist plays the same as BDMV/PLAYLIST/00022.mpls and selects no stream it lacks, so it is not emitted as a separate title.",
+        "path": "BDMV/PLAYLIST/00024.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_AUTHORED_MARKS",
+        "message": "Authored marks (index:type:playItem:time:duration, 45 kHz): 0:1:0:188910000:0, 1:1:0:193414500:0, 2:1:0:206740312:0, 3:1:0:223376932:0, 4:1:0:229073248:0, 5:1:0:232673094:0, 6:1:0:240039828:0, 7:1:0:253277428:0, 8:1:0:266792805:0, 9:1:0:273592723:0, 10:1:0:293767252:0, 11:1:0:309767611:0, 12:1:0:317511598:0, 13:1:0:323007088:0, 14:1:0:333960530:0, 15:1:0:344088148:0, 16:1:0:354677476:0, 17:1:0:360079123:0, 18:1:0:370304338:0, 19:1:0:383016412:0, 20:1:0:402663540:0, 21:1:0:411657525:0, 22:1:0:425124103:0, 23:1:0:432511483:0, 24:1:0:443566276:0, 25:1:0:450670248:0, 26:1:0:465411225:0, 27:1:0:474225030:0, 28:1:0:486071865:0, 29:1:0:500910438:0, 30:1:0:513243384:0, 31:1:0:521732490:0, 32:1:0:529223098:0, 33:1:0:536441559:0, 34:1:0:539343208:0, 35:1:0:571495953:0",
+        "path": "BDMV/PLAYLIST/00100.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_FINAL_MARK",
+        "message": "Resolved 36 entry marks from 36 authored marks. Final entry mark 35 references play item 0, timestamp 571495953, duration 0; playlist start 382585953, playlist end 382597215, distance from end 11262 ticks (45 kHz).",
+        "path": "BDMV/PLAYLIST/00100.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_TERMINAL_SENTINEL_EXCLUDED",
+        "message": "Excluded a final entry mark 11262 ticks (45 kHz) before playlist end as a MakeMKV-style terminal chapter-end sentinel, not a legitimate chapter.",
+        "path": "BDMV/PLAYLIST/00100.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_AUTHORED_EVIDENCE",
+        "message": "Original playlist evidence before loop/tail/split rules; times are 45 kHz ticks, stream values are numeric codec/format/rate codes. PlaybackType=1,stereoRelationships=0,subPaths=0,extensionSubPaths=0. item=0,clips=[00163@0],in=188910000,out=571507215,connection=1,still=0,multiAngle=False,STN=[Video/1/4113:234/6/1,Audio/1/4352:134/6/1,Audio/1/4353:129/6/1,Audio/1/4354:129/6/1,Audio/1/4355:129/6/1,Audio/1/4356:129/6/1,Audio/1/4357:129/6/1,Audio/1/4358:129/6/1,Audio/1/4359:129/6/1,Audio/1/4360:129/6/1,Audio/1/4361:129/6/1,Audio/1/4362:129/6/1],CLPI=[00163: start=188910000,end=571507215,duration=382597215,stcCount=1,STC=[atc=0,offsetStcId=0,stcIndex=0,start=188910000,end=571507215],programStreams=[program=0,packetStart=0,streams=[4113:234/6/1,4352:134/6/1,4353:129/6/1,4354:129/6/1,4355:129/6/1,4356:129/6/1,4357:129/6/1,4358:129/6/1,4359:129/6/1,4360:129/6/1,4361:129/6/1,4362:129/6/1,4363:129/6/1,4608:144//,4609:144//,4610:144//,4611:144//,4612:144//,4613:144//,4614:144//,4615:144//,4616:144//,4617:144//,4618:144//,4619:144//,4620:144//]]]",
+        "path": "BDMV/PLAYLIST/00100.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_PRESENTATION_TIMING",
+        "message": "Mapped playlist part=none: playItemTicks=382597215,trailingClipTicks=0,presentationTicks=382597215 (45 kHz). Segment values are rounded seconds, alternate angles share a timeline: clip=00163,angle=,start=0,duration=8502.160333",
+        "path": "BDMV/PLAYLIST/00100.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_SPLIT_DECISION",
+        "message": "Split not evaluated: fewer than two play items.",
+        "path": "BDMV/PLAYLIST/00100.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_AUTHORED_MARKS",
+        "message": "Authored marks (index:type:playItem:time:duration, 45 kHz): 0:1:0:188910000:0, 1:1:0:193414500:0, 2:1:0:206740312:0, 3:1:0:223376932:0, 4:1:0:229073248:0, 5:1:0:232673094:0, 6:1:0:240039828:0, 7:1:0:253277428:0, 8:1:0:266792805:0, 9:1:0:273592723:0, 10:1:0:293767252:0, 11:1:0:309767611:0, 12:1:0:317511598:0, 13:1:0:323007088:0, 14:1:0:333960530:0, 15:1:0:344088148:0, 16:1:0:354677476:0, 17:1:0:360079123:0, 18:1:0:370304338:0, 19:1:0:383016412:0, 20:1:0:402663540:0, 21:1:0:411657525:0, 22:1:0:425124103:0, 23:1:0:432511483:0, 24:1:0:443566276:0, 25:1:0:450670248:0, 26:1:0:465411225:0, 27:1:0:474225030:0, 28:1:0:486071865:0, 29:1:0:500910438:0, 30:1:0:513243384:0, 31:1:0:521732490:0, 32:1:0:529223098:0, 33:1:0:536441559:0, 34:1:0:539343208:0, 35:1:0:571495953:0",
+        "path": "BDMV/PLAYLIST/00101.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_FINAL_MARK",
+        "message": "Resolved 36 entry marks from 36 authored marks. Final entry mark 35 references play item 0, timestamp 571495953, duration 0; playlist start 382585953, playlist end 382597215, distance from end 11262 ticks (45 kHz).",
+        "path": "BDMV/PLAYLIST/00101.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_TERMINAL_SENTINEL_EXCLUDED",
+        "message": "Excluded a final entry mark 11262 ticks (45 kHz) before playlist end as a MakeMKV-style terminal chapter-end sentinel, not a legitimate chapter.",
+        "path": "BDMV/PLAYLIST/00101.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_AUTHORED_EVIDENCE",
+        "message": "Original playlist evidence before loop/tail/split rules; times are 45 kHz ticks, stream values are numeric codec/format/rate codes. PlaybackType=1,stereoRelationships=0,subPaths=0,extensionSubPaths=0. item=0,clips=[00163@0],in=188910000,out=571507215,connection=1,still=0,multiAngle=False,STN=[Video/1/4113:234/6/1,Audio/1/4352:134/6/1,Audio/1/4363:129/6/1],CLPI=[00163: start=188910000,end=571507215,duration=382597215,stcCount=1,STC=[atc=0,offsetStcId=0,stcIndex=0,start=188910000,end=571507215],programStreams=[program=0,packetStart=0,streams=[4113:234/6/1,4352:134/6/1,4353:129/6/1,4354:129/6/1,4355:129/6/1,4356:129/6/1,4357:129/6/1,4358:129/6/1,4359:129/6/1,4360:129/6/1,4361:129/6/1,4362:129/6/1,4363:129/6/1,4608:144//,4609:144//,4610:144//,4611:144//,4612:144//,4613:144//,4614:144//,4615:144//,4616:144//,4617:144//,4618:144//,4619:144//,4620:144//]]]",
+        "path": "BDMV/PLAYLIST/00101.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_PRESENTATION_TIMING",
+        "message": "Mapped playlist part=none: playItemTicks=382597215,trailingClipTicks=0,presentationTicks=382597215 (45 kHz). Segment values are rounded seconds, alternate angles share a timeline: clip=00163,angle=,start=0,duration=8502.160333",
+        "path": "BDMV/PLAYLIST/00101.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_SPLIT_DECISION",
+        "message": "Split not evaluated: fewer than two play items.",
+        "path": "BDMV/PLAYLIST/00101.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_AUTHORED_MARKS",
+        "message": "Authored marks (index:type:playItem:time:duration, 45 kHz): 0:1:0:27000000:0",
+        "path": "BDMV/PLAYLIST/00120.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_FINAL_MARK",
+        "message": "Resolved 1 entry marks from 1 authored marks. Final entry mark 0 references play item 0, timestamp 27000000, duration 0; playlist start 0, playlist end 8513505, distance from end 8513505 ticks (45 kHz).",
+        "path": "BDMV/PLAYLIST/00120.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_AUTHORED_EVIDENCE",
+        "message": "Original playlist evidence before loop/tail/split rules; times are 45 kHz ticks, stream values are numeric codec/format/rate codes. PlaybackType=1,stereoRelationships=0,subPaths=0,extensionSubPaths=0. item=0,clips=[00003@0],in=27000000,out=35513505,connection=1,still=2,multiAngle=False,STN=[Video/1/4113:234/6/1,Audio/1/4352:129/3/1],CLPI=[00003: start=27000000,end=35513505,duration=8513505,stcCount=1,STC=[atc=0,offsetStcId=0,stcIndex=0,start=27000000,end=35513505],programStreams=[program=0,packetStart=0,streams=[4113:234/6/1,4352:129/3/1]]]",
+        "path": "BDMV/PLAYLIST/00120.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_PRESENTATION_TIMING",
+        "message": "Mapped playlist part=none: playItemTicks=8513505,trailingClipTicks=0,presentationTicks=8513505 (45 kHz). Segment values are rounded seconds, alternate angles share a timeline: clip=00003,angle=,start=0,duration=189.189",
+        "path": "BDMV/PLAYLIST/00120.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_SPLIT_DECISION",
+        "message": "Split not evaluated: fewer than two play items, still mode.",
+        "path": "BDMV/PLAYLIST/00120.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_AUTHORED_MARKS",
+        "message": "Authored marks (index:type:playItem:time:duration, 45 kHz): 0:1:0:27000000:0",
+        "path": "BDMV/PLAYLIST/00137.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_FINAL_MARK",
+        "message": "Resolved 1 entry marks from 1 authored marks. Final entry mark 0 references play item 0, timestamp 27000000, duration 0; playlist start 0, playlist end 180180, distance from end 180180 ticks (45 kHz).",
+        "path": "BDMV/PLAYLIST/00137.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_AUTHORED_EVIDENCE",
+        "message": "Original playlist evidence before loop/tail/split rules; times are 45 kHz ticks, stream values are numeric codec/format/rate codes. PlaybackType=1,stereoRelationships=0,subPaths=0,extensionSubPaths=0. item=0,clips=[00999@0],in=27000000,out=27180180,connection=1,still=0,multiAngle=False,STN=[Video/1/4113:234/5/1],CLPI=[00999: start=27000000,end=27180180,duration=180180,stcCount=1,STC=[atc=0,offsetStcId=0,stcIndex=0,start=27000000,end=27180180],programStreams=[program=0,packetStart=0,streams=[4113:234/5/1]]]",
+        "path": "BDMV/PLAYLIST/00137.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_PRESENTATION_TIMING",
+        "message": "Mapped playlist part=none: playItemTicks=180180,trailingClipTicks=0,presentationTicks=180180 (45 kHz). Segment values are rounded seconds, alternate angles share a timeline: clip=00999,angle=,start=0,duration=4.004",
+        "path": "BDMV/PLAYLIST/00137.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_SPLIT_DECISION",
+        "message": "Split not evaluated: fewer than two play items.",
+        "path": "BDMV/PLAYLIST/00137.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_AUTHORED_MARKS",
+        "message": "Authored marks (index:type:playItem:time:duration, 45 kHz): 0:1:0:27000000:0",
+        "path": "BDMV/PLAYLIST/00900.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_FINAL_MARK",
+        "message": "Resolved 1 entry marks from 1 authored marks. Final entry mark 0 references play item 0, timestamp 27000000, duration 0; playlist start 0, playlist end 675675, distance from end 675675 ticks (45 kHz).",
+        "path": "BDMV/PLAYLIST/00900.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_AUTHORED_EVIDENCE",
+        "message": "Original playlist evidence before loop/tail/split rules; times are 45 kHz ticks, stream values are numeric codec/format/rate codes. PlaybackType=1,stereoRelationships=0,subPaths=0,extensionSubPaths=0. item=0,clips=[00900@0],in=27000000,out=27675675,connection=1,still=0,multiAngle=False,STN=[Video/1/4113:234/6/1],CLPI=[00900: start=27000000,end=27675675,duration=675675,stcCount=1,STC=[atc=0,offsetStcId=0,stcIndex=0,start=27000000,end=27675675],programStreams=[program=0,packetStart=0,streams=[4113:234/6/1]]]",
+        "path": "BDMV/PLAYLIST/00900.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_PRESENTATION_TIMING",
+        "message": "Mapped playlist part=none: playItemTicks=675675,trailingClipTicks=0,presentationTicks=675675 (45 kHz). Segment values are rounded seconds, alternate angles share a timeline: clip=00900,angle=,start=0,duration=15.015",
+        "path": "BDMV/PLAYLIST/00900.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_SPLIT_DECISION",
+        "message": "Split not evaluated: fewer than two play items.",
+        "path": "BDMV/PLAYLIST/00900.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_AUTHORED_MARKS",
+        "message": "Authored marks (index:type:playItem:time:duration, 45 kHz): 0:1:0:27000000:0",
+        "path": "BDMV/PLAYLIST/00901.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_FINAL_MARK",
+        "message": "Resolved 1 entry marks from 1 authored marks. Final entry mark 0 references play item 0, timestamp 27000000, duration 0; playlist start 0, playlist end 675675, distance from end 675675 ticks (45 kHz).",
+        "path": "BDMV/PLAYLIST/00901.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_AUTHORED_EVIDENCE",
+        "message": "Original playlist evidence before loop/tail/split rules; times are 45 kHz ticks, stream values are numeric codec/format/rate codes. PlaybackType=1,stereoRelationships=0,subPaths=0,extensionSubPaths=0. item=0,clips=[00901@0],in=27000000,out=27675675,connection=1,still=0,multiAngle=False,STN=[Video/1/4113:234/6/1],CLPI=[00901: start=27000000,end=27675675,duration=675675,stcCount=1,STC=[atc=0,offsetStcId=0,stcIndex=0,start=27000000,end=27675675],programStreams=[program=0,packetStart=0,streams=[4113:234/6/1]]]",
+        "path": "BDMV/PLAYLIST/00901.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_PRESENTATION_TIMING",
+        "message": "Mapped playlist part=none: playItemTicks=675675,trailingClipTicks=0,presentationTicks=675675 (45 kHz). Segment values are rounded seconds, alternate angles share a timeline: clip=00901,angle=,start=0,duration=15.015",
+        "path": "BDMV/PLAYLIST/00901.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_SPLIT_DECISION",
+        "message": "Split not evaluated: fewer than two play items.",
+        "path": "BDMV/PLAYLIST/00901.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_AUTHORED_MARKS",
+        "message": "Authored marks (index:type:playItem:time:duration, 45 kHz): 0:1:0:27000000:0",
+        "path": "BDMV/PLAYLIST/00959.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_CHAPTER_FINAL_MARK",
+        "message": "Resolved 1 entry marks from 1 authored marks. Final entry mark 0 references play item 0, timestamp 27000000, duration 0; playlist start 0, playlist end 180180, distance from end 180180 ticks (45 kHz).",
+        "path": "BDMV/PLAYLIST/00959.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_AUTHORED_EVIDENCE",
+        "message": "Original playlist evidence before loop/tail/split rules; times are 45 kHz ticks, stream values are numeric codec/format/rate codes. PlaybackType=1,stereoRelationships=0,subPaths=0,extensionSubPaths=0. item=0,clips=[00999@0],in=27000000,out=27180180,connection=1,still=0,multiAngle=False,STN=[Video/1/4113:234/5/1],CLPI=[00999: start=27000000,end=27180180,duration=180180,stcCount=1,STC=[atc=0,offsetStcId=0,stcIndex=0,start=27000000,end=27180180],programStreams=[program=0,packetStart=0,streams=[4113:234/5/1]]]",
+        "path": "BDMV/PLAYLIST/00959.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_PRESENTATION_TIMING",
+        "message": "Mapped playlist part=none: playItemTicks=180180,trailingClipTicks=0,presentationTicks=180180 (45 kHz). Segment values are rounded seconds, alternate angles share a timeline: clip=00999,angle=,start=0,duration=4.004",
+        "path": "BDMV/PLAYLIST/00959.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_PLAYLIST_SPLIT_DECISION",
+        "message": "Split not evaluated: fewer than two play items.",
+        "path": "BDMV/PLAYLIST/00959.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_TITLE_DUPLICATE",
+        "message": "Playlist plays the same as BDMV/PLAYLIST/00137.mpls and selects no stream it lacks, so it is not emitted as a separate title.",
+        "path": "BDMV/PLAYLIST/00959.mpls"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_STREAM_TITLE_ATTRIBUTED",
+        "message": "Attributed BDMV/PLAYLIST/00012.mpls (part none) to clip 00000: one full-clip segment, no alternate angle or stereoscopic pairing, 1 chapter mark(s) removed; played seconds=10.01, clip seconds=10.01.",
+        "path": "BDMV/STREAM/00000.m2ts"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_STREAM_TITLE_ATTRIBUTED",
+        "message": "Attributed BDMV/PLAYLIST/00120.mpls (part none) to clip 00003: one full-clip segment, no alternate angle or stereoscopic pairing, 1 chapter mark(s) removed; played seconds=189.189, clip seconds=189.189.",
+        "path": "BDMV/STREAM/00003.m2ts"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_STREAM_TITLE_ATTRIBUTED",
+        "message": "Attributed BDMV/PLAYLIST/00003.mpls (part none) to clip 00014: one full-clip segment, no alternate angle or stereoscopic pairing, 1 chapter mark(s) removed; played seconds=6.047689, clip seconds=6.047689.",
+        "path": "BDMV/STREAM/00014.m2ts"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_STREAM_TITLE_ATTRIBUTED",
+        "message": "Attributed BDMV/PLAYLIST/00004.mpls (part none) to clip 00016: one full-clip segment, no alternate angle or stereoscopic pairing, 1 chapter mark(s) removed; played seconds=5.005, clip seconds=5.005.",
+        "path": "BDMV/STREAM/00016.m2ts"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_STREAM_TITLE_ATTRIBUTED",
+        "message": "Attributed BDMV/PLAYLIST/00006.mpls (part none) to clip 00017: one full-clip segment, no alternate angle or stereoscopic pairing, 1 chapter mark(s) removed; played seconds=10.01, clip seconds=10.01.",
+        "path": "BDMV/STREAM/00017.m2ts"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_STREAM_TITLE_ATTRIBUTED",
+        "message": "Attributed BDMV/PLAYLIST/00002.mpls (part none) to clip 00112: one full-clip segment, no alternate angle or stereoscopic pairing, 1 chapter mark(s) removed; played seconds=11.928578, clip seconds=11.928578.",
+        "path": "BDMV/STREAM/00112.m2ts"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_STREAM_TITLE_ATTRIBUTED",
+        "message": "Attributed BDMV/PLAYLIST/00000.mpls (part none) to clip 00120: one full-clip segment, no alternate angle or stereoscopic pairing, 1 chapter mark(s) removed; played seconds=12.012, clip seconds=12.012.",
+        "path": "BDMV/STREAM/00120.m2ts"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_STREAM_TITLE_ATTRIBUTED",
+        "message": "Attributed BDMV/PLAYLIST/00011.mpls (part none) to clip 00137: one full-clip segment, no alternate angle or stereoscopic pairing, 1 chapter mark(s) removed; played seconds=10.01, clip seconds=10.01.",
+        "path": "BDMV/STREAM/00137.m2ts"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_STREAM_TITLE_ATTRIBUTED",
+        "message": "Attributed BDMV/PLAYLIST/00001.mpls (part none) to clip 00144: one full-clip segment, no alternate angle or stereoscopic pairing, 1 chapter mark(s) removed; played seconds=17.058689, clip seconds=17.058689.",
+        "path": "BDMV/STREAM/00144.m2ts"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_STREAM_TITLE_ATTRIBUTED",
+        "message": "Attributed BDMV/PLAYLIST/00005.mpls (part none) to clip 00154: one full-clip segment, no alternate angle or stereoscopic pairing, 1 chapter mark(s) removed; played seconds=23.273244, clip seconds=23.273244.",
+        "path": "BDMV/STREAM/00154.m2ts"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_STREAM_TITLE_ATTRIBUTED",
+        "message": "Attributed BDMV/PLAYLIST/00022.mpls (part none) to clip 00165: one full-clip segment, no alternate angle or stereoscopic pairing, 1 chapter mark(s) removed; played seconds=0.0834, clip seconds=0.0834.",
+        "path": "BDMV/STREAM/00165.m2ts"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_STREAM_TITLE_ATTRIBUTED",
+        "message": "Attributed BDMV/PLAYLIST/00900.mpls (part none) to clip 00900: one full-clip segment, no alternate angle or stereoscopic pairing, 1 chapter mark(s) removed; played seconds=15.015, clip seconds=15.015.",
+        "path": "BDMV/STREAM/00900.m2ts"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_STREAM_TITLE_ATTRIBUTED",
+        "message": "Attributed BDMV/PLAYLIST/00901.mpls (part none) to clip 00901: one full-clip segment, no alternate angle or stereoscopic pairing, 1 chapter mark(s) removed; played seconds=15.015, clip seconds=15.015.",
+        "path": "BDMV/STREAM/00901.m2ts"
+      },
+      {
+        "severity": "info",
+        "code": "ODM_BD_STREAM_TITLE_ATTRIBUTED",
+        "message": "Attributed BDMV/PLAYLIST/00137.mpls (part none) to clip 00999: one full-clip segment, no alternate angle or stereoscopic pairing, 1 chapter mark(s) removed; played seconds=4.004, clip seconds=4.004.",
+        "path": "BDMV/STREAM/00999.m2ts"
+      }
+    ]
+  }
+}
